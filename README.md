@@ -1,6 +1,6 @@
 # OSRS Collection Log Dependency Builder
 
-A Python tool that builds dependency chains for Old School RuneScape items based on collection log requirements. Designed to generate data for a RuneLite plugin that restricts items until their collection log dependencies are unlocked.
+A Python tool that builds dependency chains for Old School RuneScape items based on collection log requirements. This generates the data file used by the [Clogman Mode](https://github.com/mozjay/clogman-mode) RuneLite plugin.
 
 ## Overview
 
@@ -91,6 +91,7 @@ MINIMUM CLOG DEPENDENCIES (4 items):
 │                        OSRS Wiki API                            │
 │  • Module:Collection_log/data.json (1,692 clog items)          │
 │  • Bucket:Recipe API (7,152 recipes)                           │
+│  • Prices API (for item ID resolution)                         │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼ (fetch once, cache locally)
@@ -98,6 +99,7 @@ MINIMUM CLOG DEPENDENCIES (4 items):
 │                      Local Cache (cache/)                       │
 │  • clog_items.json - Collection log items with IDs & sources   │
 │  • recipes.json - All crafting recipes with materials          │
+│  • prices.json - Item name to ID mappings                      │
 │  Cache valid for 7 days, then auto-refreshes                   │
 └─────────────────────────────────────────────────────────────────┘
                               │
@@ -107,6 +109,7 @@ MINIMUM CLOG DEPENDENCIES (4 items):
 │  • Builds recipe graph: item → [recipe1, recipe2, ...]         │
 │  • Tracks which items are collection log items                 │
 │  • Calculates minimum clog dependencies per item               │
+│  • Detects clog-to-clog crafting relationships                 │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼ (query in-memory)
@@ -114,7 +117,6 @@ MINIMUM CLOG DEPENDENCIES (4 items):
 │                         Output                                  │
 │  • Visualization (--visualize)                                 │
 │  • JSON export (--output)                                      │
-│  • Test cases (--test)                                         │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -123,6 +125,7 @@ MINIMUM CLOG DEPENDENCIES (4 items):
 1. **Data Fetching** (only when cache is missing/expired)
    - Fetches collection log items from `Module:Collection_log/data.json`
    - Fetches all recipes from the wiki's Bucket API
+   - Fetches item prices/IDs from the prices API
    - Saves to local cache files
 
 2. **Graph Building** (every run, from cached data)
@@ -141,6 +144,11 @@ MINIMUM CLOG DEPENDENCIES (4 items):
    - If ANY recipe is clog-free, the item is **NOT RESTRICTED**
    - Example: "Plank" has 5 recipes, all clog-free → not restricted
 
+5. **Clog-to-Clog Crafting**
+   - Some clog items can be crafted from other clog items (e.g., Onyx from Uncut onyx)
+   - These relationships are tracked in the `craftable_from` field
+   - Enables "effective unlocking" in the plugin
+
 ### Caching System
 
 The cache system avoids unnecessary API calls:
@@ -154,6 +162,7 @@ The cache system avoids unnecessary API calls:
 Cache files are stored in `cache/` directory:
 - `clog_items.json` (~164KB) - Collection log items
 - `recipes.json` (~3.7MB) - All crafting recipes
+- `prices.json` (~1MB) - Item name to ID mappings
 
 Cache expires after 7 days (configurable via `CACHE_MAX_AGE_DAYS`).
 
@@ -203,31 +212,40 @@ Result: Tormented bracelet requires 2 clog items (RESTRICTED)
 
 ```json
 {
-  "version": "1.1",
-  "generated": "2025-01-14 16:11:00",
+  "version": "1.4",
+  "generated": "2026-01-15 14:25:45",
   "stats": {
     "total_clog_items": 1692,
-    "total_derived_items": 547,
-    "items_with_clog_free_recipes": 3172
+    "total_derived_items": 627,
+    "items_with_clog_free_recipes": 3156,
+    "derived_items_with_multiple_ids": 70,
+    "derived_items_without_ids": 91,
+    "clog_items_with_multiple_ids": 169,
+    "clog_items_craftable_from_other_clogs": 27
   },
   "collectionLogItems": {
+    "6573": {
+      "name": "Onyx",
+      "tabs": ["Chambers of Xeric", "Fortis Colosseum"],
+      "all_ids": [6573],
+      "craftable_from": [[6571]]
+    },
     "19529": {
       "name": "Zenyte shard",
-      "tabs": ["Glough's Experiments"]
-    },
-    "31109": {
-      "name": "Mokhaiotl cloth",
-      "tabs": ["Doom of Mokhaiotl"]
+      "tabs": ["Glough's Experiments"],
+      "all_ids": [19529]
     }
   },
   "derivedItems": {
     "tormented bracelet": {
       "name": "tormented bracelet",
+      "item_ids": [19544],
       "clog_dependencies": [6573, 19529]
     },
-    "confliction gauntlets": {
-      "name": "confliction gauntlets",
-      "clog_dependencies": [6573, 19529, 31109, 31111]
+    "amulet of fury": {
+      "name": "amulet of fury",
+      "item_ids": [6585, 6586, 12436],
+      "clog_dependencies": [6573]
     }
   }
 }
@@ -239,8 +257,28 @@ Result: Tormented bracelet requires 2 clog items (RESTRICTED)
 |-------|-------------|
 | `collectionLogItems` | All items in the OSRS collection log, keyed by item ID |
 | `derivedItems` | Items that require clog items to create, keyed by item name |
+| `all_ids` | All variant IDs for a clog item (e.g., charged/uncharged states) |
+| `item_ids` | All variant IDs for a derived item |
 | `clog_dependencies` | Array of clog item IDs required to unlock this item |
+| `craftable_from` | (Optional) Recipes to craft this clog item from other clog items |
 | `tabs` | Collection log categories where the item appears |
+
+### Craftable From Field
+
+The `craftable_from` field enables "effective unlocking" - when a clog item can be crafted from other clog items:
+
+```json
+"6573": {
+  "name": "Onyx",
+  "craftable_from": [[6571]]  // Can be crafted from Uncut onyx (ID: 6571)
+}
+```
+
+Structure: `[[recipe1_deps], [recipe2_deps], ...]`
+- Outer list: OR (any recipe works)
+- Inner list: AND (all deps in recipe needed)
+
+This allows the plugin to treat Onyx as "effectively unlocked" if the player has Uncut onyx.
 
 ## Data Sources
 
@@ -254,11 +292,15 @@ All data comes from the [OSRS Wiki](https://oldschool.runescape.wiki/):
    - Source: Bucket API (`api.php?action=bucket&query=bucket('recipe')...`)
    - Contains 7,152 recipes with materials and outputs
 
+3. **Item Prices/IDs**
+   - Source: Prices API (`prices.runescape.wiki/api/v1/osrs/mapping`)
+   - Used to resolve item names to IDs for derived items
+
 ## Limitations
 
 1. **Recipe coverage**: Only items with wiki recipes are tracked. Some items may have undocumented creation methods.
 
-2. **Item IDs for derived items**: Currently derived items use names as keys (not IDs). This is because fetching IDs for 500+ items would require many additional API calls.
+2. **Derived items without IDs**: ~91 derived items couldn't have their IDs resolved (typically very obscure items).
 
 3. **Alternative clog paths**: If an item requires "onyx" and onyx can be obtained from multiple clog sources (CoX, Fortis, etc.), only one source is listed.
 
@@ -267,24 +309,24 @@ All data comes from the [OSRS Wiki](https://oldschool.runescape.wiki/):
 When run, the tool generates:
 
 - **1,692** collection log items tracked
-- **654** derived items (require clog items for ALL recipes)
-  - Includes **107 variant items** (charged, locked, broken, etc.)
-  - Plus **36 updated items** with added base dependencies
-- **3,172** items skipped (have clog-free recipe alternatives)
-- **11,712** total items in the wiki item database
+- **627** derived items (require clog items for ALL recipes)
+- **27** clog items craftable from other clog items
+- **169** clog items with multiple variant IDs
+- **70** derived items with multiple variant IDs
+- **3,156** items skipped (have clog-free recipe alternatives)
 
 ## File Structure
 
 ```
-osrs_clog_dependencies/
+osrs-clog-dependencies/
 ├── clog_dependency_builder.py   # Main script
 ├── clog_restrictions.json       # Generated output for RuneLite plugin
 ├── requirements.txt             # Python dependencies
 ├── README.md                    # This file
 └── cache/
-    ├── clog_items.json          # Cached collection log items (~164KB)
-    ├── recipes.json             # Cached recipes (~3.7MB)
-    └── all_items.json           # Cached item names for variant detection (~400KB)
+    ├── clog_items.json          # Cached collection log items
+    ├── recipes.json             # Cached recipes
+    └── prices.json              # Cached item prices/IDs
 ```
 
 ## Contributing
