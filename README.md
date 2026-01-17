@@ -212,7 +212,7 @@ Result: Tormented bracelet requires 2 clog items (RESTRICTED)
 
 ```json
 {
-  "version": "1.4",
+  "version": "1.0.0",
   "generated": "2026-01-15 14:25:45",
   "stats": {
     "total_clog_items": 1692,

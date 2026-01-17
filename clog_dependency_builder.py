@@ -958,7 +958,7 @@ def generate_output_json(
 
     # Build the output structure
     output = {
-        "version": "1.4",
+        "version": "1.0.0",
         "generated": time.strftime("%Y-%m-%d %H:%M:%S"),
         "stats": {
             "total_clog_items": len(clog_items),
