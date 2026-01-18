@@ -48,21 +48,10 @@ Some items can't be auto-detected (e.g., items that share display names with bas
 }
 ```
 
-### Finding Candidates
-
-```bash
-# Generate candidate items that may need manual recipes
-python3 find_manual_candidates.py
-```
-
-This creates `manual_candidates.json` with items to investigate.
-
 ## File Structure
 
 - `clog_dependency_builder.py` - Main script
-- `find_manual_candidates.py` - Helper to find items needing manual recipes
 - `manual_recipes.json` - Manually-defined derived items
-- `manual_candidates.json` - Generated list of candidates to investigate
 - `cache/` - Cached wiki data (7 day TTL)
 - `output/` - Generated output files
 
