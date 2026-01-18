@@ -40,19 +40,10 @@ ALL_ITEMS_CACHE_FILE = CACHE_DIR / "all_items.json"
 PRICES_MAPPING_CACHE_FILE = CACHE_DIR / "prices_mapping.json"
 CACHE_MAX_AGE_DAYS = 7
 
-# Manual item ID overrides - only needed for items where bucket + prices API give wrong IDs
-# Format: item_name (lowercase) -> item_id
-# Note: Most items are now correctly resolved via bucket API + prices API
-MANUAL_ITEM_IDS = {
-    # Add any items here that still have wrong IDs after bucket + prices API resolution
-}
-
-# Manual recipe additions for items whose creation isn't in the recipe bucket
-# Format: output_name (lowercase) -> [list of material names (lowercase)]
-# Note: Most (u) -> charged relationships are now handled by VARIANT_PATTERNS
-MANUAL_RECIPES = {
-    # Add any special recipes here that aren't covered by variant patterns
-}
+# Manual recipes file
+# Contains manually-defined derived items that can't be auto-detected
+# (e.g., items that share display names with base clog items)
+MANUAL_RECIPES_FILE = Path(__file__).parent / "manual_recipes.json"
 
 # Variant patterns for items that don't have explicit recipes
 # Format: (base_pattern, variant_pattern, description)
@@ -87,6 +78,9 @@ VARIANT_PATTERNS = [
 
     # Cosmetic silver variants: "X" in clog -> "X (s)" is variant
     ("", " (s)", "silver"),
+
+    # Disassembled variants: "X (disassembled)" in clog -> "X" is variant
+    (" (disassembled)", "", "assembled"),
 ]
 
 
@@ -374,22 +368,7 @@ class OSRSWikiClient:
                 # For untradeables, use the lowest ID (usually the original)
                 primary_ids[name] = min(unique_ids)
 
-        # Step 4: Apply manual overrides (highest priority)
-        overrides_applied = 0
-        for name, item_id in MANUAL_ITEM_IDS.items():
-            if primary_ids.get(name) != item_id:
-                primary_ids[name] = item_id
-                overrides_applied += 1
-            # Ensure manual ID is in the all_ids list
-            if name in all_ids_by_name and item_id not in all_ids_by_name[name]:
-                all_ids_by_name[name].append(item_id)
-                all_ids_by_name[name].sort()
-            elif name not in all_ids_by_name:
-                all_ids_by_name[name] = [item_id]
-
-        print(f"  Applied {overrides_applied} manual overrides")
-
-        # Step 5: Ensure prices API IDs are included in all_ids
+        # Step 4: Ensure prices API IDs are included in all_ids
         # (in case bucket API didn't have them)
         for name, item_id in prices_mapping.items():
             if name in all_ids_by_name and item_id not in all_ids_by_name[name]:
@@ -456,14 +435,6 @@ class DependencyResolver:
                 self.recipes_by_item[output_name].append(material_names)
 
         print(f"  Built graph with {len(self.recipes_by_item)} craftable items")
-
-        # Add manual recipes
-        manual_added = 0
-        for output_name, materials in MANUAL_RECIPES.items():
-            if output_name not in self.recipes_by_item:
-                self.recipes_by_item[output_name].append(materials)
-                manual_added += 1
-        print(f"  Added {manual_added} manual recipes")
 
         # Count items with multiple recipes
         multi_recipe = sum(1 for recipes in self.recipes_by_item.values() if len(recipes) > 1)
@@ -850,6 +821,53 @@ def find_clog_crafting_recipes(
     return clog_recipes if clog_recipes else None
 
 
+def load_manual_recipes() -> Dict[str, dict]:
+    """
+    Load manually-defined derived items from manual_recipes.json.
+
+    Returns dict in the same format as derivedItems output.
+    """
+    if not MANUAL_RECIPES_FILE.exists():
+        print(f"  No manual recipes file found at {MANUAL_RECIPES_FILE}")
+        return {}
+
+    try:
+        with open(MANUAL_RECIPES_FILE, 'r') as f:
+            manual_recipes = json.load(f)
+            print(f"  Loaded {len(manual_recipes)} manual recipes from {MANUAL_RECIPES_FILE.name}")
+            return manual_recipes
+    except Exception as e:
+        print(f"  Warning: Failed to load {MANUAL_RECIPES_FILE}: {e}")
+        return {}
+
+
+def process_manual_recipes(clog_items_output, derived_items_output, manual_recipes):
+    """
+    Add manual recipes to derived items and remove their IDs from clog item variants.
+
+    Args:
+        clog_items_output: Dict of clog items being built for output
+        derived_items_output: Dict of derived items being built for output
+        manual_recipes: Dict of manual recipes loaded from JSON
+    """
+    if not manual_recipes:
+        return
+
+    for item_name, recipe in manual_recipes.items():
+        # Add directly to derived items (already in correct format)
+        derived_items_output[item_name.lower()] = recipe
+
+        # Remove these IDs from clog item all_ids to prevent double-counting
+        ids_to_remove = set(recipe["item_ids"])
+        for clog_id, clog_entry in clog_items_output.items():
+            original = clog_entry.get("all_ids", [])
+            filtered = [id for id in original if id not in ids_to_remove]
+            if len(filtered) < len(original):
+                clog_entry["all_ids"] = filtered
+
+    print(f"  Added {len(manual_recipes)} manual recipes to derived items")
+
+
 def generate_output_json(
     clog_items: Dict[int, Item],
     resolver: DependencyResolver,
@@ -956,6 +974,10 @@ def generate_output_json(
     print(f"  Clog items with variant IDs (non-clog): {clog_items_with_extra_ids}")
     print(f"  Clog items craftable from other clogs: {clog_items_with_crafting}")
 
+    # Load and add manual recipes
+    manual_recipes = load_manual_recipes()
+    process_manual_recipes(clog_items_output, derived_items, manual_recipes)
+
     # Build the output structure
     output = {
         "version": "1.0.0",
@@ -986,7 +1008,7 @@ def generate_output_json(
 def main():
     parser = argparse.ArgumentParser(description="OSRS Collection Log Dependency Builder")
     parser.add_argument("--visualize", type=str, help="Visualize dependencies for a specific item")
-    parser.add_argument("--output", type=str, default="clog_restrictions.json", help="Output JSON file path")
+    parser.add_argument("--output", type=str, default="output/clog_restrictions.json", help="Output JSON file path")
     parser.add_argument("--refresh-cache", action="store_true", help="Force refresh of cached wiki data")
     args = parser.parse_args()
 
