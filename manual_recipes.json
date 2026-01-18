@@ -1,0 +1,115 @@
+{
+  "granite maul (ornate handle)": {
+    "name": "granite maul (ornate handle)",
+    "item_ids": [
+      24225
+    ],
+    "clog_dependencies": [
+      4153,
+      24229
+    ]
+  },
+  "granite maul (clamp)": {
+    "name": "granite maul (clamp)",
+    "item_ids": [
+      12848
+    ],
+    "clog_dependencies": [
+      4153,
+      12849
+    ]
+  },
+  "granite maul (ornate handle, clamp)": {
+    "name": "granite maul (ornate handle, clamp)",
+    "item_ids": [
+      24227
+    ],
+    "clog_dependencies": [
+      4153,
+      24229,
+      12849
+    ]
+  },
+  "rune scimitar (guthix)": {
+    "name": "rune scimitar (guthix)",
+    "item_ids": [
+      23330
+    ],
+    "clog_dependencies": [
+      23321
+    ]
+  },
+  "rune scimitar (saradomin)": {
+    "name": "rune scimitar (saradomin)",
+    "item_ids": [
+      23332
+    ],
+    "clog_dependencies": [
+      23324
+    ]
+  },
+  "rune scimitar (zamorak)": {
+    "name": "rune scimitar (zamorak)",
+    "item_ids": [
+      23334
+    ],
+    "clog_dependencies": [
+      23327
+    ]
+  },
+  "lava battlestaff (or)": {
+    "name": "lava battlestaff (or)",
+    "item_ids": [
+      21198
+    ],
+    "clog_dependencies": [
+      21202
+    ]
+  },
+  "malediction ward (or)": {
+    "name": "malediction ward (or)",
+    "item_ids": [
+      12806
+    ],
+    "clog_dependencies": [
+      12802
+    ]
+  },
+  "mystic lava staff (or)": {
+    "name": "mystic lava staff (or)",
+    "item_ids": [
+      21200
+    ],
+    "clog_dependencies": [
+      21202
+    ]
+  },
+  "mystic steam staff (or)": {
+    "name": "mystic steam staff (or)",
+    "item_ids": [
+      12796
+    ],
+    "clog_dependencies": [
+      12798
+    ]
+  },
+  "odium ward (or)": {
+    "name": "odium ward (or)",
+    "item_ids": [
+      12807
+    ],
+    "clog_dependencies": [
+      12802
+    ]
+  },
+  "steam battlestaff (or)": {
+    "name": "steam battlestaff (or)",
+    "item_ids": [
+      12795
+    ],
+    "clog_dependencies": [
+      12798,
+      11787
+    ]
+  }
+}

@@ -1,9 +1,9 @@
 {
-  "version": "1.4",
-  "generated": "2026-01-15 14:25:45",
+  "version": "1.0.0",
+  "generated": "2026-01-18 06:14:49",
   "stats": {
     "total_clog_items": 1692,
-    "total_derived_items": 627,
+    "total_derived_items": 640,
     "items_with_clog_free_recipes": 3156,
     "derived_items_with_multiple_ids": 70,
     "derived_items_without_ids": 91,
@@ -1193,10 +1193,7 @@
       ],
       "all_ids": [
         4153,
-        12848,
-        20557,
-        24225,
-        24227
+        20557
       ]
     },
     "4207": {
@@ -4483,8 +4480,7 @@
         "K'ril Tsutsaroth"
       ],
       "all_ids": [
-        11787,
-        12795
+        11787
       ]
     },
     "11791": {
@@ -21891,6 +21887,15 @@
         29028
       ]
     },
+    "chugging barrel": {
+      "name": "chugging barrel",
+      "item_ids": [
+        30000
+      ],
+      "clog_dependencies": [
+        30002
+      ]
+    },
     "tome of earth": {
       "name": "tome of earth",
       "item_ids": [
@@ -22339,6 +22344,119 @@
       ],
       "clog_dependencies": [
         28947
+      ]
+    },
+    "granite maul (ornate handle)": {
+      "name": "granite maul (ornate handle)",
+      "item_ids": [
+        24225
+      ],
+      "clog_dependencies": [
+        4153,
+        24229
+      ]
+    },
+    "granite maul (clamp)": {
+      "name": "granite maul (clamp)",
+      "item_ids": [
+        12848
+      ],
+      "clog_dependencies": [
+        4153,
+        12849
+      ]
+    },
+    "granite maul (ornate handle, clamp)": {
+      "name": "granite maul (ornate handle, clamp)",
+      "item_ids": [
+        24227
+      ],
+      "clog_dependencies": [
+        4153,
+        24229,
+        12849
+      ]
+    },
+    "rune scimitar (guthix)": {
+      "name": "rune scimitar (guthix)",
+      "item_ids": [
+        23330
+      ],
+      "clog_dependencies": [
+        23321
+      ]
+    },
+    "rune scimitar (saradomin)": {
+      "name": "rune scimitar (saradomin)",
+      "item_ids": [
+        23332
+      ],
+      "clog_dependencies": [
+        23324
+      ]
+    },
+    "rune scimitar (zamorak)": {
+      "name": "rune scimitar (zamorak)",
+      "item_ids": [
+        23334
+      ],
+      "clog_dependencies": [
+        23327
+      ]
+    },
+    "lava battlestaff (or)": {
+      "name": "lava battlestaff (or)",
+      "item_ids": [
+        21198
+      ],
+      "clog_dependencies": [
+        21202
+      ]
+    },
+    "malediction ward (or)": {
+      "name": "malediction ward (or)",
+      "item_ids": [
+        12806
+      ],
+      "clog_dependencies": [
+        12802
+      ]
+    },
+    "mystic lava staff (or)": {
+      "name": "mystic lava staff (or)",
+      "item_ids": [
+        21200
+      ],
+      "clog_dependencies": [
+        21202
+      ]
+    },
+    "mystic steam staff (or)": {
+      "name": "mystic steam staff (or)",
+      "item_ids": [
+        12796
+      ],
+      "clog_dependencies": [
+        12798
+      ]
+    },
+    "odium ward (or)": {
+      "name": "odium ward (or)",
+      "item_ids": [
+        12807
+      ],
+      "clog_dependencies": [
+        12802
+      ]
+    },
+    "steam battlestaff (or)": {
+      "name": "steam battlestaff (or)",
+      "item_ids": [
+        12795
+      ],
+      "clog_dependencies": [
+        12798,
+        11787
       ]
     }
   }
