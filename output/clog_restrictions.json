@@ -1,11 +1,11 @@
 {
-  "version": "1.0.0",
-  "generated": "2026-01-18 06:14:49",
+  "version": "1.1.0",
+  "generated": "2026-01-29 13:46:40",
   "stats": {
     "total_clog_items": 1692,
-    "total_derived_items": 640,
-    "items_with_clog_free_recipes": 3156,
-    "derived_items_with_multiple_ids": 70,
+    "total_derived_items": 793,
+    "items_with_clog_free_recipes": 3163,
+    "derived_items_with_multiple_ids": 72,
     "derived_items_without_ids": 91,
     "clog_items_with_multiple_ids": 169,
     "clog_items_craftable_from_other_clogs": 27
@@ -17243,7 +17243,8 @@
     "toxic staff (uncharged)": {
       "name": "toxic staff (uncharged)",
       "item_ids": [
-        12902
+        12902,
+        33035
       ],
       "clog_dependencies": [
         12932,
@@ -18387,6 +18388,15 @@
       "name": "blade of saeldor",
       "item_ids": [
         23995
+      ],
+      "clog_dependencies": [
+        25859
+      ]
+    },
+    "blade of saeldor (inactive)": {
+      "name": "blade of saeldor (inactive)",
+      "item_ids": [
+        23997
       ],
       "clog_dependencies": [
         25859
@@ -20887,6 +20897,36 @@
         31954
       ]
     },
+    "holy moleys": {
+      "name": "holy moleys",
+      "item_ids": [
+        33002
+      ],
+      "clog_dependencies": [
+        23285,
+        12598
+      ]
+    },
+    "hooded slayer helmet": {
+      "name": "hooded slayer helmet",
+      "item_ids": [
+        33066
+      ],
+      "clog_dependencies": [
+        8901
+      ]
+    },
+    "hooded slayer helmet (i)": {
+      "name": "hooded slayer helmet (i)",
+      "item_ids": [
+        33068,
+        33070,
+        33072
+      ],
+      "clog_dependencies": [
+        8901
+      ]
+    },
     "decorative sword (l)": {
       "name": "decorative sword (l)",
       "item_ids": [
@@ -20973,6 +21013,1086 @@
       ],
       "clog_dependencies": [
         4512
+      ]
+    },
+    "ahrim's hood 0": {
+      "name": "ahrim's hood 0",
+      "item_ids": [
+        4860
+      ],
+      "clog_dependencies": [
+        4708
+      ]
+    },
+    "ahrim's hood 25": {
+      "name": "ahrim's hood 25",
+      "item_ids": [
+        4859
+      ],
+      "clog_dependencies": [
+        4708
+      ]
+    },
+    "ahrim's hood 50": {
+      "name": "ahrim's hood 50",
+      "item_ids": [
+        4858
+      ],
+      "clog_dependencies": [
+        4708
+      ]
+    },
+    "ahrim's hood 75": {
+      "name": "ahrim's hood 75",
+      "item_ids": [
+        4857
+      ],
+      "clog_dependencies": [
+        4708
+      ]
+    },
+    "ahrim's hood 100": {
+      "name": "ahrim's hood 100",
+      "item_ids": [
+        4856
+      ],
+      "clog_dependencies": [
+        4708
+      ]
+    },
+    "ahrim's staff 0": {
+      "name": "ahrim's staff 0",
+      "item_ids": [
+        4866
+      ],
+      "clog_dependencies": [
+        4710
+      ]
+    },
+    "ahrim's staff 25": {
+      "name": "ahrim's staff 25",
+      "item_ids": [
+        4865
+      ],
+      "clog_dependencies": [
+        4710
+      ]
+    },
+    "ahrim's staff 50": {
+      "name": "ahrim's staff 50",
+      "item_ids": [
+        4864
+      ],
+      "clog_dependencies": [
+        4710
+      ]
+    },
+    "ahrim's staff 75": {
+      "name": "ahrim's staff 75",
+      "item_ids": [
+        4863
+      ],
+      "clog_dependencies": [
+        4710
+      ]
+    },
+    "ahrim's staff 100": {
+      "name": "ahrim's staff 100",
+      "item_ids": [
+        4862
+      ],
+      "clog_dependencies": [
+        4710
+      ]
+    },
+    "ahrim's robetop 0": {
+      "name": "ahrim's robetop 0",
+      "item_ids": [
+        4872
+      ],
+      "clog_dependencies": [
+        4712
+      ]
+    },
+    "ahrim's robetop 25": {
+      "name": "ahrim's robetop 25",
+      "item_ids": [
+        4871
+      ],
+      "clog_dependencies": [
+        4712
+      ]
+    },
+    "ahrim's robetop 50": {
+      "name": "ahrim's robetop 50",
+      "item_ids": [
+        4870
+      ],
+      "clog_dependencies": [
+        4712
+      ]
+    },
+    "ahrim's robetop 75": {
+      "name": "ahrim's robetop 75",
+      "item_ids": [
+        4869
+      ],
+      "clog_dependencies": [
+        4712
+      ]
+    },
+    "ahrim's robetop 100": {
+      "name": "ahrim's robetop 100",
+      "item_ids": [
+        4868
+      ],
+      "clog_dependencies": [
+        4712
+      ]
+    },
+    "ahrim's robeskirt 0": {
+      "name": "ahrim's robeskirt 0",
+      "item_ids": [
+        4878
+      ],
+      "clog_dependencies": [
+        4714
+      ]
+    },
+    "ahrim's robeskirt 25": {
+      "name": "ahrim's robeskirt 25",
+      "item_ids": [
+        4877
+      ],
+      "clog_dependencies": [
+        4714
+      ]
+    },
+    "ahrim's robeskirt 50": {
+      "name": "ahrim's robeskirt 50",
+      "item_ids": [
+        4876
+      ],
+      "clog_dependencies": [
+        4714
+      ]
+    },
+    "ahrim's robeskirt 75": {
+      "name": "ahrim's robeskirt 75",
+      "item_ids": [
+        4875
+      ],
+      "clog_dependencies": [
+        4714
+      ]
+    },
+    "ahrim's robeskirt 100": {
+      "name": "ahrim's robeskirt 100",
+      "item_ids": [
+        4874
+      ],
+      "clog_dependencies": [
+        4714
+      ]
+    },
+    "dharok's helm 0": {
+      "name": "dharok's helm 0",
+      "item_ids": [
+        4884
+      ],
+      "clog_dependencies": [
+        4716
+      ]
+    },
+    "dharok's helm 25": {
+      "name": "dharok's helm 25",
+      "item_ids": [
+        4883
+      ],
+      "clog_dependencies": [
+        4716
+      ]
+    },
+    "dharok's helm 50": {
+      "name": "dharok's helm 50",
+      "item_ids": [
+        4882
+      ],
+      "clog_dependencies": [
+        4716
+      ]
+    },
+    "dharok's helm 75": {
+      "name": "dharok's helm 75",
+      "item_ids": [
+        4881
+      ],
+      "clog_dependencies": [
+        4716
+      ]
+    },
+    "dharok's helm 100": {
+      "name": "dharok's helm 100",
+      "item_ids": [
+        4880
+      ],
+      "clog_dependencies": [
+        4716
+      ]
+    },
+    "dharok's greataxe 0": {
+      "name": "dharok's greataxe 0",
+      "item_ids": [
+        4890
+      ],
+      "clog_dependencies": [
+        4718
+      ]
+    },
+    "dharok's greataxe 25": {
+      "name": "dharok's greataxe 25",
+      "item_ids": [
+        4889
+      ],
+      "clog_dependencies": [
+        4718
+      ]
+    },
+    "dharok's greataxe 50": {
+      "name": "dharok's greataxe 50",
+      "item_ids": [
+        4888
+      ],
+      "clog_dependencies": [
+        4718
+      ]
+    },
+    "dharok's greataxe 75": {
+      "name": "dharok's greataxe 75",
+      "item_ids": [
+        4887
+      ],
+      "clog_dependencies": [
+        4718
+      ]
+    },
+    "dharok's greataxe 100": {
+      "name": "dharok's greataxe 100",
+      "item_ids": [
+        4886
+      ],
+      "clog_dependencies": [
+        4718
+      ]
+    },
+    "dharok's platebody 0": {
+      "name": "dharok's platebody 0",
+      "item_ids": [
+        4896
+      ],
+      "clog_dependencies": [
+        4720
+      ]
+    },
+    "dharok's platebody 25": {
+      "name": "dharok's platebody 25",
+      "item_ids": [
+        4895
+      ],
+      "clog_dependencies": [
+        4720
+      ]
+    },
+    "dharok's platebody 50": {
+      "name": "dharok's platebody 50",
+      "item_ids": [
+        4894
+      ],
+      "clog_dependencies": [
+        4720
+      ]
+    },
+    "dharok's platebody 75": {
+      "name": "dharok's platebody 75",
+      "item_ids": [
+        4893
+      ],
+      "clog_dependencies": [
+        4720
+      ]
+    },
+    "dharok's platebody 100": {
+      "name": "dharok's platebody 100",
+      "item_ids": [
+        4892
+      ],
+      "clog_dependencies": [
+        4720
+      ]
+    },
+    "dharok's platelegs 0": {
+      "name": "dharok's platelegs 0",
+      "item_ids": [
+        4902
+      ],
+      "clog_dependencies": [
+        4722
+      ]
+    },
+    "dharok's platelegs 25": {
+      "name": "dharok's platelegs 25",
+      "item_ids": [
+        4901
+      ],
+      "clog_dependencies": [
+        4722
+      ]
+    },
+    "dharok's platelegs 50": {
+      "name": "dharok's platelegs 50",
+      "item_ids": [
+        4900
+      ],
+      "clog_dependencies": [
+        4722
+      ]
+    },
+    "dharok's platelegs 75": {
+      "name": "dharok's platelegs 75",
+      "item_ids": [
+        4899
+      ],
+      "clog_dependencies": [
+        4722
+      ]
+    },
+    "dharok's platelegs 100": {
+      "name": "dharok's platelegs 100",
+      "item_ids": [
+        4898
+      ],
+      "clog_dependencies": [
+        4722
+      ]
+    },
+    "guthan's helm 0": {
+      "name": "guthan's helm 0",
+      "item_ids": [
+        4908
+      ],
+      "clog_dependencies": [
+        4724
+      ]
+    },
+    "guthan's helm 25": {
+      "name": "guthan's helm 25",
+      "item_ids": [
+        4907
+      ],
+      "clog_dependencies": [
+        4724
+      ]
+    },
+    "guthan's helm 50": {
+      "name": "guthan's helm 50",
+      "item_ids": [
+        4906
+      ],
+      "clog_dependencies": [
+        4724
+      ]
+    },
+    "guthan's helm 75": {
+      "name": "guthan's helm 75",
+      "item_ids": [
+        4905
+      ],
+      "clog_dependencies": [
+        4724
+      ]
+    },
+    "guthan's helm 100": {
+      "name": "guthan's helm 100",
+      "item_ids": [
+        4904
+      ],
+      "clog_dependencies": [
+        4724
+      ]
+    },
+    "guthan's warspear 0": {
+      "name": "guthan's warspear 0",
+      "item_ids": [
+        4914
+      ],
+      "clog_dependencies": [
+        4726
+      ]
+    },
+    "guthan's warspear 25": {
+      "name": "guthan's warspear 25",
+      "item_ids": [
+        4913
+      ],
+      "clog_dependencies": [
+        4726
+      ]
+    },
+    "guthan's warspear 50": {
+      "name": "guthan's warspear 50",
+      "item_ids": [
+        4912
+      ],
+      "clog_dependencies": [
+        4726
+      ]
+    },
+    "guthan's warspear 75": {
+      "name": "guthan's warspear 75",
+      "item_ids": [
+        4911
+      ],
+      "clog_dependencies": [
+        4726
+      ]
+    },
+    "guthan's warspear 100": {
+      "name": "guthan's warspear 100",
+      "item_ids": [
+        4910
+      ],
+      "clog_dependencies": [
+        4726
+      ]
+    },
+    "guthan's platebody 0": {
+      "name": "guthan's platebody 0",
+      "item_ids": [
+        4920
+      ],
+      "clog_dependencies": [
+        4728
+      ]
+    },
+    "guthan's platebody 25": {
+      "name": "guthan's platebody 25",
+      "item_ids": [
+        4919
+      ],
+      "clog_dependencies": [
+        4728
+      ]
+    },
+    "guthan's platebody 50": {
+      "name": "guthan's platebody 50",
+      "item_ids": [
+        4918
+      ],
+      "clog_dependencies": [
+        4728
+      ]
+    },
+    "guthan's platebody 75": {
+      "name": "guthan's platebody 75",
+      "item_ids": [
+        4917
+      ],
+      "clog_dependencies": [
+        4728
+      ]
+    },
+    "guthan's platebody 100": {
+      "name": "guthan's platebody 100",
+      "item_ids": [
+        4916
+      ],
+      "clog_dependencies": [
+        4728
+      ]
+    },
+    "guthan's chainskirt 0": {
+      "name": "guthan's chainskirt 0",
+      "item_ids": [
+        4926
+      ],
+      "clog_dependencies": [
+        4730
+      ]
+    },
+    "guthan's chainskirt 25": {
+      "name": "guthan's chainskirt 25",
+      "item_ids": [
+        4925
+      ],
+      "clog_dependencies": [
+        4730
+      ]
+    },
+    "guthan's chainskirt 50": {
+      "name": "guthan's chainskirt 50",
+      "item_ids": [
+        4924
+      ],
+      "clog_dependencies": [
+        4730
+      ]
+    },
+    "guthan's chainskirt 75": {
+      "name": "guthan's chainskirt 75",
+      "item_ids": [
+        4923
+      ],
+      "clog_dependencies": [
+        4730
+      ]
+    },
+    "guthan's chainskirt 100": {
+      "name": "guthan's chainskirt 100",
+      "item_ids": [
+        4922
+      ],
+      "clog_dependencies": [
+        4730
+      ]
+    },
+    "karil's coif 0": {
+      "name": "karil's coif 0",
+      "item_ids": [
+        4932
+      ],
+      "clog_dependencies": [
+        4732
+      ]
+    },
+    "karil's coif 25": {
+      "name": "karil's coif 25",
+      "item_ids": [
+        4931
+      ],
+      "clog_dependencies": [
+        4732
+      ]
+    },
+    "karil's coif 50": {
+      "name": "karil's coif 50",
+      "item_ids": [
+        4930
+      ],
+      "clog_dependencies": [
+        4732
+      ]
+    },
+    "karil's coif 75": {
+      "name": "karil's coif 75",
+      "item_ids": [
+        4929
+      ],
+      "clog_dependencies": [
+        4732
+      ]
+    },
+    "karil's coif 100": {
+      "name": "karil's coif 100",
+      "item_ids": [
+        4928
+      ],
+      "clog_dependencies": [
+        4732
+      ]
+    },
+    "karil's crossbow 0": {
+      "name": "karil's crossbow 0",
+      "item_ids": [
+        4938
+      ],
+      "clog_dependencies": [
+        4734
+      ]
+    },
+    "karil's crossbow 25": {
+      "name": "karil's crossbow 25",
+      "item_ids": [
+        4937
+      ],
+      "clog_dependencies": [
+        4734
+      ]
+    },
+    "karil's crossbow 50": {
+      "name": "karil's crossbow 50",
+      "item_ids": [
+        4936
+      ],
+      "clog_dependencies": [
+        4734
+      ]
+    },
+    "karil's crossbow 75": {
+      "name": "karil's crossbow 75",
+      "item_ids": [
+        4935
+      ],
+      "clog_dependencies": [
+        4734
+      ]
+    },
+    "karil's crossbow 100": {
+      "name": "karil's crossbow 100",
+      "item_ids": [
+        4934
+      ],
+      "clog_dependencies": [
+        4734
+      ]
+    },
+    "karil's leathertop 0": {
+      "name": "karil's leathertop 0",
+      "item_ids": [
+        4944
+      ],
+      "clog_dependencies": [
+        4736
+      ]
+    },
+    "karil's leathertop 25": {
+      "name": "karil's leathertop 25",
+      "item_ids": [
+        4943
+      ],
+      "clog_dependencies": [
+        4736
+      ]
+    },
+    "karil's leathertop 50": {
+      "name": "karil's leathertop 50",
+      "item_ids": [
+        4942
+      ],
+      "clog_dependencies": [
+        4736
+      ]
+    },
+    "karil's leathertop 75": {
+      "name": "karil's leathertop 75",
+      "item_ids": [
+        4941
+      ],
+      "clog_dependencies": [
+        4736
+      ]
+    },
+    "karil's leathertop 100": {
+      "name": "karil's leathertop 100",
+      "item_ids": [
+        4940
+      ],
+      "clog_dependencies": [
+        4736
+      ]
+    },
+    "karil's leatherskirt 0": {
+      "name": "karil's leatherskirt 0",
+      "item_ids": [
+        4950
+      ],
+      "clog_dependencies": [
+        4738
+      ]
+    },
+    "karil's leatherskirt 25": {
+      "name": "karil's leatherskirt 25",
+      "item_ids": [
+        4949
+      ],
+      "clog_dependencies": [
+        4738
+      ]
+    },
+    "karil's leatherskirt 50": {
+      "name": "karil's leatherskirt 50",
+      "item_ids": [
+        4948
+      ],
+      "clog_dependencies": [
+        4738
+      ]
+    },
+    "karil's leatherskirt 75": {
+      "name": "karil's leatherskirt 75",
+      "item_ids": [
+        4947
+      ],
+      "clog_dependencies": [
+        4738
+      ]
+    },
+    "karil's leatherskirt 100": {
+      "name": "karil's leatherskirt 100",
+      "item_ids": [
+        4946
+      ],
+      "clog_dependencies": [
+        4738
+      ]
+    },
+    "torag's helm 0": {
+      "name": "torag's helm 0",
+      "item_ids": [
+        4956
+      ],
+      "clog_dependencies": [
+        4745
+      ]
+    },
+    "torag's helm 25": {
+      "name": "torag's helm 25",
+      "item_ids": [
+        4955
+      ],
+      "clog_dependencies": [
+        4745
+      ]
+    },
+    "torag's helm 50": {
+      "name": "torag's helm 50",
+      "item_ids": [
+        4954
+      ],
+      "clog_dependencies": [
+        4745
+      ]
+    },
+    "torag's helm 75": {
+      "name": "torag's helm 75",
+      "item_ids": [
+        4953
+      ],
+      "clog_dependencies": [
+        4745
+      ]
+    },
+    "torag's helm 100": {
+      "name": "torag's helm 100",
+      "item_ids": [
+        4952
+      ],
+      "clog_dependencies": [
+        4745
+      ]
+    },
+    "torag's hammers 0": {
+      "name": "torag's hammers 0",
+      "item_ids": [
+        4962
+      ],
+      "clog_dependencies": [
+        4747
+      ]
+    },
+    "torag's hammers 25": {
+      "name": "torag's hammers 25",
+      "item_ids": [
+        4961
+      ],
+      "clog_dependencies": [
+        4747
+      ]
+    },
+    "torag's hammers 50": {
+      "name": "torag's hammers 50",
+      "item_ids": [
+        4960
+      ],
+      "clog_dependencies": [
+        4747
+      ]
+    },
+    "torag's hammers 75": {
+      "name": "torag's hammers 75",
+      "item_ids": [
+        4959
+      ],
+      "clog_dependencies": [
+        4747
+      ]
+    },
+    "torag's hammers 100": {
+      "name": "torag's hammers 100",
+      "item_ids": [
+        4958
+      ],
+      "clog_dependencies": [
+        4747
+      ]
+    },
+    "torag's platebody 0": {
+      "name": "torag's platebody 0",
+      "item_ids": [
+        4968
+      ],
+      "clog_dependencies": [
+        4749
+      ]
+    },
+    "torag's platebody 25": {
+      "name": "torag's platebody 25",
+      "item_ids": [
+        4967
+      ],
+      "clog_dependencies": [
+        4749
+      ]
+    },
+    "torag's platebody 50": {
+      "name": "torag's platebody 50",
+      "item_ids": [
+        4966
+      ],
+      "clog_dependencies": [
+        4749
+      ]
+    },
+    "torag's platebody 75": {
+      "name": "torag's platebody 75",
+      "item_ids": [
+        4965
+      ],
+      "clog_dependencies": [
+        4749
+      ]
+    },
+    "torag's platebody 100": {
+      "name": "torag's platebody 100",
+      "item_ids": [
+        4964
+      ],
+      "clog_dependencies": [
+        4749
+      ]
+    },
+    "torag's platelegs 0": {
+      "name": "torag's platelegs 0",
+      "item_ids": [
+        4974
+      ],
+      "clog_dependencies": [
+        4751
+      ]
+    },
+    "torag's platelegs 25": {
+      "name": "torag's platelegs 25",
+      "item_ids": [
+        4973
+      ],
+      "clog_dependencies": [
+        4751
+      ]
+    },
+    "torag's platelegs 50": {
+      "name": "torag's platelegs 50",
+      "item_ids": [
+        4972
+      ],
+      "clog_dependencies": [
+        4751
+      ]
+    },
+    "torag's platelegs 75": {
+      "name": "torag's platelegs 75",
+      "item_ids": [
+        4971
+      ],
+      "clog_dependencies": [
+        4751
+      ]
+    },
+    "torag's platelegs 100": {
+      "name": "torag's platelegs 100",
+      "item_ids": [
+        4970
+      ],
+      "clog_dependencies": [
+        4751
+      ]
+    },
+    "verac's helm 0": {
+      "name": "verac's helm 0",
+      "item_ids": [
+        4980
+      ],
+      "clog_dependencies": [
+        4753
+      ]
+    },
+    "verac's helm 25": {
+      "name": "verac's helm 25",
+      "item_ids": [
+        4979
+      ],
+      "clog_dependencies": [
+        4753
+      ]
+    },
+    "verac's helm 50": {
+      "name": "verac's helm 50",
+      "item_ids": [
+        4978
+      ],
+      "clog_dependencies": [
+        4753
+      ]
+    },
+    "verac's helm 75": {
+      "name": "verac's helm 75",
+      "item_ids": [
+        4977
+      ],
+      "clog_dependencies": [
+        4753
+      ]
+    },
+    "verac's helm 100": {
+      "name": "verac's helm 100",
+      "item_ids": [
+        4976
+      ],
+      "clog_dependencies": [
+        4753
+      ]
+    },
+    "verac's flail 0": {
+      "name": "verac's flail 0",
+      "item_ids": [
+        4986
+      ],
+      "clog_dependencies": [
+        4755
+      ]
+    },
+    "verac's flail 25": {
+      "name": "verac's flail 25",
+      "item_ids": [
+        4985
+      ],
+      "clog_dependencies": [
+        4755
+      ]
+    },
+    "verac's flail 50": {
+      "name": "verac's flail 50",
+      "item_ids": [
+        4984
+      ],
+      "clog_dependencies": [
+        4755
+      ]
+    },
+    "verac's flail 75": {
+      "name": "verac's flail 75",
+      "item_ids": [
+        4983
+      ],
+      "clog_dependencies": [
+        4755
+      ]
+    },
+    "verac's flail 100": {
+      "name": "verac's flail 100",
+      "item_ids": [
+        4982
+      ],
+      "clog_dependencies": [
+        4755
+      ]
+    },
+    "verac's brassard 0": {
+      "name": "verac's brassard 0",
+      "item_ids": [
+        4992
+      ],
+      "clog_dependencies": [
+        4757
+      ]
+    },
+    "verac's brassard 25": {
+      "name": "verac's brassard 25",
+      "item_ids": [
+        4991
+      ],
+      "clog_dependencies": [
+        4757
+      ]
+    },
+    "verac's brassard 50": {
+      "name": "verac's brassard 50",
+      "item_ids": [
+        4990
+      ],
+      "clog_dependencies": [
+        4757
+      ]
+    },
+    "verac's brassard 75": {
+      "name": "verac's brassard 75",
+      "item_ids": [
+        4989
+      ],
+      "clog_dependencies": [
+        4757
+      ]
+    },
+    "verac's brassard 100": {
+      "name": "verac's brassard 100",
+      "item_ids": [
+        4988
+      ],
+      "clog_dependencies": [
+        4757
+      ]
+    },
+    "verac's plateskirt 0": {
+      "name": "verac's plateskirt 0",
+      "item_ids": [
+        4998
+      ],
+      "clog_dependencies": [
+        4759
+      ]
+    },
+    "verac's plateskirt 25": {
+      "name": "verac's plateskirt 25",
+      "item_ids": [
+        4997
+      ],
+      "clog_dependencies": [
+        4759
+      ]
+    },
+    "verac's plateskirt 50": {
+      "name": "verac's plateskirt 50",
+      "item_ids": [
+        4996
+      ],
+      "clog_dependencies": [
+        4759
+      ]
+    },
+    "verac's plateskirt 75": {
+      "name": "verac's plateskirt 75",
+      "item_ids": [
+        4995
+      ],
+      "clog_dependencies": [
+        4759
+      ]
+    },
+    "verac's plateskirt 100": {
+      "name": "verac's plateskirt 100",
+      "item_ids": [
+        4994
+      ],
+      "clog_dependencies": [
+        4759
       ]
     },
     "fire cape (l)": {
@@ -21923,6 +23043,24 @@
         31243
       ]
     },
+    "crystal bow (inactive)": {
+      "name": "crystal bow (inactive)",
+      "item_ids": [
+        23985
+      ],
+      "clog_dependencies": [
+        4207
+      ]
+    },
+    "crystal shield (inactive)": {
+      "name": "crystal shield (inactive)",
+      "item_ids": [
+        23993
+      ],
+      "clog_dependencies": [
+        4207
+      ]
+    },
     "toxic blowpipe": {
       "name": "toxic blowpipe",
       "item_ids": [
@@ -21941,6 +23079,16 @@
         12927
       ]
     },
+    "toxic staff of the dead": {
+      "name": "toxic staff of the dead",
+      "item_ids": [
+        12904
+      ],
+      "clog_dependencies": [
+        12932,
+        11791
+      ]
+    },
     "fire max cape (l)": {
       "name": "fire max cape (l)",
       "item_ids": [
@@ -21957,6 +23105,15 @@
       ],
       "clog_dependencies": [
         6570
+      ]
+    },
+    "arclight (inactive)": {
+      "name": "arclight (inactive)",
+      "item_ids": [
+        30305
+      ],
+      "clog_dependencies": [
+        19677
       ]
     },
     "infernal max cape (l)": {
@@ -22040,6 +23197,45 @@
       ],
       "clog_dependencies": [
         22372
+      ]
+    },
+    "crystal pickaxe (inactive)": {
+      "name": "crystal pickaxe (inactive)",
+      "item_ids": [
+        23682
+      ],
+      "clog_dependencies": [
+        11920,
+        23953
+      ]
+    },
+    "crystal harpoon (inactive)": {
+      "name": "crystal harpoon (inactive)",
+      "item_ids": [
+        23764
+      ],
+      "clog_dependencies": [
+        23953,
+        21028
+      ]
+    },
+    "crystal axe (inactive)": {
+      "name": "crystal axe (inactive)",
+      "item_ids": [
+        23675
+      ],
+      "clog_dependencies": [
+        23953,
+        6739
+      ]
+    },
+    "bow of faerdhinen (inactive)": {
+      "name": "bow of faerdhinen (inactive)",
+      "item_ids": [
+        25862
+      ],
+      "clog_dependencies": [
+        25859
       ]
     },
     "divine rune pouch (l)": {
@@ -22241,6 +23437,17 @@
         27627
       ]
     },
+    "crystal felling axe (inactive)": {
+      "name": "crystal felling axe (inactive)",
+      "item_ids": [
+        28223
+      ],
+      "clog_dependencies": [
+        28177,
+        23953,
+        6739
+      ]
+    },
     "blazing blowpipe": {
       "name": "blazing blowpipe",
       "item_ids": [
@@ -22299,6 +23506,186 @@
         19529,
         6573,
         29799
+      ]
+    },
+    "echo ahrim's hood 0": {
+      "name": "echo ahrim's hood 0",
+      "item_ids": [
+        30543
+      ],
+      "clog_dependencies": [
+        4708
+      ]
+    },
+    "echo ahrim's hood 25": {
+      "name": "echo ahrim's hood 25",
+      "item_ids": [
+        30537
+      ],
+      "clog_dependencies": [
+        4708
+      ]
+    },
+    "echo ahrim's hood 50": {
+      "name": "echo ahrim's hood 50",
+      "item_ids": [
+        30531
+      ],
+      "clog_dependencies": [
+        4708
+      ]
+    },
+    "echo ahrim's hood 75": {
+      "name": "echo ahrim's hood 75",
+      "item_ids": [
+        30525
+      ],
+      "clog_dependencies": [
+        4708
+      ]
+    },
+    "echo ahrim's hood 100": {
+      "name": "echo ahrim's hood 100",
+      "item_ids": [
+        30519
+      ],
+      "clog_dependencies": [
+        4708
+      ]
+    },
+    "echo ahrim's robeskirt 0": {
+      "name": "echo ahrim's robeskirt 0",
+      "item_ids": [
+        30547
+      ],
+      "clog_dependencies": [
+        4714
+      ]
+    },
+    "echo ahrim's robeskirt 25": {
+      "name": "echo ahrim's robeskirt 25",
+      "item_ids": [
+        30541
+      ],
+      "clog_dependencies": [
+        4714
+      ]
+    },
+    "echo ahrim's robeskirt 50": {
+      "name": "echo ahrim's robeskirt 50",
+      "item_ids": [
+        30535
+      ],
+      "clog_dependencies": [
+        4714
+      ]
+    },
+    "echo ahrim's robeskirt 75": {
+      "name": "echo ahrim's robeskirt 75",
+      "item_ids": [
+        30529
+      ],
+      "clog_dependencies": [
+        4714
+      ]
+    },
+    "echo ahrim's robeskirt 100": {
+      "name": "echo ahrim's robeskirt 100",
+      "item_ids": [
+        30523
+      ],
+      "clog_dependencies": [
+        4714
+      ]
+    },
+    "echo ahrim's robetop 0": {
+      "name": "echo ahrim's robetop 0",
+      "item_ids": [
+        30545
+      ],
+      "clog_dependencies": [
+        4712
+      ]
+    },
+    "echo ahrim's robetop 25": {
+      "name": "echo ahrim's robetop 25",
+      "item_ids": [
+        30539
+      ],
+      "clog_dependencies": [
+        4712
+      ]
+    },
+    "echo ahrim's robetop 50": {
+      "name": "echo ahrim's robetop 50",
+      "item_ids": [
+        30533
+      ],
+      "clog_dependencies": [
+        4712
+      ]
+    },
+    "echo ahrim's robetop 75": {
+      "name": "echo ahrim's robetop 75",
+      "item_ids": [
+        30527
+      ],
+      "clog_dependencies": [
+        4712
+      ]
+    },
+    "echo ahrim's robetop 100": {
+      "name": "echo ahrim's robetop 100",
+      "item_ids": [
+        30521
+      ],
+      "clog_dependencies": [
+        4712
+      ]
+    },
+    "echo ahrim's staff 0": {
+      "name": "echo ahrim's staff 0",
+      "item_ids": [
+        30574
+      ],
+      "clog_dependencies": [
+        4710
+      ]
+    },
+    "echo ahrim's staff 25": {
+      "name": "echo ahrim's staff 25",
+      "item_ids": [
+        30573
+      ],
+      "clog_dependencies": [
+        4710
+      ]
+    },
+    "echo ahrim's staff 50": {
+      "name": "echo ahrim's staff 50",
+      "item_ids": [
+        30572
+      ],
+      "clog_dependencies": [
+        4710
+      ]
+    },
+    "echo ahrim's staff 75": {
+      "name": "echo ahrim's staff 75",
+      "item_ids": [
+        30571
+      ],
+      "clog_dependencies": [
+        4710
+      ]
+    },
+    "echo ahrim's staff 100": {
+      "name": "echo ahrim's staff 100",
+      "item_ids": [
+        30570
+      ],
+      "clog_dependencies": [
+        4710
       ]
     },
     "rosewood blowpipe": {
