@@ -56,6 +56,10 @@ VARIANT_PATTERNS = [
     # This handles wilderness weapons like "Webweaver bow (u)" -> "Webweaver bow"
     (" (u)", "", "charged"),
 
+    # Special uncharged -> "of the dead" variants: "X (uncharged)" -> "X of the dead"
+    # This handles toxic staff: "Toxic staff (uncharged)" -> "Toxic staff of the dead"
+    (" (uncharged)", " of the dead", "charged_of_the_dead"),
+
     # Degradation variants: "X (10)" in clog -> "X" is variant (fully degraded version)
     # This handles items like "Black mask (10)" -> "Black mask"
     (" (10)", "", "degraded"),
@@ -73,6 +77,9 @@ VARIANT_PATTERNS = [
     # Inactive variants: "X (inactive)" in clog -> "X" is variant
     (" (inactive)", "", "active"),
 
+    # Reverse inactive: "X" (derived item) -> "X (inactive)" is variant
+    ("", " (inactive)", "inactive"),
+
     # Empty variants: "X (empty)" in clog -> "X" is variant
     (" (empty)", "", "filled"),
 
@@ -81,6 +88,14 @@ VARIANT_PATTERNS = [
 
     # Disassembled variants: "X (disassembled)" in clog -> "X" is variant
     (" (disassembled)", "", "assembled"),
+
+    # Barrows degraded variants: "X" in clog -> "X 0", "X 25", etc. are variants
+    # Note: space+number WITHOUT parentheses (unlike Black mask " (10)")
+    ("", " 0", "barrows_degraded"),
+    ("", " 25", "barrows_degraded"),
+    ("", " 50", "barrows_degraded"),
+    ("", " 75", "barrows_degraded"),
+    ("", " 100", "barrows_degraded"),
 ]
 
 
@@ -423,12 +438,12 @@ class DependencyResolver:
             if not output or isinstance(output, str):
                 continue
 
-            output_name = output.get("name", "").lower()
+            output_name = output.get("name", "").lower().replace("#", " ")
             if not output_name:
                 continue
 
             materials = production.get("materials", [])
-            material_names = [m.get("name", "").lower() for m in materials if m.get("name")]
+            material_names = [m.get("name", "").lower().replace("#", " ") for m in materials if m.get("name")]
 
             if material_names:
                 # Store this recipe separately (don't merge with other recipes)
@@ -440,7 +455,7 @@ class DependencyResolver:
         multi_recipe = sum(1 for recipes in self.recipes_by_item.values() if len(recipes) > 1)
         print(f"  Items with multiple recipes: {multi_recipe}")
 
-    def build_variant_relationships(self, all_items: Dict[str, int]):
+    def build_variant_relationships(self, primary_ids: Dict[str, int], all_ids: Dict[str, List[int]]):
         """
         Build relationships between base items and their variants.
 
@@ -449,7 +464,8 @@ class DependencyResolver:
         2. Derived items with variants (e.g., "Amulet of rancour" -> "Amulet of rancour (s)")
 
         Args:
-            all_items: Dict mapping item_name (lowercase) -> item_id
+            primary_ids: Dict mapping item_name (lowercase) -> primary item_id
+            all_ids: Dict mapping item_name (lowercase) -> list of all item IDs (includes untradeable variants)
         """
         print("Building variant relationships...")
 
@@ -459,7 +475,7 @@ class DependencyResolver:
         # Phase 1: Handle variants of clog items
         for clog_id, clog_item in self.clog_items.items():
             clog_name = clog_item.name.lower()
-            added, updated = self._process_variant_patterns(clog_name, all_items)
+            added, updated = self._process_variant_patterns(clog_name, all_ids)
             variants_added += added
             variants_updated += updated
 
@@ -479,7 +495,7 @@ class DependencyResolver:
             # Only process items that have clog dependencies
             deps = self.find_minimum_clog_dependencies(item_name)
             if deps:
-                added, updated = self._process_variant_patterns(item_name, all_items)
+                added, updated = self._process_variant_patterns(item_name, all_ids)
                 derived_added += added
                 derived_updated += updated
 
@@ -489,9 +505,13 @@ class DependencyResolver:
 
         print(f"  Total: Added {variants_added} variant items, updated {variants_updated} existing items")
 
-    def _process_variant_patterns(self, base_name: str, all_items: Dict[str, int]) -> Tuple[int, int]:
+    def _process_variant_patterns(self, base_name: str, all_ids: Dict[str, List[int]]) -> Tuple[int, int]:
         """
         Process variant patterns for a single base item.
+
+        Args:
+            base_name: The base item name to find variants for
+            all_ids: Dict mapping item_name (lowercase) -> list of all item IDs (includes untradeable variants)
 
         Returns tuple of (variants_added, variants_updated)
         """
@@ -511,8 +531,8 @@ class DependencyResolver:
                 # Item has no special suffix, look for item with variant suffix
                 variant_name = base_name + variant_suffix.lower()
 
-            # Check if variant exists in all items
-            if variant_name not in all_items:
+            # Check if variant exists in all items (including untradeable variants)
+            if variant_name not in all_ids:
                 continue
 
             # Check if variant is already a clog item (skip if so)
@@ -980,7 +1000,7 @@ def generate_output_json(
 
     # Build the output structure
     output = {
-        "version": "1.0.0",
+        "version": "1.1.0",
         "generated": time.strftime("%Y-%m-%d %H:%M:%S"),
         "stats": {
             "total_clog_items": len(clog_items),
@@ -1024,7 +1044,7 @@ def main():
     # Build resolver
     resolver = DependencyResolver(clog_items)
     resolver.build_recipe_graph(recipes)
-    resolver.build_variant_relationships(primary_ids)  # Use primary_ids for variant lookup
+    resolver.build_variant_relationships(primary_ids, all_ids)  # Pass both primary and all IDs for variant lookup
 
     if args.visualize:
         visualize_item(resolver, args.visualize, clog_items)
