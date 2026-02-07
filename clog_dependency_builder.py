@@ -418,6 +418,7 @@ class DependencyResolver:
         # Cache for dependency calculations
         self._dep_cache: Dict[str, Set[int]] = {}
         self._min_dep_cache: Dict[str, Tuple[Set[int], int]] = {}
+        self._all_dep_sets_cache: Dict[str, List[frozenset]] = {}
 
     def build_recipe_graph(self, recipes: List[dict]):
         """Build a graph of item -> list of recipes (each recipe is a list of materials)."""
@@ -559,6 +560,8 @@ class DependencyResolver:
                     # Clear cache since we modified recipes
                     if variant_name in self._min_dep_cache:
                         del self._min_dep_cache[variant_name]
+                    if variant_name in self._all_dep_sets_cache:
+                        del self._all_dep_sets_cache[variant_name]
                     updated += 1
             else:
                 # No recipe - create a "virtual recipe" that just requires the base item
@@ -652,6 +655,135 @@ class DependencyResolver:
         result = min_deps if min_deps is not None else set()
         self._min_dep_cache[item_name_lower] = (result, min_recipe_idx)
         return result
+
+    def _find_all_dep_sets_for_recipe(
+        self,
+        materials: List[str],
+        visited: Set[str]
+    ) -> List[frozenset]:
+        """
+        Find all possible dependency sets for a single recipe.
+
+        For each material, get all possible dependency sets (recursively).
+        Return the Cartesian product of all materials' dependency sets,
+        with each combination merged (union) into a single set.
+
+        Returns empty list if recipe has no dependencies (base materials only).
+        """
+        # Collect all possible dep sets for each material
+        material_dep_sets: List[List[frozenset]] = []
+
+        for material in materials:
+            material_lower = material.lower()
+
+            # Skip if already visited (cycle prevention)
+            if material_lower in visited:
+                continue
+
+            # Check if this material is a clog item
+            if material_lower in self.clog_names:
+                # This material IS a clog item - it has one dep set: itself
+                material_dep_sets.append([frozenset({self.clog_names[material_lower]})])
+            else:
+                # Recursively get all dep sets for this material
+                material_all_sets = self.find_all_minimum_clog_dependency_sets(material_lower, visited.copy())
+                if material_all_sets:
+                    material_dep_sets.append(material_all_sets)
+                # If empty, material has no clog deps - doesn't contribute to Cartesian product
+
+        # If no materials have dependencies, return empty list (no restriction)
+        if not material_dep_sets:
+            return []
+
+        # Compute Cartesian product: all combinations of picking one dep set from each material
+        # Each combination is the union of the selected dep sets
+        import itertools
+
+        result_sets = []
+        for combination in itertools.product(*material_dep_sets):
+            # Union all dep sets in this combination
+            merged = frozenset().union(*combination)
+            result_sets.append(merged)
+
+        return result_sets
+
+    def find_all_minimum_clog_dependency_sets(
+        self,
+        item_name: str,
+        visited: Optional[Set[str]] = None
+    ) -> List[frozenset]:
+        """
+        Find ALL minimum clog dependency sets needed to create an item.
+
+        Returns a list of frozensets, where each frozenset represents one valid
+        combination of clog items that would unlock this item.
+
+        Only returns sets of the minimum size - if multiple recipes exist,
+        only the shortest dependency paths are included.
+
+        Example: Armadylean plate can be made from any Armadyl piece, so returns:
+            [frozenset({11826}), frozenset({11828}), frozenset({11830})]
+
+        Returns empty list if any recipe has zero clog dependencies.
+        """
+        if visited is None:
+            visited = set()
+
+        item_name_lower = item_name.lower()
+
+        # Check cache
+        if item_name_lower in self._all_dep_sets_cache:
+            return self._all_dep_sets_cache[item_name_lower]
+
+        # Prevent infinite loops
+        if item_name_lower in visited:
+            return []
+        visited.add(item_name_lower)
+
+        # If this item is itself a clog item, it requires itself
+        if item_name_lower in self.clog_names:
+            result = [frozenset({self.clog_names[item_name_lower]})]
+            self._all_dep_sets_cache[item_name_lower] = result
+            return result
+
+        # Get all recipes for this item
+        recipes = self.recipes_by_item.get(item_name_lower, [])
+
+        if not recipes:
+            # No recipes - this is a base item (ore, logs, etc.) - no clog deps
+            self._all_dep_sets_cache[item_name_lower] = []
+            return []
+
+        # Collect all dep sets from all recipes
+        all_dep_sets: List[frozenset] = []
+
+        for recipe_materials in recipes:
+            recipe_dep_sets = self._find_all_dep_sets_for_recipe(recipe_materials, visited.copy())
+
+            # If this recipe has no dependencies, return empty immediately (unrestricted)
+            if not recipe_dep_sets:
+                self._all_dep_sets_cache[item_name_lower] = []
+                return []
+
+            all_dep_sets.extend(recipe_dep_sets)
+
+        # If we have no dep sets at all, return empty
+        if not all_dep_sets:
+            self._all_dep_sets_cache[item_name_lower] = []
+            return []
+
+        # Find minimum size
+        min_size = min(len(s) for s in all_dep_sets)
+
+        # Keep only sets of minimum size and deduplicate
+        minimal_sets = list({s for s in all_dep_sets if len(s) == min_size})
+
+        # Cap at 50 combinations to prevent explosion
+        if len(minimal_sets) > 50:
+            minimal_sets = minimal_sets[:50]
+
+        self._all_dep_sets_cache[item_name_lower] = minimal_sets
+        return minimal_sets
 
     def is_item_restricted(self, item_name: str) -> bool:
         """
@@ -909,9 +1041,9 @@ def generate_output_json(
         if output_name in resolver.clog_names:
             continue
 
-        min_deps = resolver.find_minimum_clog_dependencies(output_name)
+        all_dep_sets = resolver.find_all_minimum_clog_dependency_sets(output_name)
 
-        if min_deps:
+        if all_dep_sets:
             # All recipes require clog items - this is a derived item
             primary_id = primary_ids.get(output_name)
             item_ids = all_ids.get(output_name, [])
@@ -925,10 +1057,11 @@ def generate_output_json(
 
             if item_ids:
                 # Build the item entry - always use item_ids array
+                # Convert frozensets to sorted lists for OR-of-AND format
                 item_entry = {
                     "name": output_name,
                     "item_ids": item_ids,
-                    "clog_dependencies": list(min_deps)
+                    "clog_dependencies": [sorted(list(s)) for s in all_dep_sets]
                 }
 
                 if len(item_ids) > 1:
@@ -1000,7 +1133,7 @@ def generate_output_json(
 
     # Build the output structure
     output = {
-        "version": "1.1.0",
+        "version": "1.2.0",
         "generated": time.strftime("%Y-%m-%d %H:%M:%S"),
         "stats": {
             "total_clog_items": len(clog_items),

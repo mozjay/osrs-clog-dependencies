@@ -1,12 +1,12 @@
 {
-  "version": "1.1.0",
-  "generated": "2026-01-29 13:46:40",
+  "version": "1.2.0",
+  "generated": "2026-02-07 01:48:59",
   "stats": {
     "total_clog_items": 1692,
-    "total_derived_items": 793,
-    "items_with_clog_free_recipes": 3163,
+    "total_derived_items": 792,
+    "items_with_clog_free_recipes": 3165,
     "derived_items_with_multiple_ids": 72,
-    "derived_items_without_ids": 91,
+    "derived_items_without_ids": 90,
     "clog_items_with_multiple_ids": 169,
     "clog_items_craftable_from_other_clogs": 27
   },
@@ -16254,7 +16254,9 @@
         1187
       ],
       "clog_dependencies": [
-        2366
+        [
+          2366
+        ]
       ]
     },
     "amulet of fury": {
@@ -16264,7 +16266,9 @@
         23640
       ],
       "clog_dependencies": [
-        6573
+        [
+          6573
+        ]
       ]
     },
     "berserker necklace": {
@@ -16273,7 +16277,9 @@
         11128
       ],
       "clog_dependencies": [
-        6573
+        [
+          6573
+        ]
       ]
     },
     "crab claw": {
@@ -16282,7 +16288,9 @@
         7537
       ],
       "clog_dependencies": [
-        7536
+        [
+          7536
+        ]
       ]
     },
     "crab helmet": {
@@ -16291,7 +16299,9 @@
         7539
       ],
       "clog_dependencies": [
-        7538
+        [
+          7538
+        ]
       ]
     },
     "crystal bow": {
@@ -16301,7 +16311,9 @@
         24123
       ],
       "clog_dependencies": [
-        4207
+        [
+          4207
+        ]
       ]
     },
     "crystal shield": {
@@ -16311,7 +16323,9 @@
         24127
       ],
       "clog_dependencies": [
-        4207
+        [
+          4207
+        ]
       ]
     },
     "onyx bolts (e)": {
@@ -16320,7 +16334,9 @@
         9245
       ],
       "clog_dependencies": [
-        6573
+        [
+          6573
+        ]
       ]
     },
     "onyx bracelet": {
@@ -16329,7 +16345,9 @@
         11130
       ],
       "clog_dependencies": [
-        6573
+        [
+          6573
+        ]
       ]
     },
     "onyx necklace": {
@@ -16338,7 +16356,9 @@
         6577
       ],
       "clog_dependencies": [
-        6573
+        [
+          6573
+        ]
       ]
     },
     "onyx ring": {
@@ -16347,7 +16367,9 @@
         6575
       ],
       "clog_dependencies": [
-        6573
+        [
+          6573
+        ]
       ]
     },
     "regen bracelet": {
@@ -16356,7 +16378,9 @@
         11133
       ],
       "clog_dependencies": [
-        6573
+        [
+          6573
+        ]
       ]
     },
     "skull sceptre": {
@@ -16365,10 +16389,12 @@
         9013
       ],
       "clog_dependencies": [
-        9008,
-        9010,
-        9011,
-        9007
+        [
+          9007,
+          9008,
+          9010,
+          9011
+        ]
       ]
     },
     "splitbark boots": {
@@ -16377,7 +16403,9 @@
         3393
       ],
       "clog_dependencies": [
-        3470
+        [
+          3470
+        ]
       ]
     },
     "splitbark legs": {
@@ -16386,7 +16414,9 @@
         3389
       ],
       "clog_dependencies": [
-        3470
+        [
+          3470
+        ]
       ]
     },
     "dragonfire shield": {
@@ -16396,7 +16426,9 @@
         11284
       ],
       "clog_dependencies": [
-        11286
+        [
+          11286
+        ]
       ]
     },
     "dragon spear(p)": {
@@ -16405,7 +16437,9 @@
         1263
       ],
       "clog_dependencies": [
-        1249
+        [
+          1249
+        ]
       ]
     },
     "dragon spear(p+)": {
@@ -16414,7 +16448,9 @@
         5716
       ],
       "clog_dependencies": [
-        1249
+        [
+          1249
+        ]
       ]
     },
     "dragon spear(p++)": {
@@ -16423,7 +16459,9 @@
         5730
       ],
       "clog_dependencies": [
-        1249
+        [
+          1249
+        ]
       ]
     },
     "dragon spear(kp)": {
@@ -16432,7 +16470,9 @@
         3176
       ],
       "clog_dependencies": [
-        1249
+        [
+          1249
+        ]
       ]
     },
     "splitbark helm": {
@@ -16441,7 +16481,9 @@
         3385
       ],
       "clog_dependencies": [
-        3470
+        [
+          3470
+        ]
       ]
     },
     "splitbark body": {
@@ -16450,7 +16492,9 @@
         3387
       ],
       "clog_dependencies": [
-        3470
+        [
+          3470
+        ]
       ]
     },
     "splitbark gauntlets": {
@@ -16459,7 +16503,9 @@
         3391
       ],
       "clog_dependencies": [
-        3470
+        [
+          3470
+        ]
       ]
     },
     "ring of stone": {
@@ -16468,7 +16514,9 @@
         6583
       ],
       "clog_dependencies": [
-        6573
+        [
+          6573
+        ]
       ]
     },
     "dragon platebody": {
@@ -16477,8 +16525,10 @@
         21892
       ],
       "clog_dependencies": [
-        3140,
-        22103
+        [
+          3140,
+          22103
+        ]
       ]
     },
     "dragon kiteshield": {
@@ -16487,8 +16537,10 @@
         21895
       ],
       "clog_dependencies": [
-        22100,
-        2366
+        [
+          2366,
+          22100
+        ]
       ]
     },
     "onyx amulet": {
@@ -16497,7 +16549,9 @@
         6581
       ],
       "clog_dependencies": [
-        6573
+        [
+          6573
+        ]
       ]
     },
     "onyx bolt tips": {
@@ -16506,7 +16560,9 @@
         9194
       ],
       "clog_dependencies": [
-        6573
+        [
+          6573
+        ]
       ]
     },
     "onyx bolts": {
@@ -16515,7 +16571,9 @@
         9342
       ],
       "clog_dependencies": [
-        6573
+        [
+          6573
+        ]
       ]
     },
     "berserker ring (i)": {
@@ -16526,7 +16584,9 @@
         26770
       ],
       "clog_dependencies": [
-        6737
+        [
+          6737
+        ]
       ]
     },
     "black mask (i)": {
@@ -16537,7 +16597,9 @@
         26781
       ],
       "clog_dependencies": [
-        8901
+        [
+          8901
+        ]
       ]
     },
     "armadyl godsword": {
@@ -16548,10 +16610,12 @@
         22665
       ],
       "clog_dependencies": [
-        11810,
-        11818,
-        11820,
-        11822
+        [
+          11810,
+          11818,
+          11820,
+          11822
+        ]
       ]
     },
     "bandos godsword": {
@@ -16562,10 +16626,12 @@
         21060
       ],
       "clog_dependencies": [
-        11812,
-        11818,
-        11820,
-        11822
+        [
+          11812,
+          11818,
+          11820,
+          11822
+        ]
       ]
     },
     "saradomin godsword": {
@@ -16574,10 +16640,12 @@
         11806
       ],
       "clog_dependencies": [
-        11814,
-        11818,
-        11820,
-        11822
+        [
+          11814,
+          11818,
+          11820,
+          11822
+        ]
       ]
     },
     "zamorak godsword": {
@@ -16586,10 +16654,12 @@
         11808
       ],
       "clog_dependencies": [
-        11816,
-        11818,
-        11820,
-        11822
+        [
+          11816,
+          11818,
+          11820,
+          11822
+        ]
       ]
     },
     "mystic steam staff": {
@@ -16599,7 +16669,9 @@
         12796
       ],
       "clog_dependencies": [
-        11787
+        [
+          11787
+        ]
       ]
     },
     "godsword blade": {
@@ -16608,9 +16680,11 @@
         11798
       ],
       "clog_dependencies": [
-        11818,
-        11820,
-        11822
+        [
+          11818,
+          11820,
+          11822
+        ]
       ]
     },
     "strange skull": {
@@ -16619,8 +16693,10 @@
         9009
       ],
       "clog_dependencies": [
-        9008,
-        9007
+        [
+          9007,
+          9008
+        ]
       ]
     },
     "warrior ring (i)": {
@@ -16631,7 +16707,9 @@
         26769
       ],
       "clog_dependencies": [
-        6735
+        [
+          6735
+        ]
       ]
     },
     "archers ring (i)": {
@@ -16642,7 +16720,9 @@
         26768
       ],
       "clog_dependencies": [
-        6733
+        [
+          6733
+        ]
       ]
     },
     "seers ring (i)": {
@@ -16654,7 +16734,9 @@
         26767
       ],
       "clog_dependencies": [
-        6731
+        [
+          6731
+        ]
       ]
     },
     "cap and goggles": {
@@ -16663,7 +16745,9 @@
         9946
       ],
       "clog_dependencies": [
-        9472
+        [
+          9472
+        ]
       ]
     },
     "broken crab claw": {
@@ -16672,7 +16756,9 @@
         7540
       ],
       "clog_dependencies": [
-        7536
+        [
+          7536
+        ]
       ]
     },
     "broken crab shell": {
@@ -16681,7 +16767,9 @@
         7541
       ],
       "clog_dependencies": [
-        7538
+        [
+          7538
+        ]
       ]
     },
     "runed sceptre": {
@@ -16690,8 +16778,10 @@
         9012
       ],
       "clog_dependencies": [
-        9010,
-        9011
+        [
+          9010,
+          9011
+        ]
       ]
     },
     "mystic mud staff": {
@@ -16700,7 +16790,9 @@
         6563
       ],
       "clog_dependencies": [
-        6562
+        [
+          6562
+        ]
       ]
     },
     "slayer helmet": {
@@ -16709,7 +16801,9 @@
         11864
       ],
       "clog_dependencies": [
-        8901
+        [
+          8901
+        ]
       ]
     },
     "slayer helmet (i)": {
@@ -16720,7 +16814,9 @@
         26674
       ],
       "clog_dependencies": [
-        8901
+        [
+          8901
+        ]
       ]
     },
     "zamorakian hasta": {
@@ -16729,7 +16825,9 @@
         11889
       ],
       "clog_dependencies": [
-        11824
+        [
+          11824
+        ]
       ]
     },
     "onyx amulet (u)": {
@@ -16738,7 +16836,9 @@
         6579
       ],
       "clog_dependencies": [
-        6573
+        [
+          6573
+        ]
       ]
     },
     "crabclaw hook": {
@@ -16747,8 +16847,10 @@
         8929
       ],
       "clog_dependencies": [
-        7536,
-        2997
+        [
+          2997,
+          7536
+        ]
       ]
     },
     "stuffed big shark": {
@@ -16757,7 +16859,9 @@
         7994
       ],
       "clog_dependencies": [
-        7993
+        [
+          7993
+        ]
       ]
     },
     "hat eyepatch": {
@@ -16766,7 +16870,9 @@
         8928
       ],
       "clog_dependencies": [
-        2651
+        [
+          2651
+        ]
       ]
     },
     "malediction ward": {
@@ -16776,9 +16882,11 @@
         12806
       ],
       "clog_dependencies": [
-        11931,
-        11932,
-        11933
+        [
+          11931,
+          11932,
+          11933
+        ]
       ]
     },
     "odium ward": {
@@ -16788,9 +16896,11 @@
         12807
       ],
       "clog_dependencies": [
-        11928,
-        11929,
-        11930
+        [
+          11928,
+          11929,
+          11930
+        ]
       ]
     },
     "blue logs": {
@@ -16799,7 +16909,9 @@
         7406
       ],
       "clog_dependencies": [
-        7331
+        [
+          7331
+        ]
       ]
     },
     "green logs": {
@@ -16808,7 +16920,9 @@
         7405
       ],
       "clog_dependencies": [
-        7330
+        [
+          7330
+        ]
       ]
     },
     "purple logs": {
@@ -16817,7 +16931,9 @@
         10329
       ],
       "clog_dependencies": [
-        10326
+        [
+          10326
+        ]
       ]
     },
     "red logs": {
@@ -16826,7 +16942,9 @@
         7404
       ],
       "clog_dependencies": [
-        7329
+        [
+          7329
+        ]
       ]
     },
     "white logs": {
@@ -16835,7 +16953,9 @@
         10328
       ],
       "clog_dependencies": [
-        10327
+        [
+          10327
+        ]
       ]
     },
     "abyssal tentacle": {
@@ -16844,8 +16964,10 @@
         12006
       ],
       "clog_dependencies": [
-        12004,
-        4151
+        [
+          4151,
+          12004
+        ]
       ]
     },
     "cavalier mask": {
@@ -16854,8 +16976,10 @@
         11280
       ],
       "clog_dependencies": [
-        2643,
-        2631
+        [
+          2631,
+          2643
+        ]
       ]
     },
     "stuffed kq head": {
@@ -16864,7 +16988,9 @@
         7988
       ],
       "clog_dependencies": [
-        7981
+        [
+          7981
+        ]
       ]
     },
     "mystic smoke staff": {
@@ -16873,7 +16999,9 @@
         12000
       ],
       "clog_dependencies": [
-        11998
+        [
+          11998
+        ]
       ]
     },
     "stuffed cockatrice head": {
@@ -16882,7 +17010,9 @@
         7983
       ],
       "clog_dependencies": [
-        7976
+        [
+          7976
+        ]
       ]
     },
     "stuffed basilisk head": {
@@ -16891,7 +17021,9 @@
         7984
       ],
       "clog_dependencies": [
-        7977
+        [
+          7977
+        ]
       ]
     },
     "stuffed kurask head": {
@@ -16900,7 +17032,9 @@
         7985
       ],
       "clog_dependencies": [
-        7978
+        [
+          7978
+        ]
       ]
     },
     "stuffed abyssal head": {
@@ -16909,7 +17043,9 @@
         7986
       ],
       "clog_dependencies": [
-        7979
+        [
+          7979
+        ]
       ]
     },
     "stuffed big bass": {
@@ -16918,7 +17054,9 @@
         7990
       ],
       "clog_dependencies": [
-        7989
+        [
+          7989
+        ]
       ]
     },
     "stuffed big swordfish": {
@@ -16927,7 +17065,9 @@
         7992
       ],
       "clog_dependencies": [
-        7991
+        [
+          7991
+        ]
       ]
     },
     "baby mole-rat": {
@@ -16936,8 +17076,10 @@
         25613
       ],
       "clog_dependencies": [
-        7416,
-        12646
+        [
+          7416,
+          12646
+        ]
       ]
     },
     "beret mask": {
@@ -16946,8 +17088,10 @@
         11282
       ],
       "clog_dependencies": [
-        3057,
-        2635
+        [
+          2635,
+          3057
+        ]
       ]
     },
     "pirate hat & patch": {
@@ -16956,7 +17100,9 @@
         12412
       ],
       "clog_dependencies": [
-        12355
+        [
+          12355
+        ]
       ]
     },
     "dragon full helm (g)": {
@@ -16965,8 +17111,10 @@
         12417
       ],
       "clog_dependencies": [
-        12538,
-        11335
+        [
+          11335,
+          12538
+        ]
       ]
     },
     "dragon chainbody (g)": {
@@ -16975,8 +17123,10 @@
         12414
       ],
       "clog_dependencies": [
-        3140,
-        12534
+        [
+          3140,
+          12534
+        ]
       ]
     },
     "dragon platelegs (g)": {
@@ -16985,7 +17135,9 @@
         12415
       ],
       "clog_dependencies": [
-        12536
+        [
+          12536
+        ]
       ]
     },
     "dragon plateskirt (g)": {
@@ -16994,7 +17146,9 @@
         12416
       ],
       "clog_dependencies": [
-        12536
+        [
+          12536
+        ]
       ]
     },
     "dragon sq shield (g)": {
@@ -17003,8 +17157,10 @@
         12418
       ],
       "clog_dependencies": [
-        12532,
-        2366
+        [
+          2366,
+          12532
+        ]
       ]
     },
     "amulet of fury (or)": {
@@ -17013,8 +17169,10 @@
         12436
       ],
       "clog_dependencies": [
-        6573,
-        12526
+        [
+          6573,
+          12526
+        ]
       ]
     },
     "partyhat & specs": {
@@ -17023,7 +17181,9 @@
         12399
       ],
       "clog_dependencies": [
-        12337
+        [
+          12337
+        ]
       ]
     },
     "top hat & monocle": {
@@ -17032,8 +17192,10 @@
         12434
       ],
       "clog_dependencies": [
-        12432,
-        12353
+        [
+          12353,
+          12432
+        ]
       ]
     },
     "light infinity top": {
@@ -17042,8 +17204,10 @@
         12420
       ],
       "clog_dependencies": [
-        12530,
-        6916
+        [
+          6916,
+          12530
+        ]
       ]
     },
     "light infinity hat": {
@@ -17052,8 +17216,10 @@
         12419
       ],
       "clog_dependencies": [
-        12530,
-        6918
+        [
+          6918,
+          12530
+        ]
       ]
     },
     "light infinity bottoms": {
@@ -17062,8 +17228,10 @@
         12421
       ],
       "clog_dependencies": [
-        12530,
-        6924
+        [
+          6924,
+          12530
+        ]
       ]
     },
     "dark infinity bottoms": {
@@ -17072,8 +17240,10 @@
         12459
       ],
       "clog_dependencies": [
-        12528,
-        6924
+        [
+          6924,
+          12528
+        ]
       ]
     },
     "dark infinity hat": {
@@ -17082,8 +17252,10 @@
         12457
       ],
       "clog_dependencies": [
-        12528,
-        6918
+        [
+          6918,
+          12528
+        ]
       ]
     },
     "dark infinity top": {
@@ -17092,8 +17264,10 @@
         12458
       ],
       "clog_dependencies": [
-        12528,
-        6916
+        [
+          6916,
+          12528
+        ]
       ]
     },
     "tyrannical ring (i)": {
@@ -17104,7 +17278,9 @@
         26765
       ],
       "clog_dependencies": [
-        12603
+        [
+          12603
+        ]
       ]
     },
     "treasonous ring (i)": {
@@ -17115,7 +17291,9 @@
         26766
       ],
       "clog_dependencies": [
-        12605
+        [
+          12605
+        ]
       ]
     },
     "frozen abyssal whip": {
@@ -17124,8 +17302,10 @@
         12774
       ],
       "clog_dependencies": [
-        12769,
-        4151
+        [
+          4151,
+          12769
+        ]
       ]
     },
     "volcanic abyssal whip": {
@@ -17134,8 +17314,10 @@
         12773
       ],
       "clog_dependencies": [
-        12771,
-        4151
+        [
+          4151,
+          12771
+        ]
       ]
     },
     "saradomin's blessed sword": {
@@ -17144,7 +17326,9 @@
         12809
       ],
       "clog_dependencies": [
-        11838
+        [
+          11838
+        ]
       ]
     },
     "elysian spirit shield": {
@@ -17154,9 +17338,11 @@
         19559
       ],
       "clog_dependencies": [
-        12833,
-        12819,
-        12829
+        [
+          12819,
+          12829,
+          12833
+        ]
       ]
     },
     "arcane spirit shield": {
@@ -17165,9 +17351,11 @@
         12825
       ],
       "clog_dependencies": [
-        12833,
-        12827,
-        12829
+        [
+          12827,
+          12829,
+          12833
+        ]
       ]
     },
     "spectral spirit shield": {
@@ -17176,9 +17364,11 @@
         12821
       ],
       "clog_dependencies": [
-        12833,
-        12829,
-        12823
+        [
+          12823,
+          12829,
+          12833
+        ]
       ]
     },
     "blessed spirit shield": {
@@ -17188,8 +17378,10 @@
         23642
       ],
       "clog_dependencies": [
-        12833,
-        12829
+        [
+          12829,
+          12833
+        ]
       ]
     },
     "godsword shards 1 & 2": {
@@ -17198,8 +17390,10 @@
         11794
       ],
       "clog_dependencies": [
-        11818,
-        11820
+        [
+          11818,
+          11820
+        ]
       ]
     },
     "godsword shards 2 & 3": {
@@ -17208,8 +17402,10 @@
         11800
       ],
       "clog_dependencies": [
-        11820,
-        11822
+        [
+          11820,
+          11822
+        ]
       ]
     },
     "godsword shards 1 & 3": {
@@ -17218,8 +17414,10 @@
         11796
       ],
       "clog_dependencies": [
-        11818,
-        11822
+        [
+          11818,
+          11822
+        ]
       ]
     },
     "toxic blowpipe (empty)": {
@@ -17228,7 +17426,9 @@
         12924
       ],
       "clog_dependencies": [
-        12922
+        [
+          12922
+        ]
       ]
     },
     "serpentine helm (uncharged)": {
@@ -17237,7 +17437,9 @@
         12929
       ],
       "clog_dependencies": [
-        12927
+        [
+          12927
+        ]
       ]
     },
     "toxic staff (uncharged)": {
@@ -17247,8 +17449,10 @@
         33035
       ],
       "clog_dependencies": [
-        12932,
-        11791
+        [
+          11791,
+          12932
+        ]
       ]
     },
     "uncharged toxic trident": {
@@ -17257,8 +17461,10 @@
         12900
       ],
       "clog_dependencies": [
-        12932,
-        11908
+        [
+          11908,
+          12932
+        ]
       ]
     },
     "anti-venom(1)": {
@@ -17267,7 +17473,9 @@
         12911
       ],
       "clog_dependencies": [
-        12934
+        [
+          12934
+        ]
       ]
     },
     "anti-venom(2)": {
@@ -17276,7 +17484,9 @@
         12909
       ],
       "clog_dependencies": [
-        12934
+        [
+          12934
+        ]
       ]
     },
     "anti-venom(3)": {
@@ -17285,7 +17495,9 @@
         12907
       ],
       "clog_dependencies": [
-        12934
+        [
+          12934
+        ]
       ]
     },
     "anti-venom(4)": {
@@ -17294,7 +17506,9 @@
         12905
       ],
       "clog_dependencies": [
-        12934
+        [
+          12934
+        ]
       ]
     },
     "anti-venom+(4)": {
@@ -17303,7 +17517,9 @@
         12913
       ],
       "clog_dependencies": [
-        12934
+        [
+          12934
+        ]
       ]
     },
     "ring of the gods (i)": {
@@ -17314,7 +17530,9 @@
         26764
       ],
       "clog_dependencies": [
-        12601
+        [
+          12601
+        ]
       ]
     },
     "eternal boots": {
@@ -17324,8 +17542,10 @@
         23644
       ],
       "clog_dependencies": [
-        6920,
-        13227
+        [
+          6920,
+          13227
+        ]
       ]
     },
     "pegasian boots": {
@@ -17334,8 +17554,10 @@
         13237
       ],
       "clog_dependencies": [
-        2577,
-        13229
+        [
+          2577,
+          13229
+        ]
       ]
     },
     "primordial boots": {
@@ -17344,8 +17566,10 @@
         13239
       ],
       "clog_dependencies": [
-        11840,
-        13231
+        [
+          11840,
+          13231
+        ]
       ]
     },
     "infernal pickaxe": {
@@ -17354,8 +17578,10 @@
         13243
       ],
       "clog_dependencies": [
-        11920,
-        13233
+        [
+          11920,
+          13233
+        ]
       ]
     },
     "infernal axe": {
@@ -17364,8 +17590,10 @@
         13241
       ],
       "clog_dependencies": [
-        13233,
-        6739
+        [
+          6739,
+          13233
+        ]
       ]
     },
     "abyssal bludgeon": {
@@ -17374,9 +17602,11 @@
         13263
       ],
       "clog_dependencies": [
-        13274,
-        13275,
-        13276
+        [
+          13274,
+          13275,
+          13276
+        ]
       ]
     },
     "abyssal dagger (p)": {
@@ -17385,7 +17615,9 @@
         13267
       ],
       "clog_dependencies": [
-        13265
+        [
+          13265
+        ]
       ]
     },
     "abyssal dagger (p+)": {
@@ -17394,7 +17626,9 @@
         13269
       ],
       "clog_dependencies": [
-        13265
+        [
+          13265
+        ]
       ]
     },
     "abyssal dagger (p++)": {
@@ -17403,7 +17637,9 @@
         13271
       ],
       "clog_dependencies": [
-        13265
+        [
+          13265
+        ]
       ]
     },
     "fire max cape": {
@@ -17413,7 +17649,9 @@
         21186
       ],
       "clog_dependencies": [
-        6570
+        [
+          6570
+        ]
       ]
     },
     "fire max hood": {
@@ -17422,7 +17660,9 @@
         13330
       ],
       "clog_dependencies": [
-        6570
+        [
+          6570
+        ]
       ]
     },
     "lizardman fang": {
@@ -17431,7 +17671,9 @@
         13391
       ],
       "clog_dependencies": [
-        13392
+        [
+          13392
+        ]
       ]
     },
     "ensouled dragon head": {
@@ -17441,7 +17683,9 @@
         13511
       ],
       "clog_dependencies": [
-        7980
+        [
+          7980
+        ]
       ]
     },
     "stuffed kbd heads": {
@@ -17450,7 +17694,9 @@
         7987
       ],
       "clog_dependencies": [
-        7980
+        [
+          7980
+        ]
       ]
     },
     "ring of suffering": {
@@ -17459,8 +17705,10 @@
         19550
       ],
       "clog_dependencies": [
-        19529,
-        6573
+        [
+          6573,
+          19529
+        ]
       ]
     },
     "necklace of anguish": {
@@ -17470,8 +17718,10 @@
         27172
       ],
       "clog_dependencies": [
-        19529,
-        6573
+        [
+          6573,
+          19529
+        ]
       ]
     },
     "tormented bracelet": {
@@ -17481,8 +17731,10 @@
         27171
       ],
       "clog_dependencies": [
-        19529,
-        6573
+        [
+          6573,
+          19529
+        ]
       ]
     },
     "amulet of torture": {
@@ -17492,8 +17744,10 @@
         27173
       ],
       "clog_dependencies": [
-        19529,
-        6573
+        [
+          6573,
+          19529
+        ]
       ]
     },
     "zenyte bracelet": {
@@ -17502,8 +17756,10 @@
         19532
       ],
       "clog_dependencies": [
-        19529,
-        6573
+        [
+          6573,
+          19529
+        ]
       ]
     },
     "zenyte ring": {
@@ -17512,8 +17768,10 @@
         19538
       ],
       "clog_dependencies": [
-        19529,
-        6573
+        [
+          6573,
+          19529
+        ]
       ]
     },
     "zenyte amulet": {
@@ -17522,8 +17780,10 @@
         19541
       ],
       "clog_dependencies": [
-        19529,
-        6573
+        [
+          6573,
+          19529
+        ]
       ]
     },
     "zenyte necklace": {
@@ -17532,8 +17792,10 @@
         19535
       ],
       "clog_dependencies": [
-        19529,
-        6573
+        [
+          6573,
+          19529
+        ]
       ]
     },
     "heavy ballista": {
@@ -17543,10 +17805,12 @@
         23630
       ],
       "clog_dependencies": [
-        19601,
-        19589,
-        19592,
-        19610
+        [
+          19589,
+          19592,
+          19601,
+          19610
+        ]
       ]
     },
     "light ballista": {
@@ -17556,10 +17820,12 @@
         27188
       ],
       "clog_dependencies": [
-        19601,
-        19586,
-        19592,
-        19610
+        [
+          19586,
+          19592,
+          19601,
+          19610
+        ]
       ]
     },
     "incomplete heavy ballista": {
@@ -17568,8 +17834,10 @@
         19598
       ],
       "clog_dependencies": [
-        19592,
-        19589
+        [
+          19589,
+          19592
+        ]
       ]
     },
     "incomplete light ballista": {
@@ -17578,8 +17846,10 @@
         19595
       ],
       "clog_dependencies": [
-        19592,
-        19586
+        [
+          19586,
+          19592
+        ]
       ]
     },
     "zenyte": {
@@ -17588,8 +17858,10 @@
         19493
       ],
       "clog_dependencies": [
-        19529,
-        6573
+        [
+          6573,
+          19529
+        ]
       ]
     },
     "uncut zenyte": {
@@ -17598,8 +17870,10 @@
         19496
       ],
       "clog_dependencies": [
-        19529,
-        6573
+        [
+          6573,
+          19529
+        ]
       ]
     },
     "unstrung heavy ballista": {
@@ -17608,9 +17882,11 @@
         19607
       ],
       "clog_dependencies": [
-        19592,
-        19601,
-        19589
+        [
+          19589,
+          19592,
+          19601
+        ]
       ]
     },
     "unstrung light ballista": {
@@ -17619,9 +17895,11 @@
         19604
       ],
       "clog_dependencies": [
-        19592,
-        19601,
-        19586
+        [
+          19586,
+          19592,
+          19601
+        ]
       ]
     },
     "zenyte amulet (u)": {
@@ -17630,8 +17908,10 @@
         19501
       ],
       "clog_dependencies": [
-        19529,
-        6573
+        [
+          6573,
+          19529
+        ]
       ]
     },
     "black slayer helmet": {
@@ -17640,8 +17920,10 @@
         19639
       ],
       "clog_dependencies": [
-        7980,
-        8901
+        [
+          7980,
+          8901
+        ]
       ]
     },
     "green slayer helmet": {
@@ -17650,8 +17932,10 @@
         19643
       ],
       "clog_dependencies": [
-        7981,
-        8901
+        [
+          7981,
+          8901
+        ]
       ]
     },
     "red slayer helmet": {
@@ -17660,8 +17944,10 @@
         19647
       ],
       "clog_dependencies": [
-        7979,
-        8901
+        [
+          7979,
+          8901
+        ]
       ]
     },
     "black slayer helmet (i)": {
@@ -17672,8 +17958,10 @@
         26675
       ],
       "clog_dependencies": [
-        7980,
-        8901
+        [
+          7980,
+          8901
+        ]
       ]
     },
     "green slayer helmet (i)": {
@@ -17684,8 +17972,10 @@
         26676
       ],
       "clog_dependencies": [
-        7981,
-        8901
+        [
+          7981,
+          8901
+        ]
       ]
     },
     "red slayer helmet (i)": {
@@ -17696,8 +17986,10 @@
         26677
       ],
       "clog_dependencies": [
-        7979,
-        8901
+        [
+          7979,
+          8901
+        ]
       ]
     },
     "arclight": {
@@ -17706,7 +17998,9 @@
         19675
       ],
       "clog_dependencies": [
-        19677
+        [
+          19677
+        ]
       ]
     },
     "ring of suffering (i)": {
@@ -17717,8 +18011,10 @@
         26761
       ],
       "clog_dependencies": [
-        19529,
-        6573
+        [
+          6573,
+          19529
+        ]
       ]
     },
     "dragon scimitar (or)": {
@@ -17727,7 +18023,9 @@
         20000
       ],
       "clog_dependencies": [
-        20002
+        [
+          20002
+        ]
       ]
     },
     "dragon defender (t)": {
@@ -17736,8 +18034,10 @@
         19722
       ],
       "clog_dependencies": [
-        12954,
-        20143
+        [
+          12954,
+          20143
+        ]
       ]
     },
     "occult necklace (or)": {
@@ -17746,8 +18046,10 @@
         19720
       ],
       "clog_dependencies": [
-        20065,
-        12002
+        [
+          12002,
+          20065
+        ]
       ]
     },
     "amulet of torture (or)": {
@@ -17756,9 +18058,11 @@
         20366
       ],
       "clog_dependencies": [
-        19529,
-        6573,
-        20062
+        [
+          6573,
+          19529,
+          20062
+        ]
       ]
     },
     "armadyl godsword (or)": {
@@ -17767,11 +18071,13 @@
         20368
       ],
       "clog_dependencies": [
-        11810,
-        20068,
-        11818,
-        11820,
-        11822
+        [
+          11810,
+          11818,
+          11820,
+          11822,
+          20068
+        ]
       ]
     },
     "bandos godsword (or)": {
@@ -17780,11 +18086,13 @@
         20370
       ],
       "clog_dependencies": [
-        11812,
-        20071,
-        11818,
-        11820,
-        11822
+        [
+          11812,
+          11818,
+          11820,
+          11822,
+          20071
+        ]
       ]
     },
     "saradomin godsword (or)": {
@@ -17793,11 +18101,13 @@
         20372
       ],
       "clog_dependencies": [
-        11814,
-        11818,
-        20074,
-        11820,
-        11822
+        [
+          11814,
+          11818,
+          11820,
+          11822,
+          20074
+        ]
       ]
     },
     "zamorak godsword (or)": {
@@ -17806,11 +18116,13 @@
         20374
       ],
       "clog_dependencies": [
-        11816,
-        11818,
-        11820,
-        20077,
-        11822
+        [
+          11816,
+          11818,
+          11820,
+          11822,
+          20077
+        ]
       ]
     },
     "double eye patch": {
@@ -17819,7 +18131,9 @@
         19727
       ],
       "clog_dependencies": [
-        19724
+        [
+          19724
+        ]
       ]
     },
     "dark squirrel": {
@@ -17828,8 +18142,10 @@
         24701
       ],
       "clog_dependencies": [
-        20659,
-        24733
+        [
+          20659,
+          24733
+        ]
       ]
     },
     "bone squirrel": {
@@ -17838,8 +18154,10 @@
         30151
       ],
       "clog_dependencies": [
-        30042,
-        20659
+        [
+          20659,
+          30042
+        ]
       ]
     },
     "greatish guardian": {
@@ -17848,8 +18166,10 @@
         26899
       ],
       "clog_dependencies": [
-        20665,
-        26820
+        [
+          20665,
+          26820
+        ]
       ]
     },
     "mystic dust staff": {
@@ -17858,7 +18178,9 @@
         20739
       ],
       "clog_dependencies": [
-        20736
+        [
+          20736
+        ]
       ]
     },
     "mystic mist staff": {
@@ -17867,7 +18189,9 @@
         20733
       ],
       "clog_dependencies": [
-        20730
+        [
+          20730
+        ]
       ]
     },
     "kodai wand": {
@@ -17877,8 +18201,10 @@
         23626
       ],
       "clog_dependencies": [
-        6914,
-        21043
+        [
+          6914,
+          21043
+        ]
       ]
     },
     "infernal harpoon": {
@@ -17887,8 +18213,10 @@
         21031
       ],
       "clog_dependencies": [
-        13233,
-        21028
+        [
+          13233,
+          21028
+        ]
       ]
     },
     "dragon crossbow": {
@@ -17897,7 +18225,9 @@
         21902
       ],
       "clog_dependencies": [
-        21918
+        [
+          21918
+        ]
       ]
     },
     "purple slayer helmet (i)": {
@@ -17908,8 +18238,10 @@
         26678
       ],
       "clog_dependencies": [
-        21275,
-        8901
+        [
+          8901,
+          21275
+        ]
       ]
     },
     "purple slayer helmet": {
@@ -17918,8 +18250,10 @@
         21264
       ],
       "clog_dependencies": [
-        21275,
-        8901
+        [
+          8901,
+          21275
+        ]
       ]
     },
     "slayer ring (eternal)": {
@@ -17928,7 +18262,9 @@
         21268
       ],
       "clog_dependencies": [
-        21270
+        [
+          21270
+        ]
       ]
     },
     "skull sceptre (i)": {
@@ -17937,10 +18273,12 @@
         21276
       ],
       "clog_dependencies": [
-        9008,
-        9010,
-        9011,
-        9007
+        [
+          9007,
+          9008,
+          9010,
+          9011
+        ]
       ]
     },
     "infernal max cape": {
@@ -17950,7 +18288,9 @@
         21285
       ],
       "clog_dependencies": [
-        21295
+        [
+          21295
+        ]
       ]
     },
     "infernal max hood": {
@@ -17959,7 +18299,9 @@
         21282
       ],
       "clog_dependencies": [
-        21295
+        [
+          21295
+        ]
       ]
     },
     "ancient wyvern shield": {
@@ -17969,7 +18311,9 @@
         21634
       ],
       "clog_dependencies": [
-        21637
+        [
+          21637
+        ]
       ]
     },
     "granite cannonball": {
@@ -17978,7 +18322,9 @@
         21728
       ],
       "clog_dependencies": [
-        21726
+        [
+          21726
+        ]
       ]
     },
     "guardian boots": {
@@ -17987,8 +18333,10 @@
         21733
       ],
       "clog_dependencies": [
-        21730,
-        11836
+        [
+          11836,
+          21730
+        ]
       ]
     },
     "granite ring (i)": {
@@ -17999,7 +18347,9 @@
         26685
       ],
       "clog_dependencies": [
-        21739
+        [
+          21739
+        ]
       ]
     },
     "onyx dragon bolts (e)": {
@@ -18008,7 +18358,9 @@
         21950
       ],
       "clog_dependencies": [
-        6573
+        [
+          6573
+        ]
       ]
     },
     "onyx dragon bolts": {
@@ -18017,7 +18369,9 @@
         21973
       ],
       "clog_dependencies": [
-        6573
+        [
+          6573
+        ]
       ]
     },
     "vorkath's stuffed head": {
@@ -18026,7 +18380,9 @@
         21909
       ],
       "clog_dependencies": [
-        21907
+        [
+          21907
+        ]
       ]
     },
     "turquoise slayer helmet": {
@@ -18035,8 +18391,10 @@
         21888
       ],
       "clog_dependencies": [
-        21907,
-        8901
+        [
+          8901,
+          21907
+        ]
       ]
     },
     "turquoise slayer helmet (i)": {
@@ -18047,8 +18405,10 @@
         26679
       ],
       "clog_dependencies": [
-        21907,
-        8901
+        [
+          8901,
+          21907
+        ]
       ]
     },
     "ava's assembler": {
@@ -18057,7 +18417,9 @@
         22109
       ],
       "clog_dependencies": [
-        21907
+        [
+          21907
+        ]
       ]
     },
     "assembler max cape": {
@@ -18066,7 +18428,9 @@
         21898
       ],
       "clog_dependencies": [
-        21907
+        [
+          21907
+        ]
       ]
     },
     "assembler max hood": {
@@ -18075,7 +18439,9 @@
         21900
       ],
       "clog_dependencies": [
-        21907
+        [
+          21907
+        ]
       ]
     },
     "dragon crossbow (u)": {
@@ -18084,7 +18450,9 @@
         21921
       ],
       "clog_dependencies": [
-        21918
+        [
+          21918
+        ]
       ]
     },
     "dragonfire ward": {
@@ -18094,7 +18462,9 @@
         22003
       ],
       "clog_dependencies": [
-        22006
+        [
+          22006
+        ]
       ]
     },
     "dragon platebody (g)": {
@@ -18103,9 +18473,11 @@
         22242
       ],
       "clog_dependencies": [
-        22236,
-        3140,
-        22103
+        [
+          3140,
+          22103,
+          22236
+        ]
       ]
     },
     "dragon kiteshield (g)": {
@@ -18114,9 +18486,11 @@
         22244
       ],
       "clog_dependencies": [
-        22100,
-        2366,
-        22239
+        [
+          2366,
+          22100,
+          22239
+        ]
       ]
     },
     "dragon boots (g)": {
@@ -18125,8 +18499,10 @@
         22234
       ],
       "clog_dependencies": [
-        11840,
-        22231
+        [
+          11840,
+          22231
+        ]
       ]
     },
     "necklace of anguish (or)": {
@@ -18135,9 +18511,11 @@
         22249
       ],
       "clog_dependencies": [
-        19529,
-        6573,
-        22246
+        [
+          6573,
+          19529,
+          22246
+        ]
       ]
     },
     "staff of light": {
@@ -18146,8 +18524,10 @@
         22296
       ],
       "clog_dependencies": [
-        13256,
-        11791
+        [
+          11791,
+          13256
+        ]
       ]
     },
     "uncharged trident (e)": {
@@ -18156,8 +18536,10 @@
         22290
       ],
       "clog_dependencies": [
-        12004,
-        11908
+        [
+          11908,
+          12004
+        ]
       ]
     },
     "uncharged toxic trident (e)": {
@@ -18166,9 +18548,11 @@
         22294
       ],
       "clog_dependencies": [
-        12004,
-        12932,
-        11908
+        [
+          11908,
+          12004,
+          12932
+        ]
       ]
     },
     "avernic defender": {
@@ -18177,8 +18561,10 @@
         22322
       ],
       "clog_dependencies": [
-        12954,
-        22477
+        [
+          12954,
+          22477
+        ]
       ]
     },
     "bryophyta's staff (uncharged)": {
@@ -18187,7 +18573,9 @@
         22368
       ],
       "clog_dependencies": [
-        22372
+        [
+          22372
+        ]
       ]
     },
     "bastion potion(3)": {
@@ -18196,7 +18584,9 @@
         22464
       ],
       "clog_dependencies": [
-        22446
+        [
+          22446
+        ]
       ]
     },
     "battlemage potion(3)": {
@@ -18205,7 +18595,9 @@
         22452
       ],
       "clog_dependencies": [
-        22446
+        [
+          22446
+        ]
       ]
     },
     "cadantine blood potion (unf)": {
@@ -18214,7 +18606,9 @@
         22443
       ],
       "clog_dependencies": [
-        22446
+        [
+          22446
+        ]
       ]
     },
     "dragon knife(p)": {
@@ -18223,7 +18617,9 @@
         22806
       ],
       "clog_dependencies": [
-        22804
+        [
+          22804
+        ]
       ]
     },
     "dragon knife(p+)": {
@@ -18232,7 +18628,9 @@
         22808
       ],
       "clog_dependencies": [
-        22804
+        [
+          22804
+        ]
       ]
     },
     "dragon knife(p++)": {
@@ -18241,7 +18639,9 @@
         22810
       ],
       "clog_dependencies": [
-        22804
+        [
+          22804
+        ]
       ]
     },
     "boots of brimstone": {
@@ -18250,7 +18650,9 @@
         22951
       ],
       "clog_dependencies": [
-        22957
+        [
+          22957
+        ]
       ]
     },
     "devout boots": {
@@ -18259,8 +18661,10 @@
         22954
       ],
       "clog_dependencies": [
-        22960,
-        12598
+        [
+          12598,
+          22960
+        ]
       ]
     },
     "brimstone ring": {
@@ -18269,9 +18673,11 @@
         22975
       ],
       "clog_dependencies": [
-        22969,
-        22971,
-        22973
+        [
+          22969,
+          22971,
+          22973
+        ]
       ]
     },
     "bonecrusher necklace": {
@@ -18280,8 +18686,10 @@
         22986
       ],
       "clog_dependencies": [
-        22988,
-        22111
+        [
+          22111,
+          22988
+        ]
       ]
     },
     "ferocious gloves": {
@@ -18290,7 +18698,9 @@
         22981
       ],
       "clog_dependencies": [
-        22983
+        [
+          22983
+        ]
       ]
     },
     "dragon hunter lance": {
@@ -18299,8 +18709,10 @@
         22978
       ],
       "clog_dependencies": [
-        11824,
-        22966
+        [
+          11824,
+          22966
+        ]
       ]
     },
     "stuffed hydra heads": {
@@ -18309,7 +18721,9 @@
         23079
       ],
       "clog_dependencies": [
-        23077
+        [
+          23077
+        ]
       ]
     },
     "hydra slayer helmet": {
@@ -18318,8 +18732,10 @@
         23073
       ],
       "clog_dependencies": [
-        23077,
-        8901
+        [
+          8901,
+          23077
+        ]
       ]
     },
     "hydra slayer helmet (i)": {
@@ -18330,8 +18746,10 @@
         26680
       ],
       "clog_dependencies": [
-        23077,
-        8901
+        [
+          8901,
+          23077
+        ]
       ]
     },
     "oily pearl fishing rod": {
@@ -18340,7 +18758,9 @@
         23122
       ],
       "clog_dependencies": [
-        22846
+        [
+          22846
+        ]
       ]
     },
     "tormented bracelet (or)": {
@@ -18349,9 +18769,11 @@
         23444
       ],
       "clog_dependencies": [
-        19529,
-        23348,
-        6573
+        [
+          6573,
+          19529,
+          23348
+        ]
       ]
     },
     "berserker necklace (or)": {
@@ -18360,8 +18782,10 @@
         23240
       ],
       "clog_dependencies": [
-        23237,
-        6573
+        [
+          6573,
+          23237
+        ]
       ]
     },
     "tzhaar-ket-om (t)": {
@@ -18370,8 +18794,10 @@
         23235
       ],
       "clog_dependencies": [
-        6528,
-        23232
+        [
+          6528,
+          23232
+        ]
       ]
     },
     "rune defender (t)": {
@@ -18380,8 +18806,10 @@
         23230
       ],
       "clog_dependencies": [
-        8850,
-        23227
+        [
+          8850,
+          23227
+        ]
       ]
     },
     "blade of saeldor": {
@@ -18390,16 +18818,9 @@
         23995
       ],
       "clog_dependencies": [
-        25859
-      ]
-    },
-    "blade of saeldor (inactive)": {
-      "name": "blade of saeldor (inactive)",
-      "item_ids": [
-        23997
-      ],
-      "clog_dependencies": [
-        25859
+        [
+          25859
+        ]
       ]
     },
     "crystal shards": {
@@ -18408,7 +18829,21 @@
         23866
       ],
       "clog_dependencies": [
-        4207
+        [
+          23953
+        ],
+        [
+          25859
+        ],
+        [
+          23956
+        ],
+        [
+          23959
+        ],
+        [
+          4207
+        ]
       ]
     },
     "bloodbark legs": {
@@ -18417,7 +18852,9 @@
         25416
       ],
       "clog_dependencies": [
-        3470
+        [
+          3470
+        ]
       ]
     },
     "bloodbark body": {
@@ -18426,7 +18863,9 @@
         25404
       ],
       "clog_dependencies": [
-        3470
+        [
+          3470
+        ]
       ]
     },
     "bloodbark helm": {
@@ -18435,7 +18874,9 @@
         25413
       ],
       "clog_dependencies": [
-        3470
+        [
+          3470
+        ]
       ]
     },
     "crystal pickaxe": {
@@ -18445,8 +18886,10 @@
         23863
       ],
       "clog_dependencies": [
-        11920,
-        23953
+        [
+          11920,
+          23953
+        ]
       ]
     },
     "eternal teleport crystal": {
@@ -18455,7 +18898,9 @@
         23946
       ],
       "clog_dependencies": [
-        23959
+        [
+          23959
+        ]
       ]
     },
     "crystal acorn": {
@@ -18464,7 +18909,15 @@
         23661
       ],
       "clog_dependencies": [
-        4207
+        [
+          23956
+        ],
+        [
+          23953
+        ],
+        [
+          4207
+        ]
       ]
     },
     "crystal harpoon": {
@@ -18474,8 +18927,10 @@
         23864
       ],
       "clog_dependencies": [
-        23953,
-        21028
+        [
+          21028,
+          23953
+        ]
       ]
     },
     "crystal axe": {
@@ -18485,8 +18940,10 @@
         23862
       ],
       "clog_dependencies": [
-        23953,
-        6739
+        [
+          6739,
+          23953
+        ]
       ]
     },
     "dragon pickaxe (or)": {
@@ -18497,8 +18954,10 @@
         30351
       ],
       "clog_dependencies": [
-        11920,
-        23908
+        [
+          11920,
+          23908
+        ]
       ]
     },
     "staff of balance": {
@@ -18507,8 +18966,10 @@
         24144
       ],
       "clog_dependencies": [
-        24217,
-        11791
+        [
+          11791,
+          24217
+        ]
       ]
     },
     "neitiznot faceguard": {
@@ -18517,7 +18978,9 @@
         24271
       ],
       "clog_dependencies": [
-        24268
+        [
+          24268
+        ]
       ]
     },
     "twisted slayer helmet": {
@@ -18526,7 +18989,9 @@
         24370
       ],
       "clog_dependencies": [
-        8901
+        [
+          8901
+        ]
       ]
     },
     "eldritch nightmare staff": {
@@ -18535,8 +19000,10 @@
         24425
       ],
       "clog_dependencies": [
-        24517,
-        24422
+        [
+          24422,
+          24517
+        ]
       ]
     },
     "harmonised nightmare staff": {
@@ -18545,8 +19012,10 @@
         24423
       ],
       "clog_dependencies": [
-        24422,
-        24511
+        [
+          24422,
+          24511
+        ]
       ]
     },
     "volatile nightmare staff": {
@@ -18556,8 +19025,10 @@
         25517
       ],
       "clog_dependencies": [
-        24514,
-        24422
+        [
+          24422,
+          24514
+        ]
       ]
     },
     "twisted slayer helmet (i)": {
@@ -18568,7 +19039,9 @@
         26681
       ],
       "clog_dependencies": [
-        8901
+        [
+          8901
+        ]
       ]
     },
     "amulet of blood fury": {
@@ -18577,8 +19050,10 @@
         24780
       ],
       "clog_dependencies": [
-        24777,
-        6573
+        [
+          6573,
+          24777
+        ]
       ]
     },
     "divine bastion potion(3)": {
@@ -18587,7 +19062,9 @@
         24638
       ],
       "clog_dependencies": [
-        22446
+        [
+          22446
+        ]
       ]
     },
     "divine battlemage potion(3)": {
@@ -18596,7 +19073,9 @@
         24626
       ],
       "clog_dependencies": [
-        22446
+        [
+          22446
+        ]
       ]
     },
     "twisted ancestral hat": {
@@ -18605,8 +19084,10 @@
         24664
       ],
       "clog_dependencies": [
-        21018,
-        24670
+        [
+          21018,
+          24670
+        ]
       ]
     },
     "twisted ancestral robe top": {
@@ -18615,8 +19096,10 @@
         24666
       ],
       "clog_dependencies": [
-        21021,
-        24670
+        [
+          21021,
+          24670
+        ]
       ]
     },
     "twisted ancestral robe bottom": {
@@ -18625,8 +19108,10 @@
         24668
       ],
       "clog_dependencies": [
-        21024,
-        24670
+        [
+          21024,
+          24670
+        ]
       ]
     },
     "infernal axe (or)": {
@@ -18636,8 +19121,10 @@
         30347
       ],
       "clog_dependencies": [
-        13233,
-        6739
+        [
+          6739,
+          13233
+        ]
       ]
     },
     "infernal pickaxe (or)": {
@@ -18647,8 +19134,10 @@
         30345
       ],
       "clog_dependencies": [
-        11920,
-        13233
+        [
+          11920,
+          13233
+        ]
       ]
     },
     "infernal harpoon (or)": {
@@ -18658,8 +19147,10 @@
         30342
       ],
       "clog_dependencies": [
-        13233,
-        21028
+        [
+          13233,
+          21028
+        ]
       ]
     },
     "bone fragments": {
@@ -18668,7 +19159,18 @@
         25139
       ],
       "clog_dependencies": [
-        9008
+        [
+          9007
+        ],
+        [
+          9011
+        ],
+        [
+          9008
+        ],
+        [
+          9010
+        ]
       ]
     },
     "dragon axe (or)": {
@@ -18678,7 +19180,9 @@
         30352
       ],
       "clog_dependencies": [
-        6739
+        [
+          6739
+        ]
       ]
     },
     "dragon harpoon (or)": {
@@ -18688,7 +19192,9 @@
         30349
       ],
       "clog_dependencies": [
-        21028
+        [
+          21028
+        ]
       ]
     },
     "swampbark helm": {
@@ -18697,7 +19203,9 @@
         25398
       ],
       "clog_dependencies": [
-        3470
+        [
+          3470
+        ]
       ]
     },
     "swampbark body": {
@@ -18706,7 +19214,9 @@
         25389
       ],
       "clog_dependencies": [
-        3470
+        [
+          3470
+        ]
       ]
     },
     "swampbark legs": {
@@ -18715,7 +19225,9 @@
         25401
       ],
       "clog_dependencies": [
-        3470
+        [
+          3470
+        ]
       ]
     },
     "swampbark gauntlets": {
@@ -18724,7 +19236,9 @@
         25392
       ],
       "clog_dependencies": [
-        3470
+        [
+          3470
+        ]
       ]
     },
     "swampbark boots": {
@@ -18733,7 +19247,9 @@
         25395
       ],
       "clog_dependencies": [
-        3470
+        [
+          3470
+        ]
       ]
     },
     "bloodbark gauntlets": {
@@ -18742,7 +19258,9 @@
         25407
       ],
       "clog_dependencies": [
-        3470
+        [
+          3470
+        ]
       ]
     },
     "bloodbark boots": {
@@ -18751,7 +19269,9 @@
         25410
       ],
       "clog_dependencies": [
-        3470
+        [
+          3470
+        ]
       ]
     },
     "bronze coffin": {
@@ -18760,7 +19280,9 @@
         25459
       ],
       "clog_dependencies": [
-        25442
+        [
+          25442
+        ]
       ]
     },
     "steel coffin": {
@@ -18769,7 +19291,9 @@
         25461
       ],
       "clog_dependencies": [
-        25445
+        [
+          25445
+        ]
       ]
     },
     "black coffin": {
@@ -18778,7 +19302,9 @@
         25463
       ],
       "clog_dependencies": [
-        25448
+        [
+          25448
+        ]
       ]
     },
     "silver coffin": {
@@ -18787,7 +19313,9 @@
         25465
       ],
       "clog_dependencies": [
-        25451
+        [
+          25451
+        ]
       ]
     },
     "gold coffin": {
@@ -18796,7 +19324,9 @@
         25467
       ],
       "clog_dependencies": [
-        25454
+        [
+          25454
+        ]
       ]
     },
     "golden prospector helmet": {
@@ -18805,8 +19335,10 @@
         25549
       ],
       "clog_dependencies": [
-        25547,
-        12013
+        [
+          12013,
+          25547
+        ]
       ]
     },
     "golden prospector jacket": {
@@ -18815,8 +19347,10 @@
         25551
       ],
       "clog_dependencies": [
-        25547,
-        12014
+        [
+          12014,
+          25547
+        ]
       ]
     },
     "golden prospector legs": {
@@ -18825,8 +19359,10 @@
         25553
       ],
       "clog_dependencies": [
-        25547,
-        12015
+        [
+          12015,
+          25547
+        ]
       ]
     },
     "golden prospector boots": {
@@ -18835,8 +19371,10 @@
         25555
       ],
       "clog_dependencies": [
-        12016,
-        25547
+        [
+          12016,
+          25547
+        ]
       ]
     },
     "dark flippers": {
@@ -18845,8 +19383,10 @@
         25557
       ],
       "clog_dependencies": [
-        6666,
-        21275
+        [
+          6666,
+          21275
+        ]
       ]
     },
     "celestial signet": {
@@ -18855,8 +19395,10 @@
         25545
       ],
       "clog_dependencies": [
-        25539,
-        23943
+        [
+          23943,
+          25539
+        ]
       ]
     },
     "stuffed big harpoonfish": {
@@ -18865,7 +19407,9 @@
         25561
       ],
       "clog_dependencies": [
-        25559
+        [
+          25559
+        ]
       ]
     },
     "fish sack barrel": {
@@ -18874,8 +19418,10 @@
         25585
       ],
       "clog_dependencies": [
-        22838,
-        25582
+        [
+          22838,
+          25582
+        ]
       ]
     },
     "holy sanguinesti staff": {
@@ -18884,8 +19430,10 @@
         25731
       ],
       "clog_dependencies": [
-        22481,
-        25742
+        [
+          22481,
+          25742
+        ]
       ]
     },
     "holy ghrazi rapier": {
@@ -18894,8 +19442,10 @@
         25734
       ],
       "clog_dependencies": [
-        22324,
-        25742
+        [
+          22324,
+          25742
+        ]
       ]
     },
     "holy scythe of vitur": {
@@ -18904,8 +19454,10 @@
         25736
       ],
       "clog_dependencies": [
-        25742,
-        22486
+        [
+          22486,
+          25742
+        ]
       ]
     },
     "sanguine scythe of vitur": {
@@ -18914,8 +19466,10 @@
         25739
       ],
       "clog_dependencies": [
-        25744,
-        22486
+        [
+          22486,
+          25744
+        ]
       ]
     },
     "bow of faerdhinen": {
@@ -18924,7 +19478,9 @@
         25865
       ],
       "clog_dependencies": [
-        25859
+        [
+          25859
+        ]
       ]
     },
     "tztok slayer helmet": {
@@ -18933,7 +19489,9 @@
         25898
       ],
       "clog_dependencies": [
-        8901
+        [
+          8901
+        ]
       ]
     },
     "vampyric slayer helmet": {
@@ -18942,7 +19500,9 @@
         25904
       ],
       "clog_dependencies": [
-        8901
+        [
+          8901
+        ]
       ]
     },
     "tzkal slayer helmet": {
@@ -18951,7 +19511,9 @@
         25910
       ],
       "clog_dependencies": [
-        8901
+        [
+          8901
+        ]
       ]
     },
     "tztok slayer helmet (i)": {
@@ -18962,7 +19524,9 @@
         26682
       ],
       "clog_dependencies": [
-        8901
+        [
+          8901
+        ]
       ]
     },
     "tzkal slayer helmet (i)": {
@@ -18973,7 +19537,9 @@
         26684
       ],
       "clog_dependencies": [
-        8901
+        [
+          8901
+        ]
       ]
     },
     "vampyric slayer helmet (i)": {
@@ -18984,7 +19550,9 @@
         26683
       ],
       "clog_dependencies": [
-        8901
+        [
+          8901
+        ]
       ]
     },
     "dragon hunter crossbow (b)": {
@@ -18993,8 +19561,10 @@
         25918
       ],
       "clog_dependencies": [
-        21012,
-        7980
+        [
+          7980,
+          21012
+        ]
       ]
     },
     "dragon hunter crossbow (t)": {
@@ -19003,8 +19573,10 @@
         25916
       ],
       "clog_dependencies": [
-        21907,
-        21012
+        [
+          21012,
+          21907
+        ]
       ]
     },
     "elidinis' ward (f)": {
@@ -19013,8 +19585,10 @@
         27251
       ],
       "clog_dependencies": [
-        25985,
-        12827
+        [
+          12827,
+          25985
+        ]
       ]
     },
     "keris partisan of breaching": {
@@ -19023,7 +19597,9 @@
         25981
       ],
       "clog_dependencies": [
-        27283
+        [
+          27283
+        ]
       ]
     },
     "ancient godsword": {
@@ -19033,10 +19609,12 @@
         27184
       ],
       "clog_dependencies": [
-        26370,
-        11818,
-        11820,
-        11822
+        [
+          11818,
+          11820,
+          11822,
+          26370
+        ]
       ]
     },
     "torva full helm": {
@@ -19046,8 +19624,14 @@
         30302
       ],
       "clog_dependencies": [
-        26376,
-        11832
+        [
+          11832,
+          26376
+        ],
+        [
+          11834,
+          26376
+        ]
       ]
     },
     "torva platebody": {
@@ -19057,8 +19641,14 @@
         30303
       ],
       "clog_dependencies": [
-        11832,
-        26378
+        [
+          11834,
+          26378
+        ],
+        [
+          11832,
+          26378
+        ]
       ]
     },
     "torva platelegs": {
@@ -19068,8 +19658,14 @@
         30304
       ],
       "clog_dependencies": [
-        11832,
-        26380
+        [
+          11832,
+          26380
+        ],
+        [
+          11834,
+          26380
+        ]
       ]
     },
     "ancient brew(3)": {
@@ -19078,7 +19674,9 @@
         26342
       ],
       "clog_dependencies": [
-        26231
+        [
+          26231
+        ]
       ]
     },
     "zaryte crossbow": {
@@ -19088,9 +19686,11 @@
         27186
       ],
       "clog_dependencies": [
-        11785,
-        26372,
-        26231
+        [
+          11785,
+          26231,
+          26372
+        ]
       ]
     },
     "nihil dust": {
@@ -19099,7 +19699,9 @@
         26368
       ],
       "clog_dependencies": [
-        26231
+        [
+          26231
+        ]
       ]
     },
     "bandosian components": {
@@ -19108,7 +19710,12 @@
         26394
       ],
       "clog_dependencies": [
-        11832
+        [
+          11832
+        ],
+        [
+          11834
+        ]
       ]
     },
     "void knight top (or)": {
@@ -19117,7 +19724,9 @@
         26463
       ],
       "clog_dependencies": [
-        8839
+        [
+          8839
+        ]
       ]
     },
     "void knight robe (or)": {
@@ -19126,7 +19735,9 @@
         26465
       ],
       "clog_dependencies": [
-        8840
+        [
+          8840
+        ]
       ]
     },
     "void knight gloves (or)": {
@@ -19135,7 +19746,9 @@
         26467
       ],
       "clog_dependencies": [
-        8842
+        [
+          8842
+        ]
       ]
     },
     "elite void top (or)": {
@@ -19144,7 +19757,9 @@
         26469
       ],
       "clog_dependencies": [
-        13072
+        [
+          13072
+        ]
       ]
     },
     "elite void robe (or)": {
@@ -19153,7 +19768,9 @@
         26471
       ],
       "clog_dependencies": [
-        13073
+        [
+          13073
+        ]
       ]
     },
     "void mage helm (or)": {
@@ -19162,7 +19779,9 @@
         26473
       ],
       "clog_dependencies": [
-        11663
+        [
+          11663
+        ]
       ]
     },
     "void ranger helm (or)": {
@@ -19171,7 +19790,9 @@
         26475
       ],
       "clog_dependencies": [
-        11664
+        [
+          11664
+        ]
       ]
     },
     "void melee helm (or)": {
@@ -19180,7 +19801,9 @@
         26477
       ],
       "clog_dependencies": [
-        11665
+        [
+          11665
+        ]
       ]
     },
     "abyssal whip (or)": {
@@ -19189,7 +19812,9 @@
         26482
       ],
       "clog_dependencies": [
-        4151
+        [
+          4151
+        ]
       ]
     },
     "abyssal tentacle (or)": {
@@ -19198,8 +19823,10 @@
         26484
       ],
       "clog_dependencies": [
-        12004,
-        4151
+        [
+          4151,
+          12004
+        ]
       ]
     },
     "colossal pouch": {
@@ -19210,7 +19837,9 @@
         26906
       ],
       "clog_dependencies": [
-        26813
+        [
+          26813
+        ]
       ]
     },
     "heavy ballista (or)": {
@@ -19219,10 +19848,12 @@
         26712
       ],
       "clog_dependencies": [
-        19592,
-        19601,
-        19610,
-        19589
+        [
+          19589,
+          19592,
+          19601,
+          19610
+        ]
       ]
     },
     "catalytic tiara": {
@@ -19231,7 +19862,9 @@
         26801
       ],
       "clog_dependencies": [
-        26798
+        [
+          26798
+        ]
       ]
     },
     "hat of the eye (red)": {
@@ -19240,8 +19873,10 @@
         26858
       ],
       "clog_dependencies": [
-        26850,
-        26811
+        [
+          26811,
+          26850
+        ]
       ]
     },
     "hat of the eye (green)": {
@@ -19250,8 +19885,10 @@
         26864
       ],
       "clog_dependencies": [
-        26850,
-        26807
+        [
+          26807,
+          26850
+        ]
       ]
     },
     "hat of the eye (blue)": {
@@ -19260,8 +19897,10 @@
         26870
       ],
       "clog_dependencies": [
-        26809,
-        26850
+        [
+          26809,
+          26850
+        ]
       ]
     },
     "robe top of the eye (red)": {
@@ -19270,8 +19909,10 @@
         26860
       ],
       "clog_dependencies": [
-        26811,
-        26852
+        [
+          26811,
+          26852
+        ]
       ]
     },
     "robe top of the eye (green)": {
@@ -19280,8 +19921,10 @@
         26866
       ],
       "clog_dependencies": [
-        26852,
-        26807
+        [
+          26807,
+          26852
+        ]
       ]
     },
     "robe top of the eye (blue)": {
@@ -19290,8 +19933,10 @@
         26872
       ],
       "clog_dependencies": [
-        26809,
-        26852
+        [
+          26809,
+          26852
+        ]
       ]
     },
     "robe bottoms of the eye (red)": {
@@ -19300,8 +19945,10 @@
         26862
       ],
       "clog_dependencies": [
-        26811,
-        26854
+        [
+          26811,
+          26854
+        ]
       ]
     },
     "robe bottoms of the eye (green)": {
@@ -19310,8 +19957,10 @@
         26868
       ],
       "clog_dependencies": [
-        26854,
-        26807
+        [
+          26807,
+          26854
+        ]
       ]
     },
     "robe bottoms of the eye (blue)": {
@@ -19320,8 +19969,10 @@
         26874
       ],
       "clog_dependencies": [
-        26809,
-        26854
+        [
+          26809,
+          26854
+        ]
       ]
     },
     "smiths gloves (i)": {
@@ -19330,7 +19981,9 @@
         27031
       ],
       "clog_dependencies": [
-        27029
+        [
+          27029
+        ]
       ]
     },
     "elder chaos hood (or)": {
@@ -19339,7 +19992,9 @@
         27119
       ],
       "clog_dependencies": [
-        20595
+        [
+          20595
+        ]
       ]
     },
     "elder chaos robe (or)": {
@@ -19348,7 +20003,9 @@
         27117
       ],
       "clog_dependencies": [
-        20520
+        [
+          20520
+        ]
       ]
     },
     "elder chaos top (or)": {
@@ -19357,7 +20014,9 @@
         27115
       ],
       "clog_dependencies": [
-        20517
+        [
+          20517
+        ]
       ]
     },
     "elder maul (or)": {
@@ -19366,7 +20025,9 @@
         27100
       ],
       "clog_dependencies": [
-        21003
+        [
+          21003
+        ]
       ]
     },
     "armadylean plate": {
@@ -19375,7 +20036,15 @@
         27269
       ],
       "clog_dependencies": [
-        11826
+        [
+          11828
+        ],
+        [
+          11830
+        ],
+        [
+          11826
+        ]
       ]
     },
     "masori mask (f)": {
@@ -19384,8 +20053,18 @@
         27235
       ],
       "clog_dependencies": [
-        27226,
-        11826
+        [
+          11828,
+          27226
+        ],
+        [
+          11830,
+          27226
+        ],
+        [
+          11826,
+          27226
+        ]
       ]
     },
     "masori body (f)": {
@@ -19394,8 +20073,18 @@
         27238
       ],
       "clog_dependencies": [
-        11826,
-        27229
+        [
+          11828,
+          27229
+        ],
+        [
+          11830,
+          27229
+        ],
+        [
+          11826,
+          27229
+        ]
       ]
     },
     "masori chaps (f)": {
@@ -19404,8 +20093,18 @@
         27241
       ],
       "clog_dependencies": [
-        27232,
-        11826
+        [
+          11826,
+          27232
+        ],
+        [
+          11830,
+          27232
+        ],
+        [
+          11828,
+          27232
+        ]
       ]
     },
     "keris partisan of corruption": {
@@ -19414,7 +20113,9 @@
         27287
       ],
       "clog_dependencies": [
-        27285
+        [
+          27285
+        ]
       ]
     },
     "keris partisan of the sun": {
@@ -19423,7 +20124,9 @@
         27291
       ],
       "clog_dependencies": [
-        27289
+        [
+          27289
+        ]
       ]
     },
     "divine rune pouch": {
@@ -19432,7 +20135,9 @@
         27281
       ],
       "clog_dependencies": [
-        27279
+        [
+          27279
+        ]
       ]
     },
     "elidinis' ward (or)": {
@@ -19441,9 +20146,11 @@
         27253
       ],
       "clog_dependencies": [
-        25985,
-        12827,
-        27255
+        [
+          12827,
+          25985,
+          27255
+        ]
       ]
     },
     "osmumten's fang (or)": {
@@ -19452,8 +20159,10 @@
         27246
       ],
       "clog_dependencies": [
-        27248,
-        26219
+        [
+          26219,
+          27248
+        ]
       ]
     },
     "masori assembler": {
@@ -19462,8 +20171,10 @@
         27374
       ],
       "clog_dependencies": [
-        21907,
-        27372
+        [
+          21907,
+          27372
+        ]
       ]
     },
     "masori assembler max cape": {
@@ -19472,8 +20183,10 @@
         27363
       ],
       "clog_dependencies": [
-        21907,
-        27372
+        [
+          21907,
+          27372
+        ]
       ]
     },
     "masori assembler max hood": {
@@ -19482,8 +20195,10 @@
         27366
       ],
       "clog_dependencies": [
-        21907,
-        27372
+        [
+          21907,
+          27372
+        ]
       ]
     },
     "accursed sceptre (u)": {
@@ -19492,8 +20207,10 @@
         27662
       ],
       "clog_dependencies": [
-        22552,
-        27673
+        [
+          22552,
+          27673
+        ]
       ]
     },
     "ursine chainmace (u)": {
@@ -19502,8 +20219,10 @@
         27657
       ],
       "clog_dependencies": [
-        27667,
-        22542
+        [
+          22542,
+          27667
+        ]
       ]
     },
     "voidwaker": {
@@ -19513,9 +20232,11 @@
         27869
       ],
       "clog_dependencies": [
-        27681,
-        27684,
-        27687
+        [
+          27681,
+          27684,
+          27687
+        ]
       ]
     },
     "webweaver bow (u)": {
@@ -19524,8 +20245,10 @@
         27652
       ],
       "clog_dependencies": [
-        22547,
-        27670
+        [
+          22547,
+          27670
+        ]
       ]
     },
     "ghommal's avernic defender 5": {
@@ -19534,8 +20257,10 @@
         27550
       ],
       "clog_dependencies": [
-        12954,
-        22477
+        [
+          12954,
+          22477
+        ]
       ]
     },
     "ghommal's avernic defender 6": {
@@ -19544,8 +20269,10 @@
         27552
       ],
       "clog_dependencies": [
-        12954,
-        22477
+        [
+          12954,
+          22477
+        ]
       ]
     },
     "ancient sceptre": {
@@ -19554,7 +20281,9 @@
         27624
       ],
       "clog_dependencies": [
-        27627
+        [
+          27627
+        ]
       ]
     },
     "venator bow (uncharged)": {
@@ -19563,7 +20292,9 @@
         27612
       ],
       "clog_dependencies": [
-        27614
+        [
+          27614
+        ]
       ]
     },
     "saturated heart": {
@@ -19572,8 +20303,10 @@
         27641
       ],
       "clog_dependencies": [
-        27616,
-        20724
+        [
+          20724,
+          27616
+        ]
       ]
     },
     "forgotten brew(1)": {
@@ -19582,7 +20315,9 @@
         27638
       ],
       "clog_dependencies": [
-        27616
+        [
+          27616
+        ]
       ]
     },
     "forgotten brew(2)": {
@@ -19591,7 +20326,9 @@
         27635
       ],
       "clog_dependencies": [
-        27616
+        [
+          27616
+        ]
       ]
     },
     "forgotten brew(3)": {
@@ -19600,8 +20337,10 @@
         27632
       ],
       "clog_dependencies": [
-        27616,
-        26231
+        [
+          26231,
+          27616
+        ]
       ]
     },
     "forgotten brew(4)": {
@@ -19610,7 +20349,9 @@
         27629
       ],
       "clog_dependencies": [
-        27616
+        [
+          27616
+        ]
       ]
     },
     "dark bow (bh)": {
@@ -19619,7 +20360,9 @@
         27853
       ],
       "clog_dependencies": [
-        11235
+        [
+          11235
+        ]
       ]
     },
     "abyssal dagger (bh)": {
@@ -19628,7 +20371,9 @@
         27861
       ],
       "clog_dependencies": [
-        13265
+        [
+          13265
+        ]
       ]
     },
     "abyssal dagger (bh)(p)": {
@@ -19637,7 +20382,9 @@
         27863
       ],
       "clog_dependencies": [
-        13265
+        [
+          13265
+        ]
       ]
     },
     "abyssal dagger (bh)(p+)": {
@@ -19646,7 +20393,9 @@
         27865
       ],
       "clog_dependencies": [
-        13265
+        [
+          13265
+        ]
       ]
     },
     "abyssal dagger (bh)(p++)": {
@@ -19655,7 +20404,9 @@
         27867
       ],
       "clog_dependencies": [
-        13265
+        [
+          13265
+        ]
       ]
     },
     "soulreaper axe": {
@@ -19664,10 +20415,12 @@
         28338
       ],
       "clog_dependencies": [
-        28321,
-        28323,
-        28325,
-        28319
+        [
+          28319,
+          28321,
+          28323,
+          28325
+        ]
       ]
     },
     "ultor ring": {
@@ -19676,9 +20429,11 @@
         28307
       ],
       "clog_dependencies": [
-        6737,
-        28276,
-        28285
+        [
+          6737,
+          28276,
+          28285
+        ]
       ]
     },
     "magus ring": {
@@ -19687,9 +20442,11 @@
         28313
       ],
       "clog_dependencies": [
-        28281,
-        6731,
-        28276
+        [
+          6731,
+          28276,
+          28281
+        ]
       ]
     },
     "bellator ring": {
@@ -19698,9 +20455,11 @@
         28316
       ],
       "clog_dependencies": [
-        28276,
-        6735,
-        28279
+        [
+          6735,
+          28276,
+          28279
+        ]
       ]
     },
     "venator ring": {
@@ -19709,9 +20468,11 @@
         28310
       ],
       "clog_dependencies": [
-        28283,
-        28276,
-        6733
+        [
+          6733,
+          28276,
+          28283
+        ]
       ]
     },
     "blood ancient sceptre": {
@@ -19720,8 +20481,10 @@
         28260
       ],
       "clog_dependencies": [
-        27627,
-        28268
+        [
+          27627,
+          28268
+        ]
       ]
     },
     "ice ancient sceptre": {
@@ -19730,8 +20493,10 @@
         28262
       ],
       "clog_dependencies": [
-        27627,
-        28270
+        [
+          27627,
+          28270
+        ]
       ]
     },
     "smoke ancient sceptre": {
@@ -19740,8 +20505,10 @@
         28264
       ],
       "clog_dependencies": [
-        28274,
-        27627
+        [
+          27627,
+          28274
+        ]
       ]
     },
     "shadow ancient sceptre": {
@@ -19750,8 +20517,10 @@
         28266
       ],
       "clog_dependencies": [
-        28272,
-        27627
+        [
+          27627,
+          28272
+        ]
       ]
     },
     "dragon 2h sword (cr)": {
@@ -19760,7 +20529,9 @@
         28051
       ],
       "clog_dependencies": [
-        7158
+        [
+          7158
+        ]
       ]
     },
     "dragon boots (cr)": {
@@ -19769,7 +20540,9 @@
         28055
       ],
       "clog_dependencies": [
-        11840
+        [
+          11840
+        ]
       ]
     },
     "dragon chainbody (cr)": {
@@ -19778,7 +20551,9 @@
         28065
       ],
       "clog_dependencies": [
-        3140
+        [
+          3140
+        ]
       ]
     },
     "dragon claws (cr)": {
@@ -19787,7 +20562,9 @@
         28039
       ],
       "clog_dependencies": [
-        13652
+        [
+          13652
+        ]
       ]
     },
     "dragon crossbow (cr)": {
@@ -19796,7 +20573,9 @@
         28053
       ],
       "clog_dependencies": [
-        21918
+        [
+          21918
+        ]
       ]
     },
     "dragon spear (cr)": {
@@ -19805,7 +20584,9 @@
         28041
       ],
       "clog_dependencies": [
-        1249
+        [
+          1249
+        ]
       ]
     },
     "dragon spear (p)(cr)": {
@@ -19814,7 +20595,9 @@
         28043
       ],
       "clog_dependencies": [
-        1249
+        [
+          1249
+        ]
       ]
     },
     "dragon spear (p+)(cr)": {
@@ -19823,7 +20606,9 @@
         28045
       ],
       "clog_dependencies": [
-        1249
+        [
+          1249
+        ]
       ]
     },
     "dragon spear (p++)(cr)": {
@@ -19832,7 +20617,9 @@
         28047
       ],
       "clog_dependencies": [
-        1249
+        [
+          1249
+        ]
       ]
     },
     "dragon sq shield (cr)": {
@@ -19841,7 +20628,9 @@
         28059
       ],
       "clog_dependencies": [
-        2366
+        [
+          2366
+        ]
       ]
     },
     "dragon sword (cr)": {
@@ -19850,7 +20639,9 @@
         28029
       ],
       "clog_dependencies": [
-        21009
+        [
+          21009
+        ]
       ]
     },
     "dragon warhammer (cr)": {
@@ -19859,7 +20650,9 @@
         28035
       ],
       "clog_dependencies": [
-        13576
+        [
+          13576
+        ]
       ]
     },
     "fighter torso (or)": {
@@ -19868,7 +20661,9 @@
         28067
       ],
       "clog_dependencies": [
-        10551
+        [
+          10551
+        ]
       ]
     },
     "forestry basket": {
@@ -19877,8 +20672,10 @@
         28143
       ],
       "clog_dependencies": [
-        28146,
-        28140
+        [
+          28140,
+          28146
+        ]
       ]
     },
     "sturdy harness": {
@@ -19887,7 +20684,9 @@
         28149
       ],
       "clog_dependencies": [
-        28146
+        [
+          28146
+        ]
       ]
     },
     "clothes pouch": {
@@ -19896,7 +20695,9 @@
         28163
       ],
       "clog_dependencies": [
-        28166
+        [
+          28166
+        ]
       ]
     },
     "bronze felling axe": {
@@ -19905,7 +20706,9 @@
         28196
       ],
       "clog_dependencies": [
-        28177
+        [
+          28177
+        ]
       ]
     },
     "iron felling axe": {
@@ -19914,7 +20717,9 @@
         28199
       ],
       "clog_dependencies": [
-        28177
+        [
+          28177
+        ]
       ]
     },
     "steel felling axe": {
@@ -19923,7 +20728,9 @@
         28202
       ],
       "clog_dependencies": [
-        28177
+        [
+          28177
+        ]
       ]
     },
     "black felling axe": {
@@ -19932,7 +20739,9 @@
         28205
       ],
       "clog_dependencies": [
-        28177
+        [
+          28177
+        ]
       ]
     },
     "mithril felling axe": {
@@ -19941,7 +20750,9 @@
         28208
       ],
       "clog_dependencies": [
-        28177
+        [
+          28177
+        ]
       ]
     },
     "adamant felling axe": {
@@ -19950,7 +20761,9 @@
         28211
       ],
       "clog_dependencies": [
-        28177
+        [
+          28177
+        ]
       ]
     },
     "rune felling axe": {
@@ -19959,7 +20772,9 @@
         28214
       ],
       "clog_dependencies": [
-        28177
+        [
+          28177
+        ]
       ]
     },
     "dragon felling axe": {
@@ -19968,8 +20783,10 @@
         28217
       ],
       "clog_dependencies": [
-        28177,
-        6739
+        [
+          6739,
+          28177
+        ]
       ]
     },
     "3rd age felling axe": {
@@ -19978,8 +20795,10 @@
         28226
       ],
       "clog_dependencies": [
-        28177,
-        20011
+        [
+          20011,
+          28177
+        ]
       ]
     },
     "crystal felling axe": {
@@ -19988,9 +20807,11 @@
         28220
       ],
       "clog_dependencies": [
-        28177,
-        23953,
-        6739
+        [
+          6739,
+          23953,
+          28177
+        ]
       ]
     },
     "sanguine torva full helm": {
@@ -19999,8 +20820,14 @@
         28254
       ],
       "clog_dependencies": [
-        26376,
-        11832
+        [
+          11832,
+          26376
+        ],
+        [
+          11834,
+          26376
+        ]
       ]
     },
     "sanguine torva platebody": {
@@ -20009,8 +20836,14 @@
         28256
       ],
       "clog_dependencies": [
-        11832,
-        26378
+        [
+          11834,
+          26378
+        ],
+        [
+          11832,
+          26378
+        ]
       ]
     },
     "sanguine torva platelegs": {
@@ -20019,8 +20852,14 @@
         28258
       ],
       "clog_dependencies": [
-        11832,
-        26380
+        [
+          11832,
+          26380
+        ],
+        [
+          11834,
+          26380
+        ]
       ]
     },
     "ultor icon": {
@@ -20029,8 +20868,10 @@
         28287
       ],
       "clog_dependencies": [
-        6737,
-        28285
+        [
+          6737,
+          28285
+        ]
       ]
     },
     "venator icon": {
@@ -20039,8 +20880,10 @@
         28289
       ],
       "clog_dependencies": [
-        28283,
-        6733
+        [
+          6733,
+          28283
+        ]
       ]
     },
     "magus icon": {
@@ -20049,8 +20892,10 @@
         28291
       ],
       "clog_dependencies": [
-        28281,
-        6731
+        [
+          6731,
+          28281
+        ]
       ]
     },
     "bellator icon": {
@@ -20059,8 +20904,10 @@
         28293
       ],
       "clog_dependencies": [
-        6735,
-        28279
+        [
+          6735,
+          28279
+        ]
       ]
     },
     "berserker icon": {
@@ -20069,7 +20916,9 @@
         28295
       ],
       "clog_dependencies": [
-        6737
+        [
+          6737
+        ]
       ]
     },
     "archer icon": {
@@ -20078,7 +20927,9 @@
         28298
       ],
       "clog_dependencies": [
-        6733
+        [
+          6733
+        ]
       ]
     },
     "warrior icon": {
@@ -20087,7 +20938,9 @@
         28301
       ],
       "clog_dependencies": [
-        6735
+        [
+          6735
+        ]
       ]
     },
     "seers icon": {
@@ -20096,7 +20949,9 @@
         28304
       ],
       "clog_dependencies": [
-        6731
+        [
+          6731
+        ]
       ]
     },
     "blazing blowpipe (empty)": {
@@ -20105,7 +20960,9 @@
         28687
       ],
       "clog_dependencies": [
-        12922
+        [
+          12922
+        ]
       ]
     },
     "dinh's blazing bulwark": {
@@ -20115,7 +20972,9 @@
         31132
       ],
       "clog_dependencies": [
-        21015
+        [
+          21015
+        ]
       ]
     },
     "bone mace": {
@@ -20124,7 +20983,9 @@
         28792
       ],
       "clog_dependencies": [
-        28798
+        [
+          28798
+        ]
       ]
     },
     "bone shortbow": {
@@ -20133,7 +20994,9 @@
         28794
       ],
       "clog_dependencies": [
-        28798
+        [
+          28798
+        ]
       ]
     },
     "bone staff": {
@@ -20142,7 +21005,9 @@
         28796
       ],
       "clog_dependencies": [
-        28798
+        [
+          28798
+        ]
       ]
     },
     "zombie axe": {
@@ -20151,7 +21016,9 @@
         28810
       ],
       "clog_dependencies": [
-        28813
+        [
+          28813
+        ]
       ]
     },
     "echo boots": {
@@ -20160,9 +21027,11 @@
         28945
       ],
       "clog_dependencies": [
-        21730,
-        11836,
-        28942
+        [
+          11836,
+          21730,
+          28942
+        ]
       ]
     },
     "sunfire rune": {
@@ -20171,7 +21040,9 @@
         28929
       ],
       "clog_dependencies": [
-        28924
+        [
+          28924
+        ]
       ]
     },
     "searing page": {
@@ -20180,8 +21051,10 @@
         28931
       ],
       "clog_dependencies": [
-        28924,
-        20718
+        [
+          20718,
+          28924
+        ]
       ]
     },
     "emberlight": {
@@ -20190,8 +21063,10 @@
         29589
       ],
       "clog_dependencies": [
-        29580,
-        19677
+        [
+          19677,
+          29580
+        ]
       ]
     },
     "dizana's max hood": {
@@ -20200,8 +21075,10 @@
         28904
       ],
       "clog_dependencies": [
-        28947,
-        28924
+        [
+          28924,
+          28947
+        ]
       ]
     },
     "jug of blessed sunfire wine": {
@@ -20210,7 +21087,9 @@
         29384
       ],
       "clog_dependencies": [
-        28924
+        [
+          28924
+        ]
       ]
     },
     "jug of sunfire wine": {
@@ -20219,7 +21098,9 @@
         29382
       ],
       "clog_dependencies": [
-        28924
+        [
+          28924
+        ]
       ]
     },
     "blessed dizana's quiver": {
@@ -20228,8 +21109,10 @@
         28955
       ],
       "clog_dependencies": [
-        28947,
-        28924
+        [
+          28924,
+          28947
+        ]
       ]
     },
     "dizana's max cape": {
@@ -20238,8 +21121,10 @@
         28902
       ],
       "clog_dependencies": [
-        28947,
-        28924
+        [
+          28924,
+          28947
+        ]
       ]
     },
     "burning claws": {
@@ -20248,7 +21133,9 @@
         29577
       ],
       "clog_dependencies": [
-        29574
+        [
+          29574
+        ]
       ]
     },
     "scorching bow": {
@@ -20257,7 +21144,9 @@
         29591
       ],
       "clog_dependencies": [
-        29580
+        [
+          29580
+        ]
       ]
     },
     "purging staff": {
@@ -20266,7 +21155,9 @@
         29594
       ],
       "clog_dependencies": [
-        29580
+        [
+          29580
+        ]
       ]
     },
     "noxious halberd": {
@@ -20275,9 +21166,11 @@
         29796
       ],
       "clog_dependencies": [
-        29792,
-        29794,
-        29790
+        [
+          29790,
+          29792,
+          29794
+        ]
       ]
     },
     "amulet of rancour": {
@@ -20286,9 +21179,11 @@
         29801
       ],
       "clog_dependencies": [
-        19529,
-        6573,
-        29799
+        [
+          6573,
+          19529,
+          29799
+        ]
       ]
     },
     "extended anti-venom+(1)": {
@@ -20297,7 +21192,9 @@
         29833
       ],
       "clog_dependencies": [
-        29784
+        [
+          29784
+        ]
       ]
     },
     "extended anti-venom+(2)": {
@@ -20306,7 +21203,9 @@
         29830
       ],
       "clog_dependencies": [
-        29784
+        [
+          29784
+        ]
       ]
     },
     "extended anti-venom+(3)": {
@@ -20315,7 +21214,9 @@
         29827
       ],
       "clog_dependencies": [
-        29784
+        [
+          29784
+        ]
       ]
     },
     "extended anti-venom+(4)": {
@@ -20324,8 +21225,10 @@
         29824
       ],
       "clog_dependencies": [
-        29784,
-        12934
+        [
+          12934,
+          29784
+        ]
       ]
     },
     "armadyl godsword (deadman)": {
@@ -20334,10 +21237,12 @@
         29605
       ],
       "clog_dependencies": [
-        11822,
-        11810,
-        11818,
-        11820
+        [
+          11810,
+          11818,
+          11820,
+          11822
+        ]
       ]
     },
     "voidwaker (deadman)": {
@@ -20346,9 +21251,11 @@
         29607
       ],
       "clog_dependencies": [
-        27681,
-        27684,
-        27687
+        [
+          27681,
+          27684,
+          27687
+        ]
       ]
     },
     "dark bow (deadman)": {
@@ -20357,7 +21264,9 @@
         29611
       ],
       "clog_dependencies": [
-        11235
+        [
+          11235
+        ]
       ]
     },
     "volatile nightmare staff (deadman)": {
@@ -20366,8 +21275,10 @@
         29609
       ],
       "clog_dependencies": [
-        24514,
-        24422
+        [
+          24422,
+          24514
+        ]
       ]
     },
     "araxyte slayer helmet (i)": {
@@ -20378,8 +21289,10 @@
         29822
       ],
       "clog_dependencies": [
-        29788,
-        8901
+        [
+          8901,
+          29788
+        ]
       ]
     },
     "araxyte slayer helmet": {
@@ -20388,8 +21301,10 @@
         29816
       ],
       "clog_dependencies": [
-        29788,
-        8901
+        [
+          8901,
+          29788
+        ]
       ]
     },
     "hueycoatl hide body": {
@@ -20398,7 +21313,9 @@
         30076
       ],
       "clog_dependencies": [
-        30085
+        [
+          30085
+        ]
       ]
     },
     "hueycoatl hide chaps": {
@@ -20407,7 +21324,9 @@
         30079
       ],
       "clog_dependencies": [
-        30085
+        [
+          30085
+        ]
       ]
     },
     "hueycoatl hide coif": {
@@ -20416,7 +21335,9 @@
         30073
       ],
       "clog_dependencies": [
-        30085
+        [
+          30085
+        ]
       ]
     },
     "hueycoatl hide vambraces": {
@@ -20425,7 +21346,9 @@
         30082
       ],
       "clog_dependencies": [
-        30085
+        [
+          30085
+        ]
       ]
     },
     "zombie helmet": {
@@ -20434,7 +21357,9 @@
         30321
       ],
       "clog_dependencies": [
-        30324
+        [
+          30324
+        ]
       ]
     },
     "echo ahrim's hood": {
@@ -20443,7 +21368,9 @@
         30445
       ],
       "clog_dependencies": [
-        4708
+        [
+          4708
+        ]
       ]
     },
     "echo ahrim's robeskirt": {
@@ -20452,7 +21379,9 @@
         30449
       ],
       "clog_dependencies": [
-        4714
+        [
+          4714
+        ]
       ]
     },
     "echo ahrim's robetop": {
@@ -20461,7 +21390,9 @@
         30447
       ],
       "clog_dependencies": [
-        4712
+        [
+          4712
+        ]
       ]
     },
     "echo venator bow": {
@@ -20470,7 +21401,9 @@
         30434
       ],
       "clog_dependencies": [
-        27614
+        [
+          27614
+        ]
       ]
     },
     "echo virtus mask": {
@@ -20479,7 +21412,9 @@
         30437
       ],
       "clog_dependencies": [
-        26241
+        [
+          26241
+        ]
       ]
     },
     "echo virtus robe bottom": {
@@ -20488,7 +21423,9 @@
         30441
       ],
       "clog_dependencies": [
-        26245
+        [
+          26245
+        ]
       ]
     },
     "echo virtus robe top": {
@@ -20497,7 +21434,9 @@
         30439
       ],
       "clog_dependencies": [
-        26243
+        [
+          26243
+        ]
       ]
     },
     "echo ahrim's staff": {
@@ -20506,7 +21445,9 @@
         30568
       ],
       "clog_dependencies": [
-        4710
+        [
+          4710
+        ]
       ]
     },
     "twinflame staff": {
@@ -20515,8 +21456,10 @@
         30634
       ],
       "clog_dependencies": [
-        30628,
-        30631
+        [
+          30628,
+          30631
+        ]
       ]
     },
     "rosewood blowpipe (empty)": {
@@ -20525,7 +21468,9 @@
         31585
       ],
       "clog_dependencies": [
-        31572
+        [
+          31572
+        ]
       ]
     },
     "stuffed huge halibut": {
@@ -20534,7 +21479,9 @@
         31422
       ],
       "clog_dependencies": [
-        31420
+        [
+          31420
+        ]
       ]
     },
     "confliction gauntlets": {
@@ -20543,10 +21490,12 @@
         31106
       ],
       "clog_dependencies": [
-        31109,
-        31111,
-        19529,
-        6573
+        [
+          6573,
+          19529,
+          31109,
+          31111
+        ]
       ]
     },
     "radiant oathplate chest": {
@@ -20555,7 +21504,9 @@
         30779
       ],
       "clog_dependencies": [
-        30753
+        [
+          30753
+        ]
       ]
     },
     "radiant oathplate helm": {
@@ -20564,7 +21515,9 @@
         30777
       ],
       "clog_dependencies": [
-        30750
+        [
+          30750
+        ]
       ]
     },
     "radiant oathplate legs": {
@@ -20573,7 +21526,9 @@
         30781
       ],
       "clog_dependencies": [
-        30756
+        [
+          30756
+        ]
       ]
     },
     "keris partisan of amascut": {
@@ -20582,7 +21537,9 @@
         30891
       ],
       "clog_dependencies": [
-        30893
+        [
+          30893
+        ]
       ]
     },
     "camphor blowpipe (empty)": {
@@ -20591,7 +21548,9 @@
         31577
       ],
       "clog_dependencies": [
-        31572
+        [
+          31572
+        ]
       ]
     },
     "ironwood blowpipe (empty)": {
@@ -20600,7 +21559,9 @@
         31581
       ],
       "clog_dependencies": [
-        31572
+        [
+          31572
+        ]
       ]
     },
     "stuffed purplefin": {
@@ -20609,7 +21570,9 @@
         31426
       ],
       "clog_dependencies": [
-        31424
+        [
+          31424
+        ]
       ]
     },
     "stuffed giant blue krill": {
@@ -20618,7 +21581,9 @@
         31410
       ],
       "clog_dependencies": [
-        31408
+        [
+          31408
+        ]
       ]
     },
     "stuffed golden haddock": {
@@ -20627,7 +21592,9 @@
         31414
       ],
       "clog_dependencies": [
-        31412
+        [
+          31412
+        ]
       ]
     },
     "stuffed orangefin": {
@@ -20636,7 +21603,9 @@
         31418
       ],
       "clog_dependencies": [
-        31416
+        [
+          31416
+        ]
       ]
     },
     "stuffed swift marlin": {
@@ -20645,7 +21614,9 @@
         31430
       ],
       "clog_dependencies": [
-        31428
+        [
+          31428
+        ]
       ]
     },
     "large dragon keel parts": {
@@ -20654,7 +21625,9 @@
         32038
       ],
       "clog_dependencies": [
-        31996
+        [
+          31996
+        ]
       ]
     },
     "rosewood repair kit": {
@@ -20663,7 +21636,9 @@
         31982
       ],
       "clog_dependencies": [
-        31406
+        [
+          31406
+        ]
       ]
     },
     "dragon keel parts": {
@@ -20672,7 +21647,9 @@
         32017
       ],
       "clog_dependencies": [
-        31996
+        [
+          31996
+        ]
       ]
     },
     "atlatl dart tips": {
@@ -20681,7 +21658,9 @@
         30998
       ],
       "clog_dependencies": [
-        31086
+        [
+          31086
+        ]
       ]
     },
     "atlatl dart shaft": {
@@ -20690,7 +21669,9 @@
         31004
       ],
       "clog_dependencies": [
-        31032
+        [
+          31032
+        ]
       ]
     },
     "headless atlatl dart": {
@@ -20699,7 +21680,9 @@
         31010
       ],
       "clog_dependencies": [
-        31032
+        [
+          31032
+        ]
       ]
     },
     "greenman carving": {
@@ -20708,8 +21691,10 @@
         31024
       ],
       "clog_dependencies": [
-        31032,
-        31034
+        [
+          31032,
+          31034
+        ]
       ]
     },
     "greenman statue": {
@@ -20718,8 +21703,10 @@
         31027
       ],
       "clog_dependencies": [
-        31032,
-        31034
+        [
+          31032,
+          31034
+        ]
       ]
     },
     "greenman mask (normal)": {
@@ -20728,7 +21715,9 @@
         31037
       ],
       "clog_dependencies": [
-        31034
+        [
+          31034
+        ]
       ]
     },
     "greenman mask (oak)": {
@@ -20737,7 +21726,9 @@
         31038
       ],
       "clog_dependencies": [
-        31034
+        [
+          31034
+        ]
       ]
     },
     "greenman mask (willow)": {
@@ -20746,7 +21737,9 @@
         31039
       ],
       "clog_dependencies": [
-        31034
+        [
+          31034
+        ]
       ]
     },
     "greenman mask (maple)": {
@@ -20755,7 +21748,9 @@
         31040
       ],
       "clog_dependencies": [
-        31034
+        [
+          31034
+        ]
       ]
     },
     "greenman mask (yew)": {
@@ -20764,7 +21759,9 @@
         31041
       ],
       "clog_dependencies": [
-        31034
+        [
+          31034
+        ]
       ]
     },
     "greenman mask (magic)": {
@@ -20773,7 +21770,9 @@
         31042
       ],
       "clog_dependencies": [
-        31034
+        [
+          31034
+        ]
       ]
     },
     "avernic treads (max)": {
@@ -20782,14 +21781,16 @@
         31097
       ],
       "clog_dependencies": [
-        11840,
-        31111,
-        6920,
-        13227,
-        13229,
-        13231,
-        31088,
-        2577
+        [
+          2577,
+          6920,
+          11840,
+          13227,
+          13229,
+          13231,
+          31088,
+          31111
+        ]
       ]
     },
     "avernic treads (pr)": {
@@ -20798,10 +21799,12 @@
         31091
       ],
       "clog_dependencies": [
-        31088,
-        11840,
-        31111,
-        13231
+        [
+          11840,
+          13231,
+          31088,
+          31111
+        ]
       ]
     },
     "avernic treads (pe)": {
@@ -20810,10 +21813,12 @@
         31092
       ],
       "clog_dependencies": [
-        31088,
-        2577,
-        31111,
-        13229
+        [
+          2577,
+          13229,
+          31088,
+          31111
+        ]
       ]
     },
     "avernic treads (et)": {
@@ -20822,10 +21827,12 @@
         31093
       ],
       "clog_dependencies": [
-        31088,
-        31111,
-        6920,
-        13227
+        [
+          6920,
+          13227,
+          31088,
+          31111
+        ]
       ]
     },
     "avernic treads (pr)(pe)": {
@@ -20834,12 +21841,14 @@
         31094
       ],
       "clog_dependencies": [
-        31088,
-        11840,
-        2577,
-        31111,
-        13229,
-        13231
+        [
+          2577,
+          11840,
+          13229,
+          13231,
+          31088,
+          31111
+        ]
       ]
     },
     "avernic treads (pr)(et)": {
@@ -20848,12 +21857,14 @@
         31095
       ],
       "clog_dependencies": [
-        31088,
-        11840,
-        31111,
-        6920,
-        13227,
-        13231
+        [
+          6920,
+          11840,
+          13227,
+          13231,
+          31088,
+          31111
+        ]
       ]
     },
     "avernic treads (pe)(et)": {
@@ -20862,12 +21873,14 @@
         31096
       ],
       "clog_dependencies": [
-        31088,
-        2577,
-        31111,
-        6920,
-        13227,
-        13229
+        [
+          2577,
+          6920,
+          13227,
+          13229,
+          31088,
+          31111
+        ]
       ]
     },
     "belle's folly": {
@@ -20876,7 +21889,9 @@
         31248
       ],
       "clog_dependencies": [
-        31245
+        [
+          31245
+        ]
       ]
     },
     "aquanite hopper": {
@@ -20885,7 +21900,9 @@
         32879
       ],
       "clog_dependencies": [
-        32876
+        [
+          32876
+        ]
       ]
     },
     "narwhal horn knife": {
@@ -20894,7 +21911,9 @@
         31957
       ],
       "clog_dependencies": [
-        31954
+        [
+          31954
+        ]
       ]
     },
     "holy moleys": {
@@ -20903,8 +21922,10 @@
         33002
       ],
       "clog_dependencies": [
-        23285,
-        12598
+        [
+          12598,
+          23285
+        ]
       ]
     },
     "hooded slayer helmet": {
@@ -20913,7 +21934,9 @@
         33066
       ],
       "clog_dependencies": [
-        8901
+        [
+          8901
+        ]
       ]
     },
     "hooded slayer helmet (i)": {
@@ -20924,7 +21947,9 @@
         33072
       ],
       "clog_dependencies": [
-        8901
+        [
+          8901
+        ]
       ]
     },
     "decorative sword (l)": {
@@ -20933,7 +21958,9 @@
         24157
       ],
       "clog_dependencies": [
-        4508
+        [
+          4508
+        ]
       ]
     },
     "decorative sword (broken)": {
@@ -20942,7 +21969,9 @@
         20483
       ],
       "clog_dependencies": [
-        4508
+        [
+          4508
+        ]
       ]
     },
     "decorative armour (l)": {
@@ -20959,7 +21988,9 @@
         24168
       ],
       "clog_dependencies": [
-        11901
+        [
+          11901
+        ]
       ]
     },
     "decorative armour (broken)": {
@@ -20976,7 +22007,9 @@
         20505
       ],
       "clog_dependencies": [
-        11901
+        [
+          11901
+        ]
       ]
     },
     "decorative helm (l)": {
@@ -20985,7 +22018,9 @@
         24160
       ],
       "clog_dependencies": [
-        4511
+        [
+          4511
+        ]
       ]
     },
     "decorative helm (broken)": {
@@ -20994,7 +22029,9 @@
         20489
       ],
       "clog_dependencies": [
-        4511
+        [
+          4511
+        ]
       ]
     },
     "decorative shield (l)": {
@@ -21003,7 +22040,9 @@
         24161
       ],
       "clog_dependencies": [
-        4512
+        [
+          4512
+        ]
       ]
     },
     "decorative shield (broken)": {
@@ -21012,7 +22051,9 @@
         20491
       ],
       "clog_dependencies": [
-        4512
+        [
+          4512
+        ]
       ]
     },
     "ahrim's hood 0": {
@@ -21021,7 +22062,9 @@
         4860
       ],
       "clog_dependencies": [
-        4708
+        [
+          4708
+        ]
       ]
     },
     "ahrim's hood 25": {
@@ -21030,7 +22073,9 @@
         4859
       ],
       "clog_dependencies": [
-        4708
+        [
+          4708
+        ]
       ]
     },
     "ahrim's hood 50": {
@@ -21039,7 +22084,9 @@
         4858
       ],
       "clog_dependencies": [
-        4708
+        [
+          4708
+        ]
       ]
     },
     "ahrim's hood 75": {
@@ -21048,7 +22095,9 @@
         4857
       ],
       "clog_dependencies": [
-        4708
+        [
+          4708
+        ]
       ]
     },
     "ahrim's hood 100": {
@@ -21057,7 +22106,9 @@
         4856
       ],
       "clog_dependencies": [
-        4708
+        [
+          4708
+        ]
       ]
     },
     "ahrim's staff 0": {
@@ -21066,7 +22117,9 @@
         4866
       ],
       "clog_dependencies": [
-        4710
+        [
+          4710
+        ]
       ]
     },
     "ahrim's staff 25": {
@@ -21075,7 +22128,9 @@
         4865
       ],
       "clog_dependencies": [
-        4710
+        [
+          4710
+        ]
       ]
     },
     "ahrim's staff 50": {
@@ -21084,7 +22139,9 @@
         4864
       ],
       "clog_dependencies": [
-        4710
+        [
+          4710
+        ]
       ]
     },
     "ahrim's staff 75": {
@@ -21093,7 +22150,9 @@
         4863
       ],
       "clog_dependencies": [
-        4710
+        [
+          4710
+        ]
       ]
     },
     "ahrim's staff 100": {
@@ -21102,7 +22161,9 @@
         4862
       ],
       "clog_dependencies": [
-        4710
+        [
+          4710
+        ]
       ]
     },
     "ahrim's robetop 0": {
@@ -21111,7 +22172,9 @@
         4872
       ],
       "clog_dependencies": [
-        4712
+        [
+          4712
+        ]
       ]
     },
     "ahrim's robetop 25": {
@@ -21120,7 +22183,9 @@
         4871
       ],
       "clog_dependencies": [
-        4712
+        [
+          4712
+        ]
       ]
     },
     "ahrim's robetop 50": {
@@ -21129,7 +22194,9 @@
         4870
       ],
       "clog_dependencies": [
-        4712
+        [
+          4712
+        ]
       ]
     },
     "ahrim's robetop 75": {
@@ -21138,7 +22205,9 @@
         4869
       ],
       "clog_dependencies": [
-        4712
+        [
+          4712
+        ]
       ]
     },
     "ahrim's robetop 100": {
@@ -21147,7 +22216,9 @@
         4868
       ],
       "clog_dependencies": [
-        4712
+        [
+          4712
+        ]
       ]
     },
     "ahrim's robeskirt 0": {
@@ -21156,7 +22227,9 @@
         4878
       ],
       "clog_dependencies": [
-        4714
+        [
+          4714
+        ]
       ]
     },
     "ahrim's robeskirt 25": {
@@ -21165,7 +22238,9 @@
         4877
       ],
       "clog_dependencies": [
-        4714
+        [
+          4714
+        ]
       ]
     },
     "ahrim's robeskirt 50": {
@@ -21174,7 +22249,9 @@
         4876
       ],
       "clog_dependencies": [
-        4714
+        [
+          4714
+        ]
       ]
     },
     "ahrim's robeskirt 75": {
@@ -21183,7 +22260,9 @@
         4875
       ],
       "clog_dependencies": [
-        4714
+        [
+          4714
+        ]
       ]
     },
     "ahrim's robeskirt 100": {
@@ -21192,7 +22271,9 @@
         4874
       ],
       "clog_dependencies": [
-        4714
+        [
+          4714
+        ]
       ]
     },
     "dharok's helm 0": {
@@ -21201,7 +22282,9 @@
         4884
       ],
       "clog_dependencies": [
-        4716
+        [
+          4716
+        ]
       ]
     },
     "dharok's helm 25": {
@@ -21210,7 +22293,9 @@
         4883
       ],
       "clog_dependencies": [
-        4716
+        [
+          4716
+        ]
       ]
     },
     "dharok's helm 50": {
@@ -21219,7 +22304,9 @@
         4882
       ],
       "clog_dependencies": [
-        4716
+        [
+          4716
+        ]
       ]
     },
     "dharok's helm 75": {
@@ -21228,7 +22315,9 @@
         4881
       ],
       "clog_dependencies": [
-        4716
+        [
+          4716
+        ]
       ]
     },
     "dharok's helm 100": {
@@ -21237,7 +22326,9 @@
         4880
       ],
       "clog_dependencies": [
-        4716
+        [
+          4716
+        ]
       ]
     },
     "dharok's greataxe 0": {
@@ -21246,7 +22337,9 @@
         4890
       ],
       "clog_dependencies": [
-        4718
+        [
+          4718
+        ]
       ]
     },
     "dharok's greataxe 25": {
@@ -21255,7 +22348,9 @@
         4889
       ],
       "clog_dependencies": [
-        4718
+        [
+          4718
+        ]
       ]
     },
     "dharok's greataxe 50": {
@@ -21264,7 +22359,9 @@
         4888
       ],
       "clog_dependencies": [
-        4718
+        [
+          4718
+        ]
       ]
     },
     "dharok's greataxe 75": {
@@ -21273,7 +22370,9 @@
         4887
       ],
       "clog_dependencies": [
-        4718
+        [
+          4718
+        ]
       ]
     },
     "dharok's greataxe 100": {
@@ -21282,7 +22381,9 @@
         4886
       ],
       "clog_dependencies": [
-        4718
+        [
+          4718
+        ]
       ]
     },
     "dharok's platebody 0": {
@@ -21291,7 +22392,9 @@
         4896
       ],
       "clog_dependencies": [
-        4720
+        [
+          4720
+        ]
       ]
     },
     "dharok's platebody 25": {
@@ -21300,7 +22403,9 @@
         4895
       ],
       "clog_dependencies": [
-        4720
+        [
+          4720
+        ]
       ]
     },
     "dharok's platebody 50": {
@@ -21309,7 +22414,9 @@
         4894
       ],
       "clog_dependencies": [
-        4720
+        [
+          4720
+        ]
       ]
     },
     "dharok's platebody 75": {
@@ -21318,7 +22425,9 @@
         4893
       ],
       "clog_dependencies": [
-        4720
+        [
+          4720
+        ]
       ]
     },
     "dharok's platebody 100": {
@@ -21327,7 +22436,9 @@
         4892
       ],
       "clog_dependencies": [
-        4720
+        [
+          4720
+        ]
       ]
     },
     "dharok's platelegs 0": {
@@ -21336,7 +22447,9 @@
         4902
       ],
       "clog_dependencies": [
-        4722
+        [
+          4722
+        ]
       ]
     },
     "dharok's platelegs 25": {
@@ -21345,7 +22458,9 @@
         4901
       ],
       "clog_dependencies": [
-        4722
+        [
+          4722
+        ]
       ]
     },
     "dharok's platelegs 50": {
@@ -21354,7 +22469,9 @@
         4900
       ],
       "clog_dependencies": [
-        4722
+        [
+          4722
+        ]
       ]
     },
     "dharok's platelegs 75": {
@@ -21363,7 +22480,9 @@
         4899
       ],
       "clog_dependencies": [
-        4722
+        [
+          4722
+        ]
       ]
     },
     "dharok's platelegs 100": {
@@ -21372,7 +22491,9 @@
         4898
       ],
       "clog_dependencies": [
-        4722
+        [
+          4722
+        ]
       ]
     },
     "guthan's helm 0": {
@@ -21381,7 +22502,9 @@
         4908
       ],
       "clog_dependencies": [
-        4724
+        [
+          4724
+        ]
       ]
     },
     "guthan's helm 25": {
@@ -21390,7 +22513,9 @@
         4907
       ],
       "clog_dependencies": [
-        4724
+        [
+          4724
+        ]
       ]
     },
     "guthan's helm 50": {
@@ -21399,7 +22524,9 @@
         4906
       ],
       "clog_dependencies": [
-        4724
+        [
+          4724
+        ]
       ]
     },
     "guthan's helm 75": {
@@ -21408,7 +22535,9 @@
         4905
       ],
       "clog_dependencies": [
-        4724
+        [
+          4724
+        ]
       ]
     },
     "guthan's helm 100": {
@@ -21417,7 +22546,9 @@
         4904
       ],
       "clog_dependencies": [
-        4724
+        [
+          4724
+        ]
       ]
     },
     "guthan's warspear 0": {
@@ -21426,7 +22557,9 @@
         4914
       ],
       "clog_dependencies": [
-        4726
+        [
+          4726
+        ]
       ]
     },
     "guthan's warspear 25": {
@@ -21435,7 +22568,9 @@
         4913
       ],
       "clog_dependencies": [
-        4726
+        [
+          4726
+        ]
       ]
     },
     "guthan's warspear 50": {
@@ -21444,7 +22579,9 @@
         4912
       ],
       "clog_dependencies": [
-        4726
+        [
+          4726
+        ]
       ]
     },
     "guthan's warspear 75": {
@@ -21453,7 +22590,9 @@
         4911
       ],
       "clog_dependencies": [
-        4726
+        [
+          4726
+        ]
       ]
     },
     "guthan's warspear 100": {
@@ -21462,7 +22601,9 @@
         4910
       ],
       "clog_dependencies": [
-        4726
+        [
+          4726
+        ]
       ]
     },
     "guthan's platebody 0": {
@@ -21471,7 +22612,9 @@
         4920
       ],
       "clog_dependencies": [
-        4728
+        [
+          4728
+        ]
       ]
     },
     "guthan's platebody 25": {
@@ -21480,7 +22623,9 @@
         4919
       ],
       "clog_dependencies": [
-        4728
+        [
+          4728
+        ]
       ]
     },
     "guthan's platebody 50": {
@@ -21489,7 +22634,9 @@
         4918
       ],
       "clog_dependencies": [
-        4728
+        [
+          4728
+        ]
       ]
     },
     "guthan's platebody 75": {
@@ -21498,7 +22645,9 @@
         4917
       ],
       "clog_dependencies": [
-        4728
+        [
+          4728
+        ]
       ]
     },
     "guthan's platebody 100": {
@@ -21507,7 +22656,9 @@
         4916
       ],
       "clog_dependencies": [
-        4728
+        [
+          4728
+        ]
       ]
     },
     "guthan's chainskirt 0": {
@@ -21516,7 +22667,9 @@
         4926
       ],
       "clog_dependencies": [
-        4730
+        [
+          4730
+        ]
       ]
     },
     "guthan's chainskirt 25": {
@@ -21525,7 +22678,9 @@
         4925
       ],
       "clog_dependencies": [
-        4730
+        [
+          4730
+        ]
       ]
     },
     "guthan's chainskirt 50": {
@@ -21534,7 +22689,9 @@
         4924
       ],
       "clog_dependencies": [
-        4730
+        [
+          4730
+        ]
       ]
     },
     "guthan's chainskirt 75": {
@@ -21543,7 +22700,9 @@
         4923
       ],
       "clog_dependencies": [
-        4730
+        [
+          4730
+        ]
       ]
     },
     "guthan's chainskirt 100": {
@@ -21552,7 +22711,9 @@
         4922
       ],
       "clog_dependencies": [
-        4730
+        [
+          4730
+        ]
       ]
     },
     "karil's coif 0": {
@@ -21561,7 +22722,9 @@
         4932
       ],
       "clog_dependencies": [
-        4732
+        [
+          4732
+        ]
       ]
     },
     "karil's coif 25": {
@@ -21570,7 +22733,9 @@
         4931
       ],
       "clog_dependencies": [
-        4732
+        [
+          4732
+        ]
       ]
     },
     "karil's coif 50": {
@@ -21579,7 +22744,9 @@
         4930
       ],
       "clog_dependencies": [
-        4732
+        [
+          4732
+        ]
       ]
     },
     "karil's coif 75": {
@@ -21588,7 +22755,9 @@
         4929
       ],
       "clog_dependencies": [
-        4732
+        [
+          4732
+        ]
       ]
     },
     "karil's coif 100": {
@@ -21597,7 +22766,9 @@
         4928
       ],
       "clog_dependencies": [
-        4732
+        [
+          4732
+        ]
       ]
     },
     "karil's crossbow 0": {
@@ -21606,7 +22777,9 @@
         4938
       ],
       "clog_dependencies": [
-        4734
+        [
+          4734
+        ]
       ]
     },
     "karil's crossbow 25": {
@@ -21615,7 +22788,9 @@
         4937
       ],
       "clog_dependencies": [
-        4734
+        [
+          4734
+        ]
       ]
     },
     "karil's crossbow 50": {
@@ -21624,7 +22799,9 @@
         4936
       ],
       "clog_dependencies": [
-        4734
+        [
+          4734
+        ]
       ]
     },
     "karil's crossbow 75": {
@@ -21633,7 +22810,9 @@
         4935
       ],
       "clog_dependencies": [
-        4734
+        [
+          4734
+        ]
       ]
     },
     "karil's crossbow 100": {
@@ -21642,7 +22821,9 @@
         4934
       ],
       "clog_dependencies": [
-        4734
+        [
+          4734
+        ]
       ]
     },
     "karil's leathertop 0": {
@@ -21651,7 +22832,9 @@
         4944
       ],
       "clog_dependencies": [
-        4736
+        [
+          4736
+        ]
       ]
     },
     "karil's leathertop 25": {
@@ -21660,7 +22843,9 @@
         4943
       ],
       "clog_dependencies": [
-        4736
+        [
+          4736
+        ]
       ]
     },
     "karil's leathertop 50": {
@@ -21669,7 +22854,9 @@
         4942
       ],
       "clog_dependencies": [
-        4736
+        [
+          4736
+        ]
       ]
     },
     "karil's leathertop 75": {
@@ -21678,7 +22865,9 @@
         4941
       ],
       "clog_dependencies": [
-        4736
+        [
+          4736
+        ]
       ]
     },
     "karil's leathertop 100": {
@@ -21687,7 +22876,9 @@
         4940
       ],
       "clog_dependencies": [
-        4736
+        [
+          4736
+        ]
       ]
     },
     "karil's leatherskirt 0": {
@@ -21696,7 +22887,9 @@
         4950
       ],
       "clog_dependencies": [
-        4738
+        [
+          4738
+        ]
       ]
     },
     "karil's leatherskirt 25": {
@@ -21705,7 +22898,9 @@
         4949
       ],
       "clog_dependencies": [
-        4738
+        [
+          4738
+        ]
       ]
     },
     "karil's leatherskirt 50": {
@@ -21714,7 +22909,9 @@
         4948
       ],
       "clog_dependencies": [
-        4738
+        [
+          4738
+        ]
       ]
     },
     "karil's leatherskirt 75": {
@@ -21723,7 +22920,9 @@
         4947
       ],
       "clog_dependencies": [
-        4738
+        [
+          4738
+        ]
       ]
     },
     "karil's leatherskirt 100": {
@@ -21732,7 +22931,9 @@
         4946
       ],
       "clog_dependencies": [
-        4738
+        [
+          4738
+        ]
       ]
     },
     "torag's helm 0": {
@@ -21741,7 +22942,9 @@
         4956
       ],
       "clog_dependencies": [
-        4745
+        [
+          4745
+        ]
       ]
     },
     "torag's helm 25": {
@@ -21750,7 +22953,9 @@
         4955
       ],
       "clog_dependencies": [
-        4745
+        [
+          4745
+        ]
       ]
     },
     "torag's helm 50": {
@@ -21759,7 +22964,9 @@
         4954
       ],
       "clog_dependencies": [
-        4745
+        [
+          4745
+        ]
       ]
     },
     "torag's helm 75": {
@@ -21768,7 +22975,9 @@
         4953
       ],
       "clog_dependencies": [
-        4745
+        [
+          4745
+        ]
       ]
     },
     "torag's helm 100": {
@@ -21777,7 +22986,9 @@
         4952
       ],
       "clog_dependencies": [
-        4745
+        [
+          4745
+        ]
       ]
     },
     "torag's hammers 0": {
@@ -21786,7 +22997,9 @@
         4962
       ],
       "clog_dependencies": [
-        4747
+        [
+          4747
+        ]
       ]
     },
     "torag's hammers 25": {
@@ -21795,7 +23008,9 @@
         4961
       ],
       "clog_dependencies": [
-        4747
+        [
+          4747
+        ]
       ]
     },
     "torag's hammers 50": {
@@ -21804,7 +23019,9 @@
         4960
       ],
       "clog_dependencies": [
-        4747
+        [
+          4747
+        ]
       ]
     },
     "torag's hammers 75": {
@@ -21813,7 +23030,9 @@
         4959
       ],
       "clog_dependencies": [
-        4747
+        [
+          4747
+        ]
       ]
     },
     "torag's hammers 100": {
@@ -21822,7 +23041,9 @@
         4958
       ],
       "clog_dependencies": [
-        4747
+        [
+          4747
+        ]
       ]
     },
     "torag's platebody 0": {
@@ -21831,7 +23052,9 @@
         4968
       ],
       "clog_dependencies": [
-        4749
+        [
+          4749
+        ]
       ]
     },
     "torag's platebody 25": {
@@ -21840,7 +23063,9 @@
         4967
       ],
       "clog_dependencies": [
-        4749
+        [
+          4749
+        ]
       ]
     },
     "torag's platebody 50": {
@@ -21849,7 +23074,9 @@
         4966
       ],
       "clog_dependencies": [
-        4749
+        [
+          4749
+        ]
       ]
     },
     "torag's platebody 75": {
@@ -21858,7 +23085,9 @@
         4965
       ],
       "clog_dependencies": [
-        4749
+        [
+          4749
+        ]
       ]
     },
     "torag's platebody 100": {
@@ -21867,7 +23096,9 @@
         4964
       ],
       "clog_dependencies": [
-        4749
+        [
+          4749
+        ]
       ]
     },
     "torag's platelegs 0": {
@@ -21876,7 +23107,9 @@
         4974
       ],
       "clog_dependencies": [
-        4751
+        [
+          4751
+        ]
       ]
     },
     "torag's platelegs 25": {
@@ -21885,7 +23118,9 @@
         4973
       ],
       "clog_dependencies": [
-        4751
+        [
+          4751
+        ]
       ]
     },
     "torag's platelegs 50": {
@@ -21894,7 +23129,9 @@
         4972
       ],
       "clog_dependencies": [
-        4751
+        [
+          4751
+        ]
       ]
     },
     "torag's platelegs 75": {
@@ -21903,7 +23140,9 @@
         4971
       ],
       "clog_dependencies": [
-        4751
+        [
+          4751
+        ]
       ]
     },
     "torag's platelegs 100": {
@@ -21912,7 +23151,9 @@
         4970
       ],
       "clog_dependencies": [
-        4751
+        [
+          4751
+        ]
       ]
     },
     "verac's helm 0": {
@@ -21921,7 +23162,9 @@
         4980
       ],
       "clog_dependencies": [
-        4753
+        [
+          4753
+        ]
       ]
     },
     "verac's helm 25": {
@@ -21930,7 +23173,9 @@
         4979
       ],
       "clog_dependencies": [
-        4753
+        [
+          4753
+        ]
       ]
     },
     "verac's helm 50": {
@@ -21939,7 +23184,9 @@
         4978
       ],
       "clog_dependencies": [
-        4753
+        [
+          4753
+        ]
       ]
     },
     "verac's helm 75": {
@@ -21948,7 +23195,9 @@
         4977
       ],
       "clog_dependencies": [
-        4753
+        [
+          4753
+        ]
       ]
     },
     "verac's helm 100": {
@@ -21957,7 +23206,9 @@
         4976
       ],
       "clog_dependencies": [
-        4753
+        [
+          4753
+        ]
       ]
     },
     "verac's flail 0": {
@@ -21966,7 +23217,9 @@
         4986
       ],
       "clog_dependencies": [
-        4755
+        [
+          4755
+        ]
       ]
     },
     "verac's flail 25": {
@@ -21975,7 +23228,9 @@
         4985
       ],
       "clog_dependencies": [
-        4755
+        [
+          4755
+        ]
       ]
     },
     "verac's flail 50": {
@@ -21984,7 +23239,9 @@
         4984
       ],
       "clog_dependencies": [
-        4755
+        [
+          4755
+        ]
       ]
     },
     "verac's flail 75": {
@@ -21993,7 +23250,9 @@
         4983
       ],
       "clog_dependencies": [
-        4755
+        [
+          4755
+        ]
       ]
     },
     "verac's flail 100": {
@@ -22002,7 +23261,9 @@
         4982
       ],
       "clog_dependencies": [
-        4755
+        [
+          4755
+        ]
       ]
     },
     "verac's brassard 0": {
@@ -22011,7 +23272,9 @@
         4992
       ],
       "clog_dependencies": [
-        4757
+        [
+          4757
+        ]
       ]
     },
     "verac's brassard 25": {
@@ -22020,7 +23283,9 @@
         4991
       ],
       "clog_dependencies": [
-        4757
+        [
+          4757
+        ]
       ]
     },
     "verac's brassard 50": {
@@ -22029,7 +23294,9 @@
         4990
       ],
       "clog_dependencies": [
-        4757
+        [
+          4757
+        ]
       ]
     },
     "verac's brassard 75": {
@@ -22038,7 +23305,9 @@
         4989
       ],
       "clog_dependencies": [
-        4757
+        [
+          4757
+        ]
       ]
     },
     "verac's brassard 100": {
@@ -22047,7 +23316,9 @@
         4988
       ],
       "clog_dependencies": [
-        4757
+        [
+          4757
+        ]
       ]
     },
     "verac's plateskirt 0": {
@@ -22056,7 +23327,9 @@
         4998
       ],
       "clog_dependencies": [
-        4759
+        [
+          4759
+        ]
       ]
     },
     "verac's plateskirt 25": {
@@ -22065,7 +23338,9 @@
         4997
       ],
       "clog_dependencies": [
-        4759
+        [
+          4759
+        ]
       ]
     },
     "verac's plateskirt 50": {
@@ -22074,7 +23349,9 @@
         4996
       ],
       "clog_dependencies": [
-        4759
+        [
+          4759
+        ]
       ]
     },
     "verac's plateskirt 75": {
@@ -22083,7 +23360,9 @@
         4995
       ],
       "clog_dependencies": [
-        4759
+        [
+          4759
+        ]
       ]
     },
     "verac's plateskirt 100": {
@@ -22092,7 +23371,9 @@
         4994
       ],
       "clog_dependencies": [
-        4759
+        [
+          4759
+        ]
       ]
     },
     "fire cape (l)": {
@@ -22101,7 +23382,9 @@
         24223
       ],
       "clog_dependencies": [
-        6570
+        [
+          6570
+        ]
       ]
     },
     "fire cape (broken)": {
@@ -22110,7 +23393,9 @@
         20445
       ],
       "clog_dependencies": [
-        6570
+        [
+          6570
+        ]
       ]
     },
     "void knight top (l)": {
@@ -22119,7 +23404,9 @@
         24177
       ],
       "clog_dependencies": [
-        8839
+        [
+          8839
+        ]
       ]
     },
     "void knight top (broken)": {
@@ -22128,7 +23415,9 @@
         20465
       ],
       "clog_dependencies": [
-        8839
+        [
+          8839
+        ]
       ]
     },
     "void knight robe (l)": {
@@ -22137,7 +23426,9 @@
         24179
       ],
       "clog_dependencies": [
-        8840
+        [
+          8840
+        ]
       ]
     },
     "void knight robe (broken)": {
@@ -22146,7 +23437,9 @@
         20469
       ],
       "clog_dependencies": [
-        8840
+        [
+          8840
+        ]
       ]
     },
     "void knight mace (l)": {
@@ -22155,7 +23448,9 @@
         24181
       ],
       "clog_dependencies": [
-        8841
+        [
+          8841
+        ]
       ]
     },
     "void knight mace (broken)": {
@@ -22164,7 +23459,9 @@
         20473
       ],
       "clog_dependencies": [
-        8841
+        [
+          8841
+        ]
       ]
     },
     "void knight gloves (l)": {
@@ -22173,7 +23470,9 @@
         24182
       ],
       "clog_dependencies": [
-        8842
+        [
+          8842
+        ]
       ]
     },
     "void knight gloves (broken)": {
@@ -22182,7 +23481,9 @@
         20475
       ],
       "clog_dependencies": [
-        8842
+        [
+          8842
+        ]
       ]
     },
     "bronze defender (l)": {
@@ -22191,7 +23492,9 @@
         24136
       ],
       "clog_dependencies": [
-        8844
+        [
+          8844
+        ]
       ]
     },
     "bronze defender (broken)": {
@@ -22200,7 +23503,9 @@
         20449
       ],
       "clog_dependencies": [
-        8844
+        [
+          8844
+        ]
       ]
     },
     "iron defender (l)": {
@@ -22209,7 +23514,9 @@
         24137
       ],
       "clog_dependencies": [
-        8845
+        [
+          8845
+        ]
       ]
     },
     "iron defender (broken)": {
@@ -22218,7 +23525,9 @@
         20451
       ],
       "clog_dependencies": [
-        8845
+        [
+          8845
+        ]
       ]
     },
     "steel defender (l)": {
@@ -22227,7 +23536,9 @@
         24138
       ],
       "clog_dependencies": [
-        8846
+        [
+          8846
+        ]
       ]
     },
     "steel defender (broken)": {
@@ -22236,7 +23547,9 @@
         20453
       ],
       "clog_dependencies": [
-        8846
+        [
+          8846
+        ]
       ]
     },
     "black defender (l)": {
@@ -22245,7 +23558,9 @@
         24139
       ],
       "clog_dependencies": [
-        8847
+        [
+          8847
+        ]
       ]
     },
     "black defender (broken)": {
@@ -22254,7 +23569,9 @@
         20455
       ],
       "clog_dependencies": [
-        8847
+        [
+          8847
+        ]
       ]
     },
     "mithril defender (l)": {
@@ -22263,7 +23580,9 @@
         24140
       ],
       "clog_dependencies": [
-        8848
+        [
+          8848
+        ]
       ]
     },
     "mithril defender (broken)": {
@@ -22272,7 +23591,9 @@
         20457
       ],
       "clog_dependencies": [
-        8848
+        [
+          8848
+        ]
       ]
     },
     "adamant defender (l)": {
@@ -22281,7 +23602,9 @@
         24141
       ],
       "clog_dependencies": [
-        8849
+        [
+          8849
+        ]
       ]
     },
     "adamant defender (broken)": {
@@ -22290,7 +23613,9 @@
         20459
       ],
       "clog_dependencies": [
-        8849
+        [
+          8849
+        ]
       ]
     },
     "rune defender (l)": {
@@ -22299,7 +23624,9 @@
         24142
       ],
       "clog_dependencies": [
-        8850
+        [
+          8850
+        ]
       ]
     },
     "rune defender (broken)": {
@@ -22308,7 +23635,9 @@
         20461
       ],
       "clog_dependencies": [
-        8850
+        [
+          8850
+        ]
       ]
     },
     "black mask": {
@@ -22317,7 +23646,9 @@
         8921
       ],
       "clog_dependencies": [
-        8901
+        [
+          8901
+        ]
       ]
     },
     "healer hat (l)": {
@@ -22326,7 +23657,9 @@
         24172
       ],
       "clog_dependencies": [
-        10547
+        [
+          10547
+        ]
       ]
     },
     "healer hat (broken)": {
@@ -22335,7 +23668,9 @@
         20511
       ],
       "clog_dependencies": [
-        10547
+        [
+          10547
+        ]
       ]
     },
     "fighter hat (l)": {
@@ -22344,7 +23679,9 @@
         24173
       ],
       "clog_dependencies": [
-        10548
+        [
+          10548
+        ]
       ]
     },
     "fighter hat (broken)": {
@@ -22353,7 +23690,9 @@
         20507
       ],
       "clog_dependencies": [
-        10548
+        [
+          10548
+        ]
       ]
     },
     "runner hat (l)": {
@@ -22362,7 +23701,9 @@
         24533
       ],
       "clog_dependencies": [
-        10549
+        [
+          10549
+        ]
       ]
     },
     "runner hat (broken)": {
@@ -22371,7 +23712,9 @@
         24531
       ],
       "clog_dependencies": [
-        10549
+        [
+          10549
+        ]
       ]
     },
     "ranger hat (l)": {
@@ -22380,7 +23723,9 @@
         24174
       ],
       "clog_dependencies": [
-        10550
+        [
+          10550
+        ]
       ]
     },
     "ranger hat (broken)": {
@@ -22389,7 +23734,9 @@
         20509
       ],
       "clog_dependencies": [
-        10550
+        [
+          10550
+        ]
       ]
     },
     "fighter torso (l)": {
@@ -22398,7 +23745,9 @@
         24175
       ],
       "clog_dependencies": [
-        10551
+        [
+          10551
+        ]
       ]
     },
     "fighter torso (broken)": {
@@ -22407,7 +23756,9 @@
         20513
       ],
       "clog_dependencies": [
-        10551
+        [
+          10551
+        ]
       ]
     },
     "penance skirt (l)": {
@@ -22416,7 +23767,9 @@
         24176
       ],
       "clog_dependencies": [
-        10555
+        [
+          10555
+        ]
       ]
     },
     "penance skirt (broken)": {
@@ -22425,7 +23778,9 @@
         20515
       ],
       "clog_dependencies": [
-        10555
+        [
+          10555
+        ]
       ]
     },
     "void mage helm (l)": {
@@ -22434,7 +23789,9 @@
         24183
       ],
       "clog_dependencies": [
-        11663
+        [
+          11663
+        ]
       ]
     },
     "void mage helm (broken)": {
@@ -22443,7 +23800,9 @@
         20477
       ],
       "clog_dependencies": [
-        11663
+        [
+          11663
+        ]
       ]
     },
     "void ranger helm (l)": {
@@ -22452,7 +23811,9 @@
         24184
       ],
       "clog_dependencies": [
-        11664
+        [
+          11664
+        ]
       ]
     },
     "void ranger helm (broken)": {
@@ -22461,7 +23822,9 @@
         20479
       ],
       "clog_dependencies": [
-        11664
+        [
+          11664
+        ]
       ]
     },
     "void melee helm (l)": {
@@ -22470,7 +23833,9 @@
         24185
       ],
       "clog_dependencies": [
-        11665
+        [
+          11665
+        ]
       ]
     },
     "void melee helm (broken)": {
@@ -22479,7 +23844,9 @@
         20481
       ],
       "clog_dependencies": [
-        11665
+        [
+          11665
+        ]
       ]
     },
     "saradomin halo (l)": {
@@ -22488,7 +23855,9 @@
         24169
       ],
       "clog_dependencies": [
-        12637
+        [
+          12637
+        ]
       ]
     },
     "saradomin halo (broken)": {
@@ -22497,7 +23866,9 @@
         20537
       ],
       "clog_dependencies": [
-        12637
+        [
+          12637
+        ]
       ]
     },
     "zamorak halo (l)": {
@@ -22506,7 +23877,9 @@
         24170
       ],
       "clog_dependencies": [
-        12638
+        [
+          12638
+        ]
       ]
     },
     "zamorak halo (broken)": {
@@ -22515,7 +23888,9 @@
         20539
       ],
       "clog_dependencies": [
-        12638
+        [
+          12638
+        ]
       ]
     },
     "guthix halo (l)": {
@@ -22524,7 +23899,9 @@
         24171
       ],
       "clog_dependencies": [
-        12639
+        [
+          12639
+        ]
       ]
     },
     "guthix halo (broken)": {
@@ -22533,7 +23910,9 @@
         20541
       ],
       "clog_dependencies": [
-        12639
+        [
+          12639
+        ]
       ]
     },
     "dragon defender (l)": {
@@ -22542,7 +23921,9 @@
         24143
       ],
       "clog_dependencies": [
-        12954
+        [
+          12954
+        ]
       ]
     },
     "dragon defender (broken)": {
@@ -22551,7 +23932,9 @@
         20463
       ],
       "clog_dependencies": [
-        12954
+        [
+          12954
+        ]
       ]
     },
     "elite void top (l)": {
@@ -22560,7 +23943,9 @@
         24178
       ],
       "clog_dependencies": [
-        13072
+        [
+          13072
+        ]
       ]
     },
     "elite void top (broken)": {
@@ -22569,7 +23954,9 @@
         20467
       ],
       "clog_dependencies": [
-        13072
+        [
+          13072
+        ]
       ]
     },
     "elite void robe (l)": {
@@ -22578,7 +23965,9 @@
         24180
       ],
       "clog_dependencies": [
-        13073
+        [
+          13073
+        ]
       ]
     },
     "elite void robe (broken)": {
@@ -22587,7 +23976,9 @@
         20471
       ],
       "clog_dependencies": [
-        13073
+        [
+          13073
+        ]
       ]
     },
     "tome of fire": {
@@ -22597,7 +23988,9 @@
         27358
       ],
       "clog_dependencies": [
-        20716
+        [
+          20716
+        ]
       ]
     },
     "infernal cape (l)": {
@@ -22606,7 +23999,9 @@
         24224
       ],
       "clog_dependencies": [
-        21295
+        [
+          21295
+        ]
       ]
     },
     "infernal cape (broken)": {
@@ -22615,7 +24010,9 @@
         21287
       ],
       "clog_dependencies": [
-        21295
+        [
+          21295
+        ]
       ]
     },
     "master scroll book": {
@@ -22624,7 +24021,9 @@
         21389
       ],
       "clog_dependencies": [
-        21387
+        [
+          21387
+        ]
       ]
     },
     "bracelet of ethereum": {
@@ -22633,7 +24032,9 @@
         21816
       ],
       "clog_dependencies": [
-        21817
+        [
+          21817
+        ]
       ]
     },
     "sanguinesti staff": {
@@ -22642,7 +24043,9 @@
         22323
       ],
       "clog_dependencies": [
-        22481
+        [
+          22481
+        ]
       ]
     },
     "scythe of vitur": {
@@ -22652,7 +24055,9 @@
         22664
       ],
       "clog_dependencies": [
-        22486
+        [
+          22486
+        ]
       ]
     },
     "viggora's chainmace": {
@@ -22661,7 +24066,9 @@
         22545
       ],
       "clog_dependencies": [
-        22542
+        [
+          22542
+        ]
       ]
     },
     "craw's bow": {
@@ -22670,7 +24077,9 @@
         22550
       ],
       "clog_dependencies": [
-        22547
+        [
+          22547
+        ]
       ]
     },
     "thammaron's sceptre": {
@@ -22679,7 +24088,9 @@
         22555
       ],
       "clog_dependencies": [
-        22552
+        [
+          22552
+        ]
       ]
     },
     "armadyl halo (l)": {
@@ -22688,7 +24099,9 @@
         24194
       ],
       "clog_dependencies": [
-        24192
+        [
+          24192
+        ]
       ]
     },
     "armadyl halo (broken)": {
@@ -22697,7 +24110,9 @@
         24147
       ],
       "clog_dependencies": [
-        24192
+        [
+          24192
+        ]
       ]
     },
     "bandos halo (l)": {
@@ -22706,7 +24121,9 @@
         24197
       ],
       "clog_dependencies": [
-        24195
+        [
+          24195
+        ]
       ]
     },
     "bandos halo (broken)": {
@@ -22715,7 +24132,9 @@
         24149
       ],
       "clog_dependencies": [
-        24195
+        [
+          24195
+        ]
       ]
     },
     "seren halo (l)": {
@@ -22724,7 +24143,9 @@
         24200
       ],
       "clog_dependencies": [
-        24198
+        [
+          24198
+        ]
       ]
     },
     "seren halo (broken)": {
@@ -22733,7 +24154,9 @@
         24151
       ],
       "clog_dependencies": [
-        24198
+        [
+          24198
+        ]
       ]
     },
     "ancient halo (l)": {
@@ -22742,7 +24165,9 @@
         24203
       ],
       "clog_dependencies": [
-        24201
+        [
+          24201
+        ]
       ]
     },
     "ancient halo (broken)": {
@@ -22751,7 +24176,9 @@
         24153
       ],
       "clog_dependencies": [
-        24201
+        [
+          24201
+        ]
       ]
     },
     "brassica halo (l)": {
@@ -22760,7 +24187,9 @@
         24206
       ],
       "clog_dependencies": [
-        24204
+        [
+          24204
+        ]
       ]
     },
     "brassica halo (broken)": {
@@ -22769,7 +24198,9 @@
         24155
       ],
       "clog_dependencies": [
-        24204
+        [
+          24204
+        ]
       ]
     },
     "ring of endurance": {
@@ -22778,7 +24209,9 @@
         24736
       ],
       "clog_dependencies": [
-        24844
+        [
+          24844
+        ]
       ]
     },
     "decorative boots (l)": {
@@ -22787,7 +24220,9 @@
         25173
       ],
       "clog_dependencies": [
-        25171
+        [
+          25171
+        ]
       ]
     },
     "decorative boots (broken)": {
@@ -22796,7 +24231,9 @@
         25155
       ],
       "clog_dependencies": [
-        25171
+        [
+          25171
+        ]
       ]
     },
     "decorative full helm (l)": {
@@ -22805,7 +24242,9 @@
         25176
       ],
       "clog_dependencies": [
-        25174
+        [
+          25174
+        ]
       ]
     },
     "decorative full helm (broken)": {
@@ -22814,7 +24253,9 @@
         25157
       ],
       "clog_dependencies": [
-        25174
+        [
+          25174
+        ]
       ]
     },
     "celestial ring": {
@@ -22823,7 +24264,9 @@
         25541
       ],
       "clog_dependencies": [
-        25539
+        [
+          25539
+        ]
       ]
     },
     "tome of water": {
@@ -22832,7 +24275,9 @@
         25574
       ],
       "clog_dependencies": [
-        25576
+        [
+          25576
+        ]
       ]
     },
     "barronite mace (l)": {
@@ -22841,7 +24286,9 @@
         25643
       ],
       "clog_dependencies": [
-        25641
+        [
+          25641
+        ]
       ]
     },
     "barronite mace (broken)": {
@@ -22850,7 +24297,9 @@
         25625
       ],
       "clog_dependencies": [
-        25641
+        [
+          25641
+        ]
       ]
     },
     "imcando hammer (broken)": {
@@ -22859,7 +24308,9 @@
         25633
       ],
       "clog_dependencies": [
-        25644
+        [
+          25644
+        ]
       ]
     },
     "pharaoh's sceptre": {
@@ -22878,7 +24329,9 @@
         26950
       ],
       "clog_dependencies": [
-        26945
+        [
+          26945
+        ]
       ]
     },
     "tumeken's shadow": {
@@ -22887,7 +24340,9 @@
         27275
       ],
       "clog_dependencies": [
-        27277
+        [
+          27277
+        ]
       ]
     },
     "warped sceptre": {
@@ -22896,7 +24351,9 @@
         28585
       ],
       "clog_dependencies": [
-        28583
+        [
+          28583
+        ]
       ]
     },
     "tonalztics of ralos": {
@@ -22905,7 +24362,9 @@
         28922
       ],
       "clog_dependencies": [
-        28919
+        [
+          28919
+        ]
       ]
     },
     "dizana's quiver": {
@@ -22914,7 +24373,9 @@
         28951
       ],
       "clog_dependencies": [
-        28947
+        [
+          28947
+        ]
       ]
     },
     "dizana's quiver (uncharged) (l)": {
@@ -22923,7 +24384,9 @@
         28949
       ],
       "clog_dependencies": [
-        28947
+        [
+          28947
+        ]
       ]
     },
     "eclipse moon chestplate (broken)": {
@@ -22932,7 +24395,9 @@
         29049
       ],
       "clog_dependencies": [
-        29004
+        [
+          29004
+        ]
       ]
     },
     "eclipse moon tassets (broken)": {
@@ -22941,7 +24406,9 @@
         29052
       ],
       "clog_dependencies": [
-        29007
+        [
+          29007
+        ]
       ]
     },
     "eclipse moon helm (broken)": {
@@ -22950,7 +24417,9 @@
         29055
       ],
       "clog_dependencies": [
-        29010
+        [
+          29010
+        ]
       ]
     },
     "blue moon chestplate (broken)": {
@@ -22959,7 +24428,9 @@
         29058
       ],
       "clog_dependencies": [
-        29013
+        [
+          29013
+        ]
       ]
     },
     "blue moon tassets (broken)": {
@@ -22968,7 +24439,9 @@
         29061
       ],
       "clog_dependencies": [
-        29016
+        [
+          29016
+        ]
       ]
     },
     "blue moon helm (broken)": {
@@ -22977,7 +24450,9 @@
         29064
       ],
       "clog_dependencies": [
-        29019
+        [
+          29019
+        ]
       ]
     },
     "blood moon chestplate (broken)": {
@@ -22986,7 +24461,9 @@
         29067
       ],
       "clog_dependencies": [
-        29022
+        [
+          29022
+        ]
       ]
     },
     "blood moon tassets (broken)": {
@@ -22995,7 +24472,9 @@
         29070
       ],
       "clog_dependencies": [
-        29025
+        [
+          29025
+        ]
       ]
     },
     "blood moon helm (broken)": {
@@ -23004,7 +24483,9 @@
         29073
       ],
       "clog_dependencies": [
-        29028
+        [
+          29028
+        ]
       ]
     },
     "chugging barrel": {
@@ -23013,7 +24494,9 @@
         30000
       ],
       "clog_dependencies": [
-        30002
+        [
+          30002
+        ]
       ]
     },
     "tome of earth": {
@@ -23022,7 +24505,9 @@
         30064
       ],
       "clog_dependencies": [
-        30066
+        [
+          30066
+        ]
       ]
     },
     "giantsoul amulet": {
@@ -23031,7 +24516,9 @@
         30638
       ],
       "clog_dependencies": [
-        30637
+        [
+          30637
+        ]
       ]
     },
     "horn of plenty": {
@@ -23040,7 +24527,9 @@
         31241
       ],
       "clog_dependencies": [
-        31243
+        [
+          31243
+        ]
       ]
     },
     "crystal bow (inactive)": {
@@ -23049,7 +24538,9 @@
         23985
       ],
       "clog_dependencies": [
-        4207
+        [
+          4207
+        ]
       ]
     },
     "crystal shield (inactive)": {
@@ -23058,7 +24549,9 @@
         23993
       ],
       "clog_dependencies": [
-        4207
+        [
+          4207
+        ]
       ]
     },
     "toxic blowpipe": {
@@ -23067,7 +24560,9 @@
         12926
       ],
       "clog_dependencies": [
-        12922
+        [
+          12922
+        ]
       ]
     },
     "serpentine helm": {
@@ -23076,7 +24571,9 @@
         12931
       ],
       "clog_dependencies": [
-        12927
+        [
+          12927
+        ]
       ]
     },
     "toxic staff of the dead": {
@@ -23085,8 +24582,10 @@
         12904
       ],
       "clog_dependencies": [
-        12932,
-        11791
+        [
+          11791,
+          12932
+        ]
       ]
     },
     "fire max cape (l)": {
@@ -23095,7 +24594,9 @@
         24134
       ],
       "clog_dependencies": [
-        6570
+        [
+          6570
+        ]
       ]
     },
     "fire max cape (broken)": {
@@ -23104,7 +24605,9 @@
         20447
       ],
       "clog_dependencies": [
-        6570
+        [
+          6570
+        ]
       ]
     },
     "arclight (inactive)": {
@@ -23113,7 +24616,9 @@
         30305
       ],
       "clog_dependencies": [
-        19677
+        [
+          19677
+        ]
       ]
     },
     "infernal max cape (l)": {
@@ -23122,7 +24627,9 @@
         24133
       ],
       "clog_dependencies": [
-        21295
+        [
+          21295
+        ]
       ]
     },
     "infernal max cape (broken)": {
@@ -23131,7 +24638,9 @@
         21289
       ],
       "clog_dependencies": [
-        21295
+        [
+          21295
+        ]
       ]
     },
     "ava's assembler (l)": {
@@ -23140,7 +24649,9 @@
         24222
       ],
       "clog_dependencies": [
-        21907
+        [
+          21907
+        ]
       ]
     },
     "ava's assembler (broken)": {
@@ -23149,7 +24660,9 @@
         21914
       ],
       "clog_dependencies": [
-        21907
+        [
+          21907
+        ]
       ]
     },
     "assembler max cape (l)": {
@@ -23158,7 +24671,9 @@
         24135
       ],
       "clog_dependencies": [
-        21907
+        [
+          21907
+        ]
       ]
     },
     "assembler max cape (broken)": {
@@ -23167,7 +24682,9 @@
         21916
       ],
       "clog_dependencies": [
-        21907
+        [
+          21907
+        ]
       ]
     },
     "avernic defender (l)": {
@@ -23176,8 +24693,10 @@
         24186
       ],
       "clog_dependencies": [
-        12954,
-        22477
+        [
+          12954,
+          22477
+        ]
       ]
     },
     "avernic defender (broken)": {
@@ -23186,8 +24705,10 @@
         22441
       ],
       "clog_dependencies": [
-        12954,
-        22477
+        [
+          12954,
+          22477
+        ]
       ]
     },
     "bryophyta's staff": {
@@ -23196,7 +24717,9 @@
         22370
       ],
       "clog_dependencies": [
-        22372
+        [
+          22372
+        ]
       ]
     },
     "crystal pickaxe (inactive)": {
@@ -23205,8 +24728,10 @@
         23682
       ],
       "clog_dependencies": [
-        11920,
-        23953
+        [
+          11920,
+          23953
+        ]
       ]
     },
     "crystal harpoon (inactive)": {
@@ -23215,8 +24740,10 @@
         23764
       ],
       "clog_dependencies": [
-        23953,
-        21028
+        [
+          21028,
+          23953
+        ]
       ]
     },
     "crystal axe (inactive)": {
@@ -23225,8 +24752,10 @@
         23675
       ],
       "clog_dependencies": [
-        23953,
-        6739
+        [
+          6739,
+          23953
+        ]
       ]
     },
     "bow of faerdhinen (inactive)": {
@@ -23235,7 +24764,9 @@
         25862
       ],
       "clog_dependencies": [
-        25859
+        [
+          25859
+        ]
       ]
     },
     "divine rune pouch (l)": {
@@ -23244,7 +24775,9 @@
         27509
       ],
       "clog_dependencies": [
-        27279
+        [
+          27279
+        ]
       ]
     },
     "masori assembler (l)": {
@@ -23253,8 +24786,10 @@
         27376
       ],
       "clog_dependencies": [
-        21907,
-        27372
+        [
+          21907,
+          27372
+        ]
       ]
     },
     "masori assembler (broken)": {
@@ -23263,8 +24798,10 @@
         27359
       ],
       "clog_dependencies": [
-        21907,
-        27372
+        [
+          21907,
+          27372
+        ]
       ]
     },
     "masori assembler max cape (l)": {
@@ -23273,8 +24810,10 @@
         27365
       ],
       "clog_dependencies": [
-        21907,
-        27372
+        [
+          21907,
+          27372
+        ]
       ]
     },
     "masori assembler max cape (broken)": {
@@ -23283,8 +24822,10 @@
         27361
       ],
       "clog_dependencies": [
-        21907,
-        27372
+        [
+          21907,
+          27372
+        ]
       ]
     },
     "accursed sceptre": {
@@ -23294,8 +24835,10 @@
         27679
       ],
       "clog_dependencies": [
-        22552,
-        27673
+        [
+          22552,
+          27673
+        ]
       ]
     },
     "ursine chainmace": {
@@ -23304,8 +24847,10 @@
         27660
       ],
       "clog_dependencies": [
-        27667,
-        22542
+        [
+          22542,
+          27667
+        ]
       ]
     },
     "webweaver bow": {
@@ -23314,8 +24859,10 @@
         27655
       ],
       "clog_dependencies": [
-        22547,
-        27670
+        [
+          22547,
+          27670
+        ]
       ]
     },
     "ghommal's avernic defender 5 (l)": {
@@ -23324,8 +24871,10 @@
         27551
       ],
       "clog_dependencies": [
-        12954,
-        22477
+        [
+          12954,
+          22477
+        ]
       ]
     },
     "ghommal's avernic defender 6 (l)": {
@@ -23334,8 +24883,10 @@
         27553
       ],
       "clog_dependencies": [
-        12954,
-        22477
+        [
+          12954,
+          22477
+        ]
       ]
     },
     "ancient sceptre (l)": {
@@ -23344,7 +24895,9 @@
         27626
       ],
       "clog_dependencies": [
-        27627
+        [
+          27627
+        ]
       ]
     },
     "venator bow": {
@@ -23354,7 +24907,9 @@
         31133
       ],
       "clog_dependencies": [
-        27614
+        [
+          27614
+        ]
       ]
     },
     "blood ancient sceptre (l)": {
@@ -23363,8 +24918,10 @@
         28473
       ],
       "clog_dependencies": [
-        27627,
-        28268
+        [
+          27627,
+          28268
+        ]
       ]
     },
     "blood ancient sceptre (broken)": {
@@ -23373,8 +24930,10 @@
         28238
       ],
       "clog_dependencies": [
-        27627,
-        28268
+        [
+          27627,
+          28268
+        ]
       ]
     },
     "ice ancient sceptre (l)": {
@@ -23383,8 +24942,10 @@
         28474
       ],
       "clog_dependencies": [
-        27627,
-        28270
+        [
+          27627,
+          28270
+        ]
       ]
     },
     "ice ancient sceptre (broken)": {
@@ -23393,8 +24954,10 @@
         28242
       ],
       "clog_dependencies": [
-        27627,
-        28270
+        [
+          27627,
+          28270
+        ]
       ]
     },
     "smoke ancient sceptre (l)": {
@@ -23403,8 +24966,10 @@
         28475
       ],
       "clog_dependencies": [
-        28274,
-        27627
+        [
+          27627,
+          28274
+        ]
       ]
     },
     "smoke ancient sceptre (broken)": {
@@ -23413,8 +24978,10 @@
         28240
       ],
       "clog_dependencies": [
-        28274,
-        27627
+        [
+          27627,
+          28274
+        ]
       ]
     },
     "shadow ancient sceptre (l)": {
@@ -23423,8 +24990,10 @@
         28476
       ],
       "clog_dependencies": [
-        28272,
-        27627
+        [
+          27627,
+          28272
+        ]
       ]
     },
     "shadow ancient sceptre (broken)": {
@@ -23433,8 +25002,10 @@
         28244
       ],
       "clog_dependencies": [
-        28272,
-        27627
+        [
+          27627,
+          28272
+        ]
       ]
     },
     "crystal felling axe (inactive)": {
@@ -23443,9 +25014,11 @@
         28223
       ],
       "clog_dependencies": [
-        28177,
-        23953,
-        6739
+        [
+          6739,
+          23953,
+          28177
+        ]
       ]
     },
     "blazing blowpipe": {
@@ -23454,7 +25027,9 @@
         28688
       ],
       "clog_dependencies": [
-        12922
+        [
+          12922
+        ]
       ]
     },
     "blessed dizana's quiver (l)": {
@@ -23463,8 +25038,10 @@
         28957
       ],
       "clog_dependencies": [
-        28947,
-        28924
+        [
+          28924,
+          28947
+        ]
       ]
     },
     "blessed dizana's quiver (broken)": {
@@ -23473,8 +25050,10 @@
         28828
       ],
       "clog_dependencies": [
-        28947,
-        28924
+        [
+          28924,
+          28947
+        ]
       ]
     },
     "dizana's max cape (l)": {
@@ -23483,8 +25062,10 @@
         28906
       ],
       "clog_dependencies": [
-        28947,
-        28924
+        [
+          28924,
+          28947
+        ]
       ]
     },
     "dizana's max cape (broken)": {
@@ -23493,8 +25074,10 @@
         28830
       ],
       "clog_dependencies": [
-        28947,
-        28924
+        [
+          28924,
+          28947
+        ]
       ]
     },
     "amulet of rancour (s)": {
@@ -23503,9 +25086,11 @@
         29804
       ],
       "clog_dependencies": [
-        19529,
-        6573,
-        29799
+        [
+          6573,
+          19529,
+          29799
+        ]
       ]
     },
     "echo ahrim's hood 0": {
@@ -23514,7 +25099,9 @@
         30543
       ],
       "clog_dependencies": [
-        4708
+        [
+          4708
+        ]
       ]
     },
     "echo ahrim's hood 25": {
@@ -23523,7 +25110,9 @@
         30537
       ],
       "clog_dependencies": [
-        4708
+        [
+          4708
+        ]
       ]
     },
     "echo ahrim's hood 50": {
@@ -23532,7 +25121,9 @@
         30531
       ],
       "clog_dependencies": [
-        4708
+        [
+          4708
+        ]
       ]
     },
     "echo ahrim's hood 75": {
@@ -23541,7 +25132,9 @@
         30525
       ],
       "clog_dependencies": [
-        4708
+        [
+          4708
+        ]
       ]
     },
     "echo ahrim's hood 100": {
@@ -23550,7 +25143,9 @@
         30519
       ],
       "clog_dependencies": [
-        4708
+        [
+          4708
+        ]
       ]
     },
     "echo ahrim's robeskirt 0": {
@@ -23559,7 +25154,9 @@
         30547
       ],
       "clog_dependencies": [
-        4714
+        [
+          4714
+        ]
       ]
     },
     "echo ahrim's robeskirt 25": {
@@ -23568,7 +25165,9 @@
         30541
       ],
       "clog_dependencies": [
-        4714
+        [
+          4714
+        ]
       ]
     },
     "echo ahrim's robeskirt 50": {
@@ -23577,7 +25176,9 @@
         30535
       ],
       "clog_dependencies": [
-        4714
+        [
+          4714
+        ]
       ]
     },
     "echo ahrim's robeskirt 75": {
@@ -23586,7 +25187,9 @@
         30529
       ],
       "clog_dependencies": [
-        4714
+        [
+          4714
+        ]
       ]
     },
     "echo ahrim's robeskirt 100": {
@@ -23595,7 +25198,9 @@
         30523
       ],
       "clog_dependencies": [
-        4714
+        [
+          4714
+        ]
       ]
     },
     "echo ahrim's robetop 0": {
@@ -23604,7 +25209,9 @@
         30545
       ],
       "clog_dependencies": [
-        4712
+        [
+          4712
+        ]
       ]
     },
     "echo ahrim's robetop 25": {
@@ -23613,7 +25220,9 @@
         30539
       ],
       "clog_dependencies": [
-        4712
+        [
+          4712
+        ]
       ]
     },
     "echo ahrim's robetop 50": {
@@ -23622,7 +25231,9 @@
         30533
       ],
       "clog_dependencies": [
-        4712
+        [
+          4712
+        ]
       ]
     },
     "echo ahrim's robetop 75": {
@@ -23631,7 +25242,9 @@
         30527
       ],
       "clog_dependencies": [
-        4712
+        [
+          4712
+        ]
       ]
     },
     "echo ahrim's robetop 100": {
@@ -23640,7 +25253,9 @@
         30521
       ],
       "clog_dependencies": [
-        4712
+        [
+          4712
+        ]
       ]
     },
     "echo ahrim's staff 0": {
@@ -23649,7 +25264,9 @@
         30574
       ],
       "clog_dependencies": [
-        4710
+        [
+          4710
+        ]
       ]
     },
     "echo ahrim's staff 25": {
@@ -23658,7 +25275,9 @@
         30573
       ],
       "clog_dependencies": [
-        4710
+        [
+          4710
+        ]
       ]
     },
     "echo ahrim's staff 50": {
@@ -23667,7 +25286,9 @@
         30572
       ],
       "clog_dependencies": [
-        4710
+        [
+          4710
+        ]
       ]
     },
     "echo ahrim's staff 75": {
@@ -23676,7 +25297,9 @@
         30571
       ],
       "clog_dependencies": [
-        4710
+        [
+          4710
+        ]
       ]
     },
     "echo ahrim's staff 100": {
@@ -23685,7 +25308,9 @@
         30570
       ],
       "clog_dependencies": [
-        4710
+        [
+          4710
+        ]
       ]
     },
     "rosewood blowpipe": {
@@ -23694,7 +25319,9 @@
         31583
       ],
       "clog_dependencies": [
-        31572
+        [
+          31572
+        ]
       ]
     },
     "camphor blowpipe": {
@@ -23703,7 +25330,9 @@
         31575
       ],
       "clog_dependencies": [
-        31572
+        [
+          31572
+        ]
       ]
     },
     "ironwood blowpipe": {
@@ -23712,7 +25341,9 @@
         31579
       ],
       "clog_dependencies": [
-        31572
+        [
+          31572
+        ]
       ]
     },
     "dizana's quiver (l)": {
@@ -23721,7 +25352,9 @@
         28953
       ],
       "clog_dependencies": [
-        28947
+        [
+          28947
+        ]
       ]
     },
     "dizana's quiver (broken)": {
@@ -23730,7 +25363,9 @@
         28826
       ],
       "clog_dependencies": [
-        28947
+        [
+          28947
+        ]
       ]
     },
     "granite maul (ornate handle)": {
@@ -23739,8 +25374,10 @@
         24225
       ],
       "clog_dependencies": [
-        4153,
-        24229
+        [
+          4153,
+          24229
+        ]
       ]
     },
     "granite maul (clamp)": {
@@ -23749,8 +25386,10 @@
         12848
       ],
       "clog_dependencies": [
-        4153,
-        12849
+        [
+          4153,
+          12849
+        ]
       ]
     },
     "granite maul (ornate handle, clamp)": {
@@ -23759,9 +25398,11 @@
         24227
       ],
       "clog_dependencies": [
-        4153,
-        24229,
-        12849
+        [
+          4153,
+          24229,
+          12849
+        ]
       ]
     },
     "rune scimitar (guthix)": {
@@ -23770,7 +25411,9 @@
         23330
       ],
       "clog_dependencies": [
-        23321
+        [
+          23321
+        ]
       ]
     },
     "rune scimitar (saradomin)": {
@@ -23779,7 +25422,9 @@
         23332
       ],
       "clog_dependencies": [
-        23324
+        [
+          23324
+        ]
       ]
     },
     "rune scimitar (zamorak)": {
@@ -23788,7 +25433,9 @@
         23334
       ],
       "clog_dependencies": [
-        23327
+        [
+          23327
+        ]
       ]
     },
     "lava battlestaff (or)": {
@@ -23797,7 +25444,9 @@
         21198
       ],
       "clog_dependencies": [
-        21202
+        [
+          21202
+        ]
       ]
     },
     "malediction ward (or)": {
@@ -23806,7 +25455,9 @@
         12806
       ],
       "clog_dependencies": [
-        12802
+        [
+          12802
+        ]
       ]
     },
     "mystic lava staff (or)": {
@@ -23815,7 +25466,9 @@
         21200
       ],
       "clog_dependencies": [
-        21202
+        [
+          21202
+        ]
       ]
     },
     "mystic steam staff (or)": {
@@ -23824,7 +25477,9 @@
         12796
       ],
       "clog_dependencies": [
-        12798
+        [
+          12798
+        ]
       ]
     },
     "odium ward (or)": {
@@ -23833,7 +25488,9 @@
         12807
       ],
       "clog_dependencies": [
-        12802
+        [
+          12802
+        ]
       ]
     },
     "steam battlestaff (or)": {
@@ -23842,8 +25499,10 @@
         12795
       ],
       "clog_dependencies": [
-        12798,
-        11787
+        [
+          12798,
+          11787
+        ]
       ]
     }
   }
