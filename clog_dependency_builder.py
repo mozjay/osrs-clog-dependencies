@@ -1133,7 +1133,7 @@ def generate_output_json(
 
     # Build the output structure
     output = {
-        "version": "1.2.0",
+        "version": "1.3.0",
         "generated": time.strftime("%Y-%m-%d %H:%M:%S"),
         "stats": {
             "total_clog_items": len(clog_items),
@@ -1149,7 +1149,12 @@ def generate_output_json(
     }
 
     with open(output_path, "w") as f:
+        json.dump(output, f, separators=(",", ":"))
+
+    pretty_path = Path(output_path).with_stem(Path(output_path).stem + ".pretty")
+    with open(pretty_path, "w") as f:
         json.dump(output, f, indent=2)
+    print(f"  Also written human-readable copy: {pretty_path}")
 
     print(f"  Written {len(clog_items)} clog items and {len(derived_items)} derived items")
     print(f"  Derived items with multiple IDs: {multi_id_items}")
