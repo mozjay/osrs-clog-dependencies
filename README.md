@@ -63,10 +63,19 @@ Decisions are recorded in `manual_candidate_decisions.json` (tracked in git), ke
 
 Use `--skip-manual-review` to run non-interactively without this step.
 
+## Manual Dependency Overrides
+
+Some items have no production recipe in the wiki's recipe graph, so the resolver treats them as freely-obtainable base materials with zero clog dependencies. This is correct for true base materials (ores, logs, etc.) but wrong for items that are only obtainable as a byproduct of a clog-gated recipe.
+
+For example, `Malformed infernal blend` is a failed-smithing byproduct of crafting `Infernal blend` from `Oathplate shards`, and reprocesses back into `Infernal blend`. The wiki graph has no recipe for it, so without an override it looks like a free alternative material for `Infernal blend` - which masks the `Oathplate shards` dependency for the entire `Infernal blend -> Infernal nugget -> Infernal chunk -> Infernal plate -> Oathplate helm/chest/legs` chain.
+
+`manual_dependency_overrides.json` lets us specify the true clog dependency sets for such items, in the same `clog_dependencies` (OR-of-AND) format as `manual_recipes.json`. Once set, the override propagates automatically through the normal resolver logic - both to derived items further up the chain (e.g. `Infernal plate` becomes correctly restricted) and to `craftable_from` on clog items (e.g. `Oathplate helm` becomes effectively unlockable via `Oathplate shards`).
+
 ## File Structure
 
 - `clog_dependency_builder.py` - Main script
 - `manual_recipes.json` - Manually-defined derived items
+- `manual_dependency_overrides.json` - Manual clog dependency overrides for items the recipe graph misrepresents as free base materials
 - `manual_candidate_decisions.json` - Accept/decline history for `--review-manual-candidates`
 - `cache/` - Cached wiki data (7 day TTL)
 - `output/` - Generated output files
