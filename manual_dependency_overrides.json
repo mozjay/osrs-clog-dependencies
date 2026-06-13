@@ -1,0 +1,6 @@
+{
+  "malformed infernal blend": {
+    "clog_dependencies": [[30765]],
+    "reason": "Failure byproduct of crafting Infernal blend from Oathplate shards (30765); reprocesses back into Infernal blend. The wiki recipe graph has no production recipe for this item, so it would otherwise be treated as a free base material, masking the Oathplate shards dependency of the whole Infernal blend -> Infernal nugget -> Infernal chunk -> Infernal plate -> Oathplate helm/chest/legs chain."
+  }
+}

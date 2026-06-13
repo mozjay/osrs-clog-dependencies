@@ -27,7 +27,7 @@ from collections import defaultdict
 
 
 # Configuration
-OUTPUT_DATA_VERSION = "1.3.0"  # version field written to clog_restrictions.json
+OUTPUT_DATA_VERSION = "1.3.1"  # version field written to clog_restrictions.json
 WIKI_API_BASE = "https://oldschool.runescape.wiki/api.php"
 CLOG_DATA_URL = "https://oldschool.runescape.wiki/w/Module:Collection_log/data.json?action=raw"
 PRICES_API_MAPPING = "https://prices.runescape.wiki/api/v1/osrs/mapping"
@@ -66,6 +66,20 @@ MANUAL_RECIPES_FILE = Path(__file__).parent / "manual_recipes.json"
 # keyed by recipe output name, so previously-declined candidates aren't
 # re-prompted unless their recipe data changes.
 MANUAL_CANDIDATE_DECISIONS_FILE = Path(__file__).parent / "manual_candidate_decisions.json"
+
+# Manual dependency overrides file
+# Some items have no production recipe in the wiki's recipe graph, so the
+# resolver treats them as freely-obtainable base materials with zero clog
+# dependencies. This is correct for true base materials (ores, logs, etc.)
+# but wrong for items that are only obtainable as byproducts of a clog-gated
+# recipe (e.g. "Malformed infernal blend" is a failed-smithing byproduct of
+# making Infernal blend from Oathplate shards, and reprocesses back into it -
+# the wiki graph has no recipe for it, so without an override it looks like a
+# free alternative material and masks the real Oathplate shards dependency
+# for the whole Infernal plate chain). This file lets us specify the true
+# clog dependency sets for such items, which then propagate automatically
+# through the normal resolver logic.
+MANUAL_DEPENDENCY_OVERRIDES_FILE = Path(__file__).parent / "manual_dependency_overrides.json"
 
 # Variant patterns for items that don't have explicit recipes
 # Format: (base_pattern, variant_pattern, description)
@@ -455,6 +469,7 @@ class DependencyResolver:
     def __init__(self, clog_items: Dict[int, Item]):
         self.clog_items = clog_items
         self.clog_names = {item.name.lower(): item_id for item_id, item in clog_items.items()}
+        self.dependency_overrides = load_manual_dependency_overrides()
 
         # Store recipes as list of recipes per item (not merged)
         # output_name -> [recipe1_materials, recipe2_materials, ...]
@@ -674,6 +689,14 @@ class DependencyResolver:
             self._min_dep_cache[item_name_lower] = (result, 0)
             return result
 
+        # Manual override for items the recipe graph misrepresents as free
+        # base materials (see MANUAL_DEPENDENCY_OVERRIDES_FILE)
+        if item_name_lower in self.dependency_overrides:
+            sets = self.dependency_overrides[item_name_lower]
+            result = min(sets, key=len)
+            self._min_dep_cache[item_name_lower] = (set(result), -1)
+            return set(result)
+
         # Get all recipes for this item
         recipes = self.recipes_by_item.get(item_name_lower, [])
 
@@ -788,6 +811,13 @@ class DependencyResolver:
         # If this item is itself a clog item, it requires itself
         if item_name_lower in self.clog_names:
             result = [frozenset({self.clog_names[item_name_lower]})]
+            self._all_dep_sets_cache[item_name_lower] = result
+            return result
+
+        # Manual override for items the recipe graph misrepresents as free
+        # base materials (see MANUAL_DEPENDENCY_OVERRIDES_FILE)
+        if item_name_lower in self.dependency_overrides:
+            result = self.dependency_overrides[item_name_lower]
             self._all_dep_sets_cache[item_name_lower] = result
             return result
 
@@ -990,32 +1020,58 @@ def find_clog_crafting_recipes(
     resolver: 'DependencyResolver'
 ) -> Optional[List[List[int]]]:
     """
-    Find recipes where this clog item can be crafted from other clog items.
+    Find the clog items that can effectively unlock this clog item via crafting,
+    by resolving this item's own recipes' transitive clog dependencies.
 
-    Returns list of recipes, where each recipe is a list of required clog item IDs.
-    Only includes clog materials (non-clog materials are ignored as they're freely obtainable).
-    Returns None if no clog-to-clog recipes exist.
+    Returns the minimal sets of clog item IDs needed (excluding this item itself),
+    or None if no such recipes exist.
 
     Structure: [[recipe1_deps], [recipe2_deps], ...]
     - Outer list: OR (any recipe works)
     - Inner list: AND (all deps in recipe needed)
     """
+    self_id = resolver.clog_names[item_name_lower]
     recipes = resolver.recipes_by_item.get(item_name_lower, [])
 
-    clog_recipes = []
+    all_dep_sets: List[frozenset] = []
     for recipe_materials in recipes:
-        clog_materials = []
-        for material in recipe_materials:
-            material_lower = material.lower()
-            if material_lower in resolver.clog_names:
-                clog_materials.append(resolver.clog_names[material_lower])
+        for dep_set in resolver._find_all_dep_sets_for_recipe(recipe_materials, {item_name_lower}):
+            dep_set = dep_set - {self_id}
+            if dep_set:
+                all_dep_sets.append(dep_set)
 
-        # Only include recipes that have clog materials
-        # (recipes with zero clog materials aren't relevant for effective unlocking)
-        if clog_materials:
-            clog_recipes.append(sorted(clog_materials))  # Sort for consistent output
+    if not all_dep_sets:
+        return None
 
-    return clog_recipes if clog_recipes else None
+    # Keep only the minimal-size sets and deduplicate
+    min_size = min(len(s) for s in all_dep_sets)
+    minimal_sets = {s for s in all_dep_sets if len(s) == min_size}
+
+    return sorted(sorted(s) for s in minimal_sets)
+
+
+def load_manual_dependency_overrides() -> Dict[str, List[frozenset]]:
+    """
+    Load manual clog dependency overrides from manual_dependency_overrides.json.
+
+    Returns a dict mapping item name (lowercase) -> list of frozensets, in the
+    same format as DependencyResolver.find_all_minimum_clog_dependency_sets().
+    """
+    if not MANUAL_DEPENDENCY_OVERRIDES_FILE.exists():
+        return {}
+
+    try:
+        with open(MANUAL_DEPENDENCY_OVERRIDES_FILE, 'r') as f:
+            raw = json.load(f)
+            overrides = {
+                name.lower(): [frozenset(s) for s in entry["clog_dependencies"]]
+                for name, entry in raw.items()
+            }
+            print(f"  Loaded {len(overrides)} manual dependency overrides from {MANUAL_DEPENDENCY_OVERRIDES_FILE.name}")
+            return overrides
+    except Exception as e:
+        print(f"  Warning: Failed to load {MANUAL_DEPENDENCY_OVERRIDES_FILE}: {e}")
+        return {}
 
 
 def load_manual_recipes() -> Dict[str, dict]:
