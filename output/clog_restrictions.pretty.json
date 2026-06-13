@@ -1,13 +1,13 @@
 {
   "version": "1.3.0",
-  "generated": "2026-06-13 14:48:36",
+  "generated": "2026-06-13 17:30:48",
   "stats": {
     "total_clog_items": 1701,
-    "total_derived_items": 808,
+    "total_derived_items": 828,
     "items_with_clog_free_recipes": 3206,
-    "derived_items_with_multiple_ids": 82,
+    "derived_items_with_multiple_ids": 54,
     "derived_items_without_ids": 99,
-    "clog_items_with_multiple_ids": 175,
+    "clog_items_with_multiple_ids": 97,
     "clog_items_craftable_from_other_clogs": 28
   },
   "collectionLogItems": {
@@ -44,8 +44,7 @@
         "Medium Treasure Trails"
       ],
       "all_ids": [
-        2579,
-        27162
+        2579
       ]
     },
     "2581": {
@@ -279,7 +278,6 @@
         "Easy Treasure Trails"
       ],
       "all_ids": [
-        979,
         2631
       ]
     },
@@ -1032,8 +1030,7 @@
         "Slayer"
       ],
       "all_ids": [
-        4101,
-        27158
+        4101
       ]
     },
     "4103": {
@@ -1042,8 +1039,7 @@
         "Slayer"
       ],
       "all_ids": [
-        4103,
-        27159
+        4103
       ]
     },
     "4105": {
@@ -1079,8 +1075,7 @@
         "Slayer"
       ],
       "all_ids": [
-        4111,
-        27160
+        4111
       ]
     },
     "4113": {
@@ -1089,8 +1084,7 @@
         "Slayer"
       ],
       "all_ids": [
-        4113,
-        27161
+        4113
       ]
     },
     "4115": {
@@ -1182,8 +1176,7 @@
       ],
       "all_ids": [
         4151,
-        4178,
-        20405
+        4178
       ]
     },
     "4153": {
@@ -1192,8 +1185,7 @@
         "Slayer"
       ],
       "all_ids": [
-        4153,
-        20557
+        4153
       ]
     },
     "4207": {
@@ -1346,8 +1338,7 @@
         "Barrows Chests"
       ],
       "all_ids": [
-        4710,
-        23653
+        4710
       ]
     },
     "4712": {
@@ -1356,8 +1347,7 @@
         "Barrows Chests"
       ],
       "all_ids": [
-        4712,
-        20598
+        4712
       ]
     },
     "4714": {
@@ -1366,8 +1356,7 @@
         "Barrows Chests"
       ],
       "all_ids": [
-        4714,
-        20599
+        4714
       ]
     },
     "4716": {
@@ -1376,8 +1365,7 @@
         "Barrows Chests"
       ],
       "all_ids": [
-        4716,
-        23639
+        4716
       ]
     },
     "4718": {
@@ -1386,8 +1374,7 @@
         "Barrows Chests"
       ],
       "all_ids": [
-        4718,
-        25516
+        4718
       ]
     },
     "4720": {
@@ -1396,8 +1383,7 @@
         "Barrows Chests"
       ],
       "all_ids": [
-        4720,
-        25515
+        4720
       ]
     },
     "4722": {
@@ -1406,8 +1392,7 @@
         "Barrows Chests"
       ],
       "all_ids": [
-        4722,
-        23633
+        4722
       ]
     },
     "4724": {
@@ -1416,8 +1401,7 @@
         "Barrows Chests"
       ],
       "all_ids": [
-        4724,
-        23638
+        4724
       ]
     },
     "4726": {
@@ -1471,8 +1455,7 @@
         "Barrows Chests"
       ],
       "all_ids": [
-        4736,
-        23632
+        4736
       ]
     },
     "4738": {
@@ -1499,8 +1482,7 @@
         "Barrows Chests"
       ],
       "all_ids": [
-        4745,
-        23637
+        4745
       ]
     },
     "4747": {
@@ -1527,8 +1509,7 @@
         "Barrows Chests"
       ],
       "all_ids": [
-        4751,
-        23634
+        4751
       ]
     },
     "4753": {
@@ -1537,8 +1518,7 @@
         "Barrows Chests"
       ],
       "all_ids": [
-        4753,
-        23636
+        4753
       ]
     },
     "4755": {
@@ -1547,8 +1527,7 @@
         "Barrows Chests"
       ],
       "all_ids": [
-        4755,
-        27189
+        4755
       ]
     },
     "4757": {
@@ -1557,8 +1536,7 @@
         "Barrows Chests"
       ],
       "all_ids": [
-        4757,
-        27190
+        4757
       ]
     },
     "4759": {
@@ -1567,8 +1545,7 @@
         "Barrows Chests"
       ],
       "all_ids": [
-        4759,
-        23635
+        4759
       ]
     },
     "5553": {
@@ -1730,8 +1707,7 @@
         "The Fight Caves"
       ],
       "all_ids": [
-        6570,
-        10566
+        6570
       ]
     },
     "6571": {
@@ -1767,8 +1743,7 @@
         "Random Events"
       ],
       "all_ids": [
-        6654,
-        6657
+        6654
       ]
     },
     "6655": {
@@ -1777,8 +1752,7 @@
         "Random Events"
       ],
       "all_ids": [
-        6655,
-        6658
+        6655
       ]
     },
     "6656": {
@@ -1787,8 +1761,7 @@
         "Random Events"
       ],
       "all_ids": [
-        6656,
-        6659
+        6656
       ]
     },
     "6665": {
@@ -1851,8 +1824,7 @@
         "Dagannoth Kings"
       ],
       "all_ids": [
-        6737,
-        23595
+        6737
       ]
     },
     "6739": {
@@ -1970,8 +1942,7 @@
         "Magic Training Arena"
       ],
       "all_ids": [
-        6889,
-        23652
+        6889
       ]
     },
     "6908": {
@@ -2034,8 +2005,7 @@
         "Magic Training Arena"
       ],
       "all_ids": [
-        6920,
-        27170
+        6920
       ]
     },
     "6922": {
@@ -2744,8 +2714,7 @@
         "Cyclopes"
       ],
       "all_ids": [
-        8850,
-        27185
+        8850
       ]
     },
     "8901": {
@@ -3334,8 +3303,7 @@
         "Master Treasure Trails (Rare)"
       ],
       "all_ids": [
-        10330,
-        27199
+        10330
       ]
     },
     "10332": {
@@ -3346,8 +3314,7 @@
         "Master Treasure Trails (Rare)"
       ],
       "all_ids": [
-        10332,
-        27200
+        10332
       ]
     },
     "10334": {
@@ -3358,8 +3325,7 @@
         "Master Treasure Trails (Rare)"
       ],
       "all_ids": [
-        10334,
-        27201
+        10334
       ]
     },
     "10336": {
@@ -3381,8 +3347,7 @@
         "Master Treasure Trails (Rare)"
       ],
       "all_ids": [
-        10338,
-        20576
+        10338
       ]
     },
     "10340": {
@@ -3393,8 +3358,7 @@
         "Master Treasure Trails (Rare)"
       ],
       "all_ids": [
-        10340,
-        20577
+        10340
       ]
     },
     "10342": {
@@ -3405,8 +3369,7 @@
         "Master Treasure Trails (Rare)"
       ],
       "all_ids": [
-        10342,
-        27183
+        10342
       ]
     },
     "10344": {
@@ -3515,8 +3478,7 @@
         "Hard Treasure Trails"
       ],
       "all_ids": [
-        10372,
-        27181
+        10372
       ]
     },
     "10374": {
@@ -3552,8 +3514,7 @@
         "Hard Treasure Trails"
       ],
       "all_ids": [
-        10380,
-        27180
+        10380
       ]
     },
     "10382": {
@@ -3589,8 +3550,7 @@
         "Hard Treasure Trails"
       ],
       "all_ids": [
-        10388,
-        27182
+        10388
       ]
     },
     "10390": {
@@ -4161,8 +4121,7 @@
         12765,
         12766,
         12767,
-        12768,
-        20408
+        12768
       ]
     },
     "11286": {
@@ -4470,8 +4429,7 @@
         "Commander Zilyana"
       ],
       "all_ids": [
-        11785,
-        23611
+        11785
       ]
     },
     "11787": {
@@ -4489,8 +4447,7 @@
         "K'ril Tsutsaroth"
       ],
       "all_ids": [
-        11791,
-        23613
+        11791
       ]
     },
     "11810": {
@@ -4616,8 +4573,7 @@
         "General Graardor"
       ],
       "all_ids": [
-        11834,
-        23646
+        11834
       ]
     },
     "11836": {
@@ -4677,12 +4633,6 @@
         13667,
         13668,
         21063,
-        24743,
-        24745,
-        25069,
-        25071,
-        27444,
-        27446,
         30047
       ]
     },
@@ -4707,12 +4657,6 @@
         13669,
         13670,
         21066,
-        24746,
-        24748,
-        25072,
-        25074,
-        27447,
-        27449,
         30050
       ]
     },
@@ -4737,12 +4681,6 @@
         13671,
         13672,
         21069,
-        24749,
-        24751,
-        25075,
-        25077,
-        27450,
-        27452,
         30053
       ]
     },
@@ -4767,12 +4705,6 @@
         13673,
         13674,
         21072,
-        24752,
-        24754,
-        25078,
-        25080,
-        27453,
-        27455,
         30056
       ]
     },
@@ -4797,12 +4729,6 @@
         13675,
         13676,
         21075,
-        24755,
-        24757,
-        25081,
-        25083,
-        27456,
-        27458,
         30059
       ]
     },
@@ -4827,12 +4753,6 @@
         13677,
         13678,
         21078,
-        24758,
-        24760,
-        25084,
-        25086,
-        27459,
-        27461,
         30062
       ]
     },
@@ -4980,8 +4900,7 @@
         "Vet'ion and Calvar'ion"
       ],
       "all_ids": [
-        11920,
-        12797
+        11920
       ],
       "craftable_from": [
         [
@@ -5088,8 +5007,7 @@
         "Slayer"
       ],
       "all_ids": [
-        12002,
-        23654
+        12002
       ]
     },
     "12004": {
@@ -6698,8 +6616,7 @@
         "Elite Treasure Trails"
       ],
       "all_ids": [
-        12596,
-        27179
+        12596
       ]
     },
     "12598": {
@@ -6852,8 +6769,7 @@
         "Castle Wars"
       ],
       "all_ids": [
-        12637,
-        27165
+        12637
       ]
     },
     "12638": {
@@ -6862,8 +6778,7 @@
         "Castle Wars"
       ],
       "all_ids": [
-        12638,
-        27164
+        12638
       ]
     },
     "12639": {
@@ -6872,8 +6787,7 @@
         "Castle Wars"
       ],
       "all_ids": [
-        12639,
-        27163
+        12639
       ]
     },
     "12642": {
@@ -7146,8 +7060,7 @@
         "Corporeal Beast"
       ],
       "all_ids": [
-        12829,
-        23599
+        12829
       ]
     },
     "12833": {
@@ -7269,8 +7182,7 @@
         "Cyclopes"
       ],
       "all_ids": [
-        12954,
-        23597
+        12954
       ]
     },
     "13071": {
@@ -7934,9 +7846,7 @@
       ],
       "all_ids": [
         13646,
-        13647,
-        21253,
-        21254
+        13647
       ]
     },
     "13652": {
@@ -7945,8 +7855,7 @@
         "Chambers of Xeric"
       ],
       "all_ids": [
-        13652,
-        20784
+        13652
       ]
     },
     "19529": {
@@ -9241,8 +9150,7 @@
         "Elder Chaos Druids"
       ],
       "all_ids": [
-        20517,
-        27174
+        20517
       ]
     },
     "20520": {
@@ -9251,8 +9159,7 @@
         "Elder Chaos Druids"
       ],
       "all_ids": [
-        20520,
-        27175
+        20520
       ]
     },
     "20590": {
@@ -9270,8 +9177,7 @@
         "Elder Chaos Druids"
       ],
       "all_ids": [
-        20595,
-        27176
+        20595
       ]
     },
     "20659": {
@@ -9513,8 +9419,7 @@
         "Chambers of Xeric"
       ],
       "all_ids": [
-        21000,
-        33188
+        21000
       ]
     },
     "21003": {
@@ -9523,8 +9428,7 @@
         "Chambers of Xeric"
       ],
       "all_ids": [
-        21003,
-        21205
+        21003
       ]
     },
     "21009": {
@@ -9560,8 +9464,7 @@
         "Chambers of Xeric"
       ],
       "all_ids": [
-        21018,
-        25518
+        21018
       ]
     },
     "21021": {
@@ -9570,8 +9473,7 @@
         "Chambers of Xeric"
       ],
       "all_ids": [
-        21021,
-        27193
+        21021
       ]
     },
     "21024": {
@@ -9580,8 +9482,7 @@
         "Chambers of Xeric"
       ],
       "all_ids": [
-        21024,
-        27194
+        21024
       ]
     },
     "21027": {
@@ -9651,12 +9552,6 @@
         13668,
         21061,
         21063,
-        24743,
-        24745,
-        25069,
-        25071,
-        27444,
-        27446,
         30047
       ]
     },
@@ -9681,12 +9576,6 @@
         13670,
         21064,
         21066,
-        24746,
-        24748,
-        25072,
-        25074,
-        27447,
-        27449,
         30050
       ]
     },
@@ -9711,12 +9600,6 @@
         13672,
         21067,
         21069,
-        24749,
-        24751,
-        25075,
-        25077,
-        27450,
-        27452,
         30053
       ]
     },
@@ -9741,12 +9624,6 @@
         13674,
         21070,
         21072,
-        24752,
-        24754,
-        25078,
-        25080,
-        27453,
-        27455,
         30056
       ]
     },
@@ -9771,12 +9648,6 @@
         13676,
         21073,
         21075,
-        24755,
-        24757,
-        25081,
-        25083,
-        27456,
-        27458,
         30059
       ]
     },
@@ -9801,12 +9672,6 @@
         13678,
         21076,
         21078,
-        24758,
-        24760,
-        25084,
-        25086,
-        27459,
-        27461,
         30062
       ]
     },
@@ -9872,9 +9737,7 @@
         "The Inferno"
       ],
       "all_ids": [
-        21295,
-        21297,
-        23622
+        21295
       ]
     },
     "21298": {
@@ -10271,7 +10134,6 @@
         "Vorkath"
       ],
       "all_ids": [
-        2425,
         21907
       ]
     },
@@ -10408,8 +10270,7 @@
         "Theatre of Blood"
       ],
       "all_ids": [
-        22324,
-        23628
+        22324
       ]
     },
     "22326": {
@@ -10659,10 +10520,7 @@
         "Slayer"
       ],
       "all_ids": [
-        22804,
-        22812,
-        22814,
-        27157
+        22804
       ]
     },
     "22838": {
@@ -11075,8 +10933,7 @@
         "Elite Treasure Trails"
       ],
       "all_ids": [
-        23246,
-        27177
+        23246
       ]
     },
     "23249": {
@@ -11488,8 +11345,7 @@
         "Medium Treasure Trails"
       ],
       "all_ids": [
-        23389,
-        27178
+        23389
       ]
     },
     "23392": {
@@ -11931,8 +11787,7 @@
         "The Nightmare"
       ],
       "all_ids": [
-        24417,
-        27198
+        24417
       ]
     },
     "24419": {
@@ -11941,8 +11796,7 @@
         "The Nightmare"
       ],
       "all_ids": [
-        24419,
-        27195
+        24419
       ]
     },
     "24420": {
@@ -11951,8 +11805,7 @@
         "The Nightmare"
       ],
       "all_ids": [
-        24420,
-        27196
+        24420
       ]
     },
     "24421": {
@@ -11961,8 +11814,7 @@
         "The Nightmare"
       ],
       "all_ids": [
-        24421,
-        27197
+        24421
       ]
     },
     "24422": {
@@ -12188,7 +12040,6 @@
         "Hallowed Sepulchre"
       ],
       "all_ids": [
-        24735,
         24844
       ]
     },
@@ -12333,7 +12184,6 @@
         "Mahogany Homes"
       ],
       "all_ids": [
-        20703,
         24884
       ]
     },
@@ -13043,8 +12893,7 @@
         "Tombs of Amascut"
       ],
       "all_ids": [
-        25975,
-        27870
+        25975
       ]
     },
     "25985": {
@@ -13062,8 +12911,7 @@
         "Tombs of Amascut"
       ],
       "all_ids": [
-        26219,
-        33174
+        26219
       ]
     },
     "26221": {
@@ -13150,8 +12998,7 @@
         "The Whisperer"
       ],
       "all_ids": [
-        26243,
-        33196
+        26243
       ]
     },
     "26245": {
@@ -13163,8 +13010,7 @@
         "The Whisperer"
       ],
       "all_ids": [
-        26245,
-        33198
+        26245
       ]
     },
     "26348": {
@@ -14332,8 +14178,7 @@
         "Moons of Peril"
       ],
       "all_ids": [
-        28988,
-        29849
+        28988
       ]
     },
     "28991": {
@@ -14342,8 +14187,7 @@
         "Moons of Peril"
       ],
       "all_ids": [
-        28991,
-        29852
+        28991
       ]
     },
     "28997": {
@@ -14352,8 +14196,7 @@
         "Moons of Peril"
       ],
       "all_ids": [
-        28997,
-        29850
+        28997
       ]
     },
     "29000": {
@@ -14362,8 +14205,7 @@
         "Moons of Peril"
       ],
       "all_ids": [
-        29000,
-        29851
+        29000
       ]
     },
     "29004": {
@@ -14373,8 +14215,7 @@
       ],
       "all_ids": [
         29004,
-        29031,
-        29840
+        29031
       ]
     },
     "29007": {
@@ -14384,8 +14225,7 @@
       ],
       "all_ids": [
         29007,
-        29033,
-        29841
+        29033
       ]
     },
     "29010": {
@@ -14395,8 +14235,7 @@
       ],
       "all_ids": [
         29010,
-        29035,
-        29842
+        29035
       ]
     },
     "29013": {
@@ -14406,8 +14245,7 @@
       ],
       "all_ids": [
         29013,
-        29037,
-        29843
+        29037
       ]
     },
     "29016": {
@@ -14417,8 +14255,7 @@
       ],
       "all_ids": [
         29016,
-        29039,
-        29844
+        29039
       ]
     },
     "29019": {
@@ -14428,8 +14265,7 @@
       ],
       "all_ids": [
         29019,
-        29041,
-        29845
+        29041
       ]
     },
     "29022": {
@@ -14439,8 +14275,7 @@
       ],
       "all_ids": [
         29022,
-        29043,
-        29846
+        29043
       ]
     },
     "29025": {
@@ -14450,8 +14285,7 @@
       ],
       "all_ids": [
         29025,
-        29045,
-        29847
+        29045
       ]
     },
     "29028": {
@@ -14461,8 +14295,7 @@
       ],
       "all_ids": [
         29028,
-        29047,
-        29848
+        29047
       ]
     },
     "29084": {
@@ -14651,8 +14484,7 @@
         "Slayer"
       ],
       "all_ids": [
-        29806,
-        33202
+        29806
       ]
     },
     "29836": {
@@ -14806,12 +14638,6 @@
         13667,
         13668,
         21063,
-        24743,
-        24745,
-        25069,
-        25071,
-        27444,
-        27446,
         30045,
         30047
       ]
@@ -14836,12 +14662,6 @@
         13669,
         13670,
         21066,
-        24746,
-        24748,
-        25072,
-        25074,
-        27447,
-        27449,
         30048,
         30050
       ]
@@ -14866,12 +14686,6 @@
         13671,
         13672,
         21069,
-        24749,
-        24751,
-        25075,
-        25077,
-        27450,
-        27452,
         30051,
         30053
       ]
@@ -14896,12 +14710,6 @@
         13673,
         13674,
         21072,
-        24752,
-        24754,
-        25078,
-        25080,
-        27453,
-        27455,
         30054,
         30056
       ]
@@ -14926,12 +14734,6 @@
         13675,
         13676,
         21075,
-        24755,
-        24757,
-        25081,
-        25083,
-        27456,
-        27458,
         30057,
         30059
       ]
@@ -14956,12 +14758,6 @@
         13677,
         13678,
         21078,
-        24758,
-        24760,
-        25084,
-        25086,
-        27459,
-        27461,
         30060,
         30062
       ]
@@ -15209,7 +15005,6 @@
       ],
       "all_ids": [
         9589,
-        9590,
         30803,
         30805
       ]
@@ -16361,8 +16156,7 @@
     "amulet of fury": {
       "name": "amulet of fury",
       "item_ids": [
-        6585,
-        23640
+        6585
       ],
       "clog_dependencies": [
         [
@@ -16522,8 +16316,7 @@
       "name": "dragonfire shield",
       "item_ids": [
         11283,
-        11284,
-        33186
+        11284
       ],
       "clog_dependencies": [
         [
@@ -16706,7 +16499,6 @@
       "name": "armadyl godsword",
       "item_ids": [
         11802,
-        20593,
         22665
       ],
       "clog_dependencies": [
@@ -16829,7 +16621,6 @@
       "name": "seers ring (i)",
       "item_ids": [
         11770,
-        23624,
         25258,
         26767
       ],
@@ -17474,8 +17265,7 @@
     "blessed spirit shield": {
       "name": "blessed spirit shield",
       "item_ids": [
-        12831,
-        23642
+        12831
       ],
       "clog_dependencies": [
         [
@@ -17638,8 +17428,7 @@
     "eternal boots": {
       "name": "eternal boots",
       "item_ids": [
-        13235,
-        23644
+        13235
       ],
       "clog_dependencies": [
         [
@@ -17745,8 +17534,7 @@
     "fire max cape": {
       "name": "fire max cape",
       "item_ids": [
-        13329,
-        21186
+        13329
       ],
       "clog_dependencies": [
         [
@@ -17814,8 +17602,7 @@
     "necklace of anguish": {
       "name": "necklace of anguish",
       "item_ids": [
-        19547,
-        27172
+        19547
       ],
       "clog_dependencies": [
         [
@@ -17827,8 +17614,7 @@
     "tormented bracelet": {
       "name": "tormented bracelet",
       "item_ids": [
-        19544,
-        27171
+        19544
       ],
       "clog_dependencies": [
         [
@@ -17840,8 +17626,7 @@
     "amulet of torture": {
       "name": "amulet of torture",
       "item_ids": [
-        19553,
-        27173
+        19553
       ],
       "clog_dependencies": [
         [
@@ -17901,8 +17686,7 @@
     "heavy ballista": {
       "name": "heavy ballista",
       "item_ids": [
-        19481,
-        23630
+        19481
       ],
       "clog_dependencies": [
         [
@@ -17916,8 +17700,7 @@
     "light ballista": {
       "name": "light ballista",
       "item_ids": [
-        19478,
-        27188
+        19478
       ],
       "clog_dependencies": [
         [
@@ -18352,8 +18135,7 @@
     "kodai wand": {
       "name": "kodai wand",
       "item_ids": [
-        21006,
-        23626
+        21006
       ],
       "clog_dependencies": [
         [
@@ -18439,7 +18221,6 @@
     "infernal max cape": {
       "name": "infernal max cape",
       "item_ids": [
-        21284,
         21285
       ],
       "clog_dependencies": [
@@ -19216,8 +18997,7 @@
     "volatile nightmare staff": {
       "name": "volatile nightmare staff",
       "item_ids": [
-        24424,
-        25517
+        24424
       ],
       "clog_dependencies": [
         [
@@ -19777,8 +19557,7 @@
     "elidinis' ward (f)": {
       "name": "elidinis' ward (f)",
       "item_ids": [
-        27251,
-        33176
+        27251
       ],
       "clog_dependencies": [
         [
@@ -19801,8 +19580,7 @@
     "ancient godsword": {
       "name": "ancient godsword",
       "item_ids": [
-        26233,
-        27184
+        26233
       ],
       "clog_dependencies": [
         [
@@ -19816,8 +19594,7 @@
     "torva full helm": {
       "name": "torva full helm",
       "item_ids": [
-        26382,
-        30302
+        26382
       ],
       "clog_dependencies": [
         [
@@ -19833,8 +19610,7 @@
     "torva platebody": {
       "name": "torva platebody",
       "item_ids": [
-        26384,
-        30303
+        26384
       ],
       "clog_dependencies": [
         [
@@ -19850,9 +19626,7 @@
     "torva platelegs": {
       "name": "torva platelegs",
       "item_ids": [
-        26386,
-        30304,
-        33194
+        26386
       ],
       "clog_dependencies": [
         [
@@ -19879,8 +19653,7 @@
     "zaryte crossbow": {
       "name": "zaryte crossbow",
       "item_ids": [
-        26374,
-        27186
+        26374
       ],
       "clog_dependencies": [
         [
@@ -20267,8 +20040,7 @@
     "masori body (f)": {
       "name": "masori body (f)",
       "item_ids": [
-        27238,
-        33190
+        27238
       ],
       "clog_dependencies": [
         [
@@ -20288,8 +20060,7 @@
     "masori chaps (f)": {
       "name": "masori chaps (f)",
       "item_ids": [
-        27241,
-        33192
+        27241
       ],
       "clog_dependencies": [
         [
@@ -20427,8 +20198,7 @@
     "voidwaker": {
       "name": "voidwaker",
       "item_ids": [
-        27690,
-        27869
+        27690
       ],
       "clog_dependencies": [
         [
@@ -20625,8 +20395,7 @@
     "ultor ring": {
       "name": "ultor ring",
       "item_ids": [
-        28307,
-        33182
+        28307
       ],
       "clog_dependencies": [
         [
@@ -20639,8 +20408,7 @@
     "magus ring": {
       "name": "magus ring",
       "item_ids": [
-        28313,
-        33180
+        28313
       ],
       "clog_dependencies": [
         [
@@ -21331,8 +21099,7 @@
     "burning claws": {
       "name": "burning claws",
       "item_ids": [
-        29577,
-        33200
+        29577
       ],
       "clog_dependencies": [
         [
@@ -21354,8 +21121,7 @@
     "purging staff": {
       "name": "purging staff",
       "item_ids": [
-        29594,
-        33184
+        29594
       ],
       "clog_dependencies": [
         [
@@ -21366,8 +21132,7 @@
     "noxious halberd": {
       "name": "noxious halberd",
       "item_ids": [
-        29796,
-        33178
+        29796
       ],
       "clog_dependencies": [
         [
@@ -21982,8 +21747,7 @@
     "avernic treads (max)": {
       "name": "avernic treads (max)",
       "item_ids": [
-        31097,
-        33172
+        31097
       ],
       "clog_dependencies": [
         [
@@ -24275,8 +24039,7 @@
     "tome of fire": {
       "name": "tome of fire",
       "item_ids": [
-        20714,
-        27358
+        20714
       ],
       "clog_dependencies": [
         [
@@ -24607,15 +24370,6 @@
     "pharaoh's sceptre": {
       "name": "pharaoh's sceptre",
       "item_ids": [
-        9044,
-        9046,
-        9048,
-        9050,
-        13074,
-        13075,
-        13076,
-        13077,
-        13078,
         26948,
         26950
       ],
@@ -25803,6 +25557,252 @@
         [
           12798,
           11787
+        ]
+      ]
+    },
+    "dragon pickaxe (upgraded)": {
+      "name": "dragon pickaxe (upgraded)",
+      "item_ids": [
+        12797
+      ],
+      "clog_dependencies": [
+        [
+          11920,
+          12800
+        ]
+      ]
+    },
+    "graceful boots (hallowed)": {
+      "name": "graceful boots (hallowed)",
+      "item_ids": [
+        24758,
+        24760
+      ],
+      "clog_dependencies": [
+        [
+          24729,
+          30060
+        ]
+      ]
+    },
+    "graceful cape (hallowed)": {
+      "name": "graceful cape (hallowed)",
+      "item_ids": [
+        24746,
+        24748
+      ],
+      "clog_dependencies": [
+        [
+          24729,
+          30048
+        ]
+      ]
+    },
+    "graceful gloves (hallowed)": {
+      "name": "graceful gloves (hallowed)",
+      "item_ids": [
+        24755,
+        24757
+      ],
+      "clog_dependencies": [
+        [
+          24729,
+          30057
+        ]
+      ]
+    },
+    "graceful hood (hallowed)": {
+      "name": "graceful hood (hallowed)",
+      "item_ids": [
+        24743,
+        24745
+      ],
+      "clog_dependencies": [
+        [
+          24729,
+          30045
+        ]
+      ]
+    },
+    "graceful legs (hallowed)": {
+      "name": "graceful legs (hallowed)",
+      "item_ids": [
+        24752,
+        24754
+      ],
+      "clog_dependencies": [
+        [
+          24729,
+          30054
+        ]
+      ]
+    },
+    "graceful top (hallowed)": {
+      "name": "graceful top (hallowed)",
+      "item_ids": [
+        24749,
+        24751
+      ],
+      "clog_dependencies": [
+        [
+          24729,
+          30051
+        ]
+      ]
+    },
+    "dragon pickaxe (or) (trailblazer)": {
+      "name": "dragon pickaxe (or) (trailblazer)",
+      "item_ids": [
+        25376,
+        30351
+      ],
+      "clog_dependencies": [
+        [
+          11920
+        ]
+      ]
+    },
+    "graceful cape (trailblazer)": {
+      "name": "graceful cape (trailblazer)",
+      "item_ids": [
+        25072,
+        25074
+      ],
+      "clog_dependencies": [
+        [
+          30048
+        ]
+      ]
+    },
+    "graceful top (trailblazer)": {
+      "name": "graceful top (trailblazer)",
+      "item_ids": [
+        25075,
+        25077
+      ],
+      "clog_dependencies": [
+        [
+          30051
+        ]
+      ]
+    },
+    "graceful boots (trailblazer)": {
+      "name": "graceful boots (trailblazer)",
+      "item_ids": [
+        25084,
+        25086
+      ],
+      "clog_dependencies": [
+        [
+          30060
+        ]
+      ]
+    },
+    "graceful legs (trailblazer)": {
+      "name": "graceful legs (trailblazer)",
+      "item_ids": [
+        25078,
+        25080
+      ],
+      "clog_dependencies": [
+        [
+          30054
+        ]
+      ]
+    },
+    "graceful hood (trailblazer)": {
+      "name": "graceful hood (trailblazer)",
+      "item_ids": [
+        25069,
+        25071
+      ],
+      "clog_dependencies": [
+        [
+          30045
+        ]
+      ]
+    },
+    "graceful gloves (trailblazer)": {
+      "name": "graceful gloves (trailblazer)",
+      "item_ids": [
+        25081,
+        25083
+      ],
+      "clog_dependencies": [
+        [
+          30057
+        ]
+      ]
+    },
+    "graceful hood (adventurer)": {
+      "name": "graceful hood (adventurer)",
+      "item_ids": [
+        27444,
+        27446
+      ],
+      "clog_dependencies": [
+        [
+          30045
+        ]
+      ]
+    },
+    "graceful cape (adventurer)": {
+      "name": "graceful cape (adventurer)",
+      "item_ids": [
+        27447,
+        27449
+      ],
+      "clog_dependencies": [
+        [
+          30048
+        ]
+      ]
+    },
+    "graceful top (adventurer)": {
+      "name": "graceful top (adventurer)",
+      "item_ids": [
+        27450,
+        27452
+      ],
+      "clog_dependencies": [
+        [
+          30051
+        ]
+      ]
+    },
+    "graceful legs (adventurer)": {
+      "name": "graceful legs (adventurer)",
+      "item_ids": [
+        27453,
+        27455
+      ],
+      "clog_dependencies": [
+        [
+          30054
+        ]
+      ]
+    },
+    "graceful gloves (adventurer)": {
+      "name": "graceful gloves (adventurer)",
+      "item_ids": [
+        27456,
+        27458
+      ],
+      "clog_dependencies": [
+        [
+          30057
+        ]
+      ]
+    },
+    "graceful boots (adventurer)": {
+      "name": "graceful boots (adventurer)",
+      "item_ids": [
+        27459,
+        27461
+      ],
+      "clog_dependencies": [
+        [
+          30060
         ]
       ]
     }

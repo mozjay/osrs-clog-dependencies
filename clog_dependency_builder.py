@@ -18,6 +18,7 @@ import json
 import time
 import argparse
 import os
+import hashlib
 import requests
 from pathlib import Path
 from typing import Dict, List, Set, Optional, Tuple
@@ -26,6 +27,7 @@ from collections import defaultdict
 
 
 # Configuration
+OUTPUT_DATA_VERSION = "1.3.0"  # version field written to clog_restrictions.json
 WIKI_API_BASE = "https://oldschool.runescape.wiki/api.php"
 CLOG_DATA_URL = "https://oldschool.runescape.wiki/w/Module:Collection_log/data.json?action=raw"
 PRICES_API_MAPPING = "https://prices.runescape.wiki/api/v1/osrs/mapping"
@@ -40,10 +42,30 @@ ALL_ITEMS_CACHE_FILE = CACHE_DIR / "all_items.json"
 PRICES_MAPPING_CACHE_FILE = CACHE_DIR / "prices_mapping.json"
 CACHE_MAX_AGE_DAYS = 7
 
+# Page name suffixes for wiki pages that document non-obtainable items
+# (betas, interface-only graphics, discontinued items, minigame-exclusive
+# replicas, etc.) which reuse a real item's display name under a different
+# item ID. Entries with these page name suffixes are excluded when building
+# the item ID map, so these IDs don't pollute the real item's variant list.
+EXCLUDED_PAGE_NAME_SUFFIXES = (
+    "(Last Man Standing)",
+    "(beta)",
+    "(unobtainable item)",
+    "(interface item)",
+    "(animation item)",
+    "(discontinued)",
+)
+
 # Manual recipes file
 # Contains manually-defined derived items that can't be auto-detected
 # (e.g., items that share display names with base clog items)
 MANUAL_RECIPES_FILE = Path(__file__).parent / "manual_recipes.json"
+
+# Manual candidate review decisions file
+# Records accept/decline decisions from the interactive manual recipe review,
+# keyed by recipe output name, so previously-declined candidates aren't
+# re-prompted unless their recipe data changes.
+MANUAL_CANDIDATE_DECISIONS_FILE = Path(__file__).parent / "manual_candidate_decisions.json"
 
 # Variant patterns for items that don't have explicit recipes
 # Format: (base_pattern, variant_pattern, description)
@@ -253,7 +275,7 @@ class OSRSWikiClient:
         """Fetch a batch of item names from the Bucket API."""
         self._rate_limit()
 
-        query = f"bucket('infobox_item').select('item_name','item_id').offset({offset}).limit({limit}).run()"
+        query = f"bucket('infobox_item').select('item_name','item_id','page_name').offset({offset}).limit({limit}).run()"
         params = {
             "action": "bucket",
             "query": query,
@@ -297,7 +319,7 @@ class OSRSWikiClient:
             print(f"  Warning: Failed to fetch prices mapping: {e}")
             return {}
 
-    def fetch_all_items(self, force_refresh: bool = False) -> Tuple[Dict[str, int], Dict[str, List[int]]]:
+    def fetch_all_items(self, force_refresh: bool = False) -> Tuple[Dict[str, int], Dict[str, List[int]], Dict[str, List[int]]]:
         """Fetch all item names and IDs from wiki bucket API + prices API.
 
         The bucket API returns multiple entries for items with variants (LMS, imbued, etc.).
@@ -306,24 +328,30 @@ class OSRSWikiClient:
         Returns a tuple of:
         - primary_ids: Dict mapping item_name (lowercase) -> primary item_id
         - all_ids: Dict mapping item_name (lowercase) -> list of all item IDs
+        - page_ids: Dict mapping wiki page_name (lowercase) -> list of item IDs on that page
 
         For derived items:
         - Tradeable items: use primary_id (from prices API)
         - Items with real variants (e.g., imbued helms): all IDs are included
+
+        page_ids is useful for resolving items whose display name (item_name)
+        collides with another item's, but which have their own wiki page
+        (e.g. "Granite maul (ornate handle)").
         """
         # Check cache first
         if not force_refresh and self.cache.is_cache_valid(ALL_ITEMS_CACHE_FILE):
             print("Loading all item names from cache...")
             cached = self.cache.load_cache(ALL_ITEMS_CACHE_FILE)
-            if isinstance(cached, dict) and "primary_ids" in cached and "all_ids" in cached:
+            if isinstance(cached, dict) and "primary_ids" in cached and "all_ids" in cached and "page_ids" in cached:
                 print(f"  Loaded {len(cached['primary_ids'])} item names from cache")
-                return cached["primary_ids"], cached["all_ids"]
+                return cached["primary_ids"], cached["all_ids"], cached["page_ids"]
             # Old cache format - need to regenerate
             print("  Old cache format detected, regenerating...")
 
         # Step 1: Fetch all items from bucket API, grouping by name
         print("Fetching all items from wiki bucket API...")
         all_ids_by_name: Dict[str, List[int]] = defaultdict(list)
+        all_ids_by_page: Dict[str, List[int]] = defaultdict(list)
         offset = 0
         batch_size = 500
         total_entries = 0
@@ -336,22 +364,34 @@ class OSRSWikiClient:
             for item in batch:
                 name = item.get("item_name", "").lower()
                 item_id_raw = item.get("item_id", [])
+                page_name = item.get("page_name", "")
 
                 if not name:
                     continue
 
+                # Skip pages documenting non-obtainable duplicates (betas,
+                # LMS replicas, interface/animation items, etc.) that reuse
+                # a real item's display name under a different item ID.
+                if page_name.endswith(EXCLUDED_PAGE_NAME_SUFFIXES):
+                    continue
+
                 # Handle item_id being a list (bucket API returns arrays)
+                ids = []
                 if isinstance(item_id_raw, list):
                     for id_str in item_id_raw:
                         try:
-                            all_ids_by_name[name].append(int(id_str))
+                            ids.append(int(id_str))
                         except (ValueError, TypeError):
                             pass
                 elif item_id_raw:
                     try:
-                        all_ids_by_name[name].append(int(item_id_raw))
+                        ids.append(int(item_id_raw))
                     except (ValueError, TypeError):
                         pass
+
+                all_ids_by_name[name].extend(ids)
+                if page_name:
+                    all_ids_by_page[page_name.lower()].extend(ids)
 
             total_entries += len(batch)
             if total_entries % 2000 == 0:
@@ -359,6 +399,11 @@ class OSRSWikiClient:
             offset += batch_size
 
         print(f"  Total: {total_entries} entries -> {len(all_ids_by_name)} unique item names")
+
+        # De-duplicate and sort page ID lists
+        page_ids: Dict[str, List[int]] = {
+            page: sorted(set(ids)) for page, ids in all_ids_by_page.items() if ids
+        }
 
         # Step 2: Get prices API mapping (authoritative for tradeable items)
         prices_mapping = self.fetch_prices_mapping(force_refresh)
@@ -398,10 +443,10 @@ class OSRSWikiClient:
         print(f"  Items with multiple IDs: {multi_id_count}")
 
         # Save to cache
-        cache_data = {"primary_ids": primary_ids, "all_ids": dict(all_ids_by_name)}
+        cache_data = {"primary_ids": primary_ids, "all_ids": dict(all_ids_by_name), "page_ids": page_ids}
         self.cache.save_cache(ALL_ITEMS_CACHE_FILE, cache_data)
 
-        return primary_ids, dict(all_ids_by_name)
+        return primary_ids, dict(all_ids_by_name), page_ids
 
 
 class DependencyResolver:
@@ -1020,6 +1065,151 @@ def process_manual_recipes(clog_items_output, derived_items_output, manual_recip
     print(f"  Added {len(manual_recipes)} manual recipes to derived items")
 
 
+def _recipe_hash(recipes_list: List[List[str]]) -> str:
+    """Compute a stable hash of a recipe's material lists, used to detect
+    when a candidate's recipe data has changed since it was last reviewed."""
+    normalized = sorted(sorted(materials) for materials in recipes_list)
+    return hashlib.md5(json.dumps(normalized).encode()).hexdigest()[:12]
+
+
+def find_manual_recipe_candidates(
+    resolver: 'DependencyResolver',
+    primary_ids: Dict[str, int],
+    all_ids: Dict[str, List[int]],
+    page_ids: Dict[str, List[int]],
+    manual_recipes: Dict[str, dict]
+) -> List[dict]:
+    """
+    Find recipe outputs that are clog-derived but have no auto-detected item ID
+    and aren't already covered by manual_recipes.json.
+
+    These are candidates for manual_recipes.json entries - typically items that
+    share a display name with another item and so have no distinct entry in the
+    wiki's item ID database.
+    """
+    manual_names = {name.lower() for name in manual_recipes.keys()}
+
+    candidates = []
+    for output_name, recipes_list in resolver.recipes_by_item.items():
+        if output_name in resolver.clog_names:
+            continue
+        if output_name in manual_names:
+            continue
+        if output_name in primary_ids or output_name in all_ids:
+            continue  # auto-resolvable
+
+        all_dep_sets = resolver.find_all_minimum_clog_dependency_sets(output_name)
+        if not all_dep_sets:
+            continue  # not clog-derived
+
+        candidates.append({
+            'name': output_name,
+            'recipes': recipes_list,
+            'clog_dependencies': [sorted(s) for s in all_dep_sets],
+            'suggested_item_ids': page_ids.get(output_name, []),
+        })
+
+    return candidates
+
+
+def review_manual_candidates(
+    resolver: 'DependencyResolver',
+    primary_ids: Dict[str, int],
+    all_ids: Dict[str, List[int]],
+    page_ids: Dict[str, List[int]],
+    clog_items: Dict[int, Item],
+    manual_recipes: Dict[str, dict]
+):
+    """
+    Interactively review candidates for manual_recipes.json.
+
+    For each candidate not previously reviewed (or whose recipe has changed
+    since it was last reviewed), prompts the user to either provide item ID(s)
+    to add it to manual_recipes.json, or decline it. Declined candidates are
+    recorded in MANUAL_CANDIDATE_DECISIONS_FILE and won't be re-prompted unless
+    their recipe data changes.
+    """
+    candidates = find_manual_recipe_candidates(resolver, primary_ids, all_ids, page_ids, manual_recipes)
+
+    if MANUAL_CANDIDATE_DECISIONS_FILE.exists():
+        with open(MANUAL_CANDIDATE_DECISIONS_FILE, 'r') as f:
+            decisions = json.load(f)
+    else:
+        decisions = {}
+
+    clog_id_to_name = {item_id: item.name for item_id, item in clog_items.items()}
+
+    new_count = 0
+    for candidate in candidates:
+        name = candidate['name']
+        h = _recipe_hash(candidate['recipes'])
+
+        decision = decisions.get(name)
+        if decision and decision.get('recipe_hash') == h and decision.get('status') == 'declined':
+            continue
+
+        if not candidate['suggested_item_ids']:
+            decisions[name] = {"status": "declined", "recipe_hash": h, "reason": "no item ID found on wiki - no resolution possible"}
+            with open(MANUAL_CANDIDATE_DECISIONS_FILE, 'w') as f:
+                json.dump(decisions, f, indent=2)
+            continue
+
+        new_count += 1
+        print("\n" + "=" * 60)
+        print(f"Candidate: {name}")
+        print("Recipes:")
+        for materials in candidate['recipes']:
+            print(f"  - {' + '.join(materials)}")
+        print("Clog dependencies:")
+        for dep_set in candidate['clog_dependencies']:
+            dep_names = ", ".join(clog_id_to_name.get(i, str(i)) for i in dep_set)
+            print(f"  - {dep_set} ({dep_names})")
+
+        suggested_item_ids = candidate['suggested_item_ids']
+        print(f"Suggested item IDs (from wiki page): {suggested_item_ids}")
+        prompt = (
+            "Enter item ID(s) comma-separated to add to manual_recipes.json, "
+            "'a' to accept the suggested IDs, 'd' to decline, or Enter to skip for now: "
+        )
+
+        response = input(prompt).strip()
+
+        if not response:
+            print("  Skipped (will ask again next time)")
+            continue
+
+        if response.lower() == 'd':
+            decisions[name] = {"status": "declined", "recipe_hash": h}
+            print("  Declined")
+        else:
+            if response.lower() == 'a':
+                item_ids = suggested_item_ids
+            else:
+                try:
+                    item_ids = [int(x.strip()) for x in response.split(",") if x.strip()]
+                except ValueError:
+                    print(f"  Could not parse '{response}' as item ID(s) - skipped")
+                    continue
+
+            manual_recipes[name] = {
+                "name": name,
+                "item_ids": item_ids,
+                "clog_dependencies": candidate['clog_dependencies'],
+            }
+            decisions[name] = {"status": "accepted", "recipe_hash": h}
+            print(f"  Added to manual_recipes.json with item_ids {item_ids}")
+
+        with open(MANUAL_RECIPES_FILE, 'w') as f:
+            json.dump(manual_recipes, f, indent=2)
+        with open(MANUAL_CANDIDATE_DECISIONS_FILE, 'w') as f:
+            json.dump(decisions, f, indent=2)
+
+    if new_count == 0:
+        print("\nNo new manual recipe candidates to review.")
+    else:
+        print(f"\nReviewed {new_count} candidate(s).")
+
+
 def generate_output_json(
     clog_items: Dict[int, Item],
     resolver: DependencyResolver,
@@ -1133,7 +1323,7 @@ def generate_output_json(
 
     # Build the output structure
     output = {
-        "version": "1.3.0",
+        "version": OUTPUT_DATA_VERSION,
         "generated": time.strftime("%Y-%m-%d %H:%M:%S"),
         "stats": {
             "total_clog_items": len(clog_items),
@@ -1168,6 +1358,8 @@ def main():
     parser.add_argument("--visualize", type=str, help="Visualize dependencies for a specific item")
     parser.add_argument("--output", type=str, default="output/clog_restrictions.json", help="Output JSON file path")
     parser.add_argument("--refresh-cache", action="store_true", help="Force refresh of cached wiki data")
+    parser.add_argument("--skip-manual-review", action="store_true",
+                         help="Skip interactive review of new manual_recipes.json candidates")
     args = parser.parse_args()
 
     # Initialize cache and client
@@ -1177,7 +1369,7 @@ def main():
     # Fetch data (uses cache unless --refresh-cache)
     clog_items = wiki_client.fetch_collection_log_items(force_refresh=args.refresh_cache)
     recipes = wiki_client.fetch_all_recipes(force_refresh=args.refresh_cache)
-    primary_ids, all_ids = wiki_client.fetch_all_items(force_refresh=args.refresh_cache)
+    primary_ids, all_ids, page_ids = wiki_client.fetch_all_items(force_refresh=args.refresh_cache)
 
     # Build resolver
     resolver = DependencyResolver(clog_items)
@@ -1187,6 +1379,10 @@ def main():
     if args.visualize:
         visualize_item(resolver, args.visualize, clog_items)
     else:
+        if not args.skip_manual_review:
+            manual_recipes = load_manual_recipes()
+            review_manual_candidates(resolver, primary_ids, all_ids, page_ids, clog_items, manual_recipes)
+
         generate_output_json(clog_items, resolver, primary_ids, all_ids, args.output)
 
 

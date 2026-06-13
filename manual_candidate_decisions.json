@@ -1,0 +1,336 @@
+{
+  "dragon helm": {
+    "status": "declined",
+    "recipe_hash": "3c828d8f6330",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "dark bow (green)": {
+    "status": "declined",
+    "recipe_hash": "fff5fcaa4580",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "dark bow (blue)": {
+    "status": "declined",
+    "recipe_hash": "b29610423ac5",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "dark bow (yellow)": {
+    "status": "declined",
+    "recipe_hash": "dfee487c2a25",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "dark bow (white)": {
+    "status": "declined",
+    "recipe_hash": "672122da2088",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "kbd head (mounted)": {
+    "status": "declined",
+    "recipe_hash": "d7e5b00ce061",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "mounted bass": {
+    "status": "declined",
+    "recipe_hash": "0a9e1df0a2b3",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "mounted shark": {
+    "status": "declined",
+    "recipe_hash": "325e17a6f05b",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "cockatrice head (mounted)": {
+    "status": "declined",
+    "recipe_hash": "6a1b0cc1411b",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "basilisk head (mounted)": {
+    "status": "declined",
+    "recipe_hash": "0c31d0ca907a",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "mounted swordfish": {
+    "status": "declined",
+    "recipe_hash": "118321cfd2ff",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "abyssal demon head (mounted)": {
+    "status": "declined",
+    "recipe_hash": "505e1bf52eb7",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "kurask head (mounted)": {
+    "status": "declined",
+    "recipe_hash": "bc9e5394b773",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "ancient altar": {
+    "status": "declined",
+    "recipe_hash": "5aa5659bf51a",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "occult altar": {
+    "status": "declined",
+    "recipe_hash": "c5b56d418426",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "ornate rejuvenation pool": {
+    "status": "declined",
+    "recipe_hash": "e43ce8a0b60e",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "volcanic theme": {
+    "status": "declined",
+    "recipe_hash": "226bed3c6f30",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "obsidian fence": {
+    "status": "declined",
+    "recipe_hash": "52cd4453c3b6",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "obsidian decorative bench": {
+    "status": "declined",
+    "recipe_hash": "13a2728fee28",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "undead combat dummy": {
+    "status": "declined",
+    "recipe_hash": "d806d36dea4b",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "obelisk (construction)": {
+    "status": "declined",
+    "recipe_hash": "0dafa2cc838a",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "vorkath's head (mounted)": {
+    "status": "declined",
+    "recipe_hash": "7c59fa0b715a",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "mounted xeric's talisman": {
+    "status": "declined",
+    "recipe_hash": "e8730a838e53",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "alchemical hydra heads (mounted)": {
+    "status": "declined",
+    "recipe_hash": "86a1e81a25c2",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "ornate undead combat dummy": {
+    "status": "declined",
+    "recipe_hash": "43fbe6c49954",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "mounted harpoonfish": {
+    "status": "declined",
+    "recipe_hash": "b6c788bdcb74",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "lost bag (red)": {
+    "status": "declined",
+    "recipe_hash": "717ddf16b5c6",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "lost bag (green)": {
+    "status": "declined",
+    "recipe_hash": "bb82fd5b316a",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "lost bag (blue)": {
+    "status": "declined",
+    "recipe_hash": "48a5bc827d22",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "amulet of the eye (red)": {
+    "status": "declined",
+    "recipe_hash": "3009ee78ee73",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "amulet of the eye (green)": {
+    "status": "declined",
+    "recipe_hash": "f77ae7b133e9",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "amulet of the eye (blue)": {
+    "status": "declined",
+    "recipe_hash": "756909c9da62",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "colossal pouch (devious minds)": {
+    "status": "declined",
+    "recipe_hash": "09bfcbf5492c"
+  },
+  "beehive (construction)": {
+    "status": "declined",
+    "recipe_hash": "6cbb97bc07e8",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "dragon cannon": {
+    "status": "declined",
+    "recipe_hash": "c88b8e812795",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "dragon salvaging hook": {
+    "status": "declined",
+    "recipe_hash": "d96ce0e971f8",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "chum spreader": {
+    "status": "declined",
+    "recipe_hash": "fda354f7e017",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "greater teleport focus (facility)": {
+    "status": "declined",
+    "recipe_hash": "01b5174e4254",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "greenman statue (construction)": {
+    "status": "declined",
+    "recipe_hash": "18b597c2ccee",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "greenman carving (construction)": {
+    "status": "declined",
+    "recipe_hash": "788209bfa90a",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "mounted huge halibut": {
+    "status": "declined",
+    "recipe_hash": "53cc4faff145",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "mounted swift marlin": {
+    "status": "declined",
+    "recipe_hash": "af61785330c2",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "rosewood cargo hold": {
+    "status": "declined",
+    "recipe_hash": "71cb4a9220cd",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "gale catcher": {
+    "status": "declined",
+    "recipe_hash": "ad2fbfe1d8ac",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "hemp trawling net": {
+    "status": "declined",
+    "recipe_hash": "8a2ddfeb3797",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "cotton trawling net": {
+    "status": "declined",
+    "recipe_hash": "a5cdfb7c2bb6",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "storm chaser's flag": {
+    "status": "declined",
+    "recipe_hash": "6c9a7c6e20e7",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "swamp cruiser's flag": {
+    "status": "declined",
+    "recipe_hash": "390192e4d47a",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "crystal glider's flag": {
+    "status": "declined",
+    "recipe_hash": "131be9f84ef4",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "mounted giant blue krill": {
+    "status": "declined",
+    "recipe_hash": "51711859f9ae",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "mounted golden haddock": {
+    "status": "declined",
+    "recipe_hash": "5263751e2eed",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "mounted orangefin": {
+    "status": "declined",
+    "recipe_hash": "31a366ac5319",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "mounted purplefin": {
+    "status": "declined",
+    "recipe_hash": "5e4181b935ff",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "dragon keel": {
+    "status": "declined",
+    "recipe_hash": "eb586169199a",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "fathom pearl": {
+    "status": "declined",
+    "recipe_hash": "c1dd83c18797",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "rosewood mast and cotton sails": {
+    "status": "declined",
+    "recipe_hash": "0ccdf2e92ebf",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "shark trim": {
+    "status": "declined",
+    "recipe_hash": "72cbac9fb23f",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "angler's trim": {
+    "status": "declined",
+    "recipe_hash": "d4aa4d4db0b3",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "zamorakian trim": {
+    "status": "declined",
+    "recipe_hash": "4ab8ece743c0",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "guthixian trim": {
+    "status": "declined",
+    "recipe_hash": "6fb8a3a105a6",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "inky trim": {
+    "status": "declined",
+    "recipe_hash": "7bf30bfbc238",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "armadylean trim": {
+    "status": "declined",
+    "recipe_hash": "14a6993c8292",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "barracuda trim": {
+    "status": "declined",
+    "recipe_hash": "d6aa3e93a225",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "saradominist trim": {
+    "status": "declined",
+    "recipe_hash": "5a8dbd7b7fdd",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "salvor's trim": {
+    "status": "declined",
+    "recipe_hash": "df4032eee482",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "sandy trim": {
+    "status": "declined",
+    "recipe_hash": "0f7a0892dd91",
+    "reason": "no item ID found on wiki - no resolution possible"
+  },
+  "merchant's trim": {
+    "status": "declined",
+    "recipe_hash": "43b1a02d560b",
+    "reason": "no item ID found on wiki - no resolution possible"
+  }
+}
