@@ -1,14 +1,14 @@
 {
-  "version": "1.2.0",
-  "generated": "2026-02-07 01:48:59",
+  "version": "1.3.0",
+  "generated": "2026-06-13 14:48:36",
   "stats": {
-    "total_clog_items": 1692,
-    "total_derived_items": 792,
-    "items_with_clog_free_recipes": 3165,
-    "derived_items_with_multiple_ids": 72,
-    "derived_items_without_ids": 90,
-    "clog_items_with_multiple_ids": 169,
-    "clog_items_craftable_from_other_clogs": 27
+    "total_clog_items": 1701,
+    "total_derived_items": 808,
+    "items_with_clog_free_recipes": 3206,
+    "derived_items_with_multiple_ids": 82,
+    "derived_items_without_ids": 99,
+    "clog_items_with_multiple_ids": 175,
+    "clog_items_craftable_from_other_clogs": 28
   },
   "collectionLogItems": {
     "1249": {
@@ -9513,7 +9513,8 @@
         "Chambers of Xeric"
       ],
       "all_ids": [
-        21000
+        21000,
+        33188
       ]
     },
     "21003": {
@@ -13061,7 +13062,8 @@
         "Tombs of Amascut"
       ],
       "all_ids": [
-        26219
+        26219,
+        33174
       ]
     },
     "26221": {
@@ -13148,7 +13150,8 @@
         "The Whisperer"
       ],
       "all_ids": [
-        26243
+        26243,
+        33196
       ]
     },
     "26245": {
@@ -13160,7 +13163,8 @@
         "The Whisperer"
       ],
       "all_ids": [
-        26245
+        26245,
+        33198
       ]
     },
     "26348": {
@@ -14647,7 +14651,8 @@
         "Slayer"
       ],
       "all_ids": [
-        29806
+        29806,
+        33202
       ]
     },
     "29836": {
@@ -15697,6 +15702,15 @@
       ],
       "all_ids": [
         32110
+      ],
+      "craftable_from": [
+        [
+          32087,
+          32090,
+          32093,
+          32096,
+          32099
+        ]
       ]
     },
     "32113": {
@@ -16245,6 +16259,91 @@
       "all_ids": [
         31283
       ]
+    },
+    "33074": {
+      "name": "Facility bottle (empty)",
+      "tabs": [
+        "Sailing Miscellaneous"
+      ],
+      "all_ids": [
+        33074
+      ]
+    },
+    "33091": {
+      "name": "Bottomless milk bucket (empty)",
+      "tabs": [
+        "Brutus"
+      ],
+      "all_ids": [
+        33091
+      ]
+    },
+    "33093": {
+      "name": "Cow slippers",
+      "tabs": [
+        "Brutus"
+      ],
+      "all_ids": [
+        33093,
+        33096,
+        33097,
+        33098
+      ]
+    },
+    "33101": {
+      "name": "Mooleta",
+      "tabs": [
+        "Brutus"
+      ],
+      "all_ids": [
+        33101
+      ]
+    },
+    "33124": {
+      "name": "Beef",
+      "tabs": [
+        "Brutus",
+        "All Pets"
+      ],
+      "all_ids": [
+        33124
+      ]
+    },
+    "33133": {
+      "name": "Pristine spider silk",
+      "tabs": [
+        "Sarachnis"
+      ],
+      "all_ids": [
+        33133
+      ]
+    },
+    "33143": {
+      "name": "Ballistic attractor schematic",
+      "tabs": [
+        "Lost Schematics"
+      ],
+      "all_ids": [
+        33143
+      ]
+    },
+    "33423": {
+      "name": "Bosun's workbench schematic",
+      "tabs": [
+        "Lost Schematics"
+      ],
+      "all_ids": [
+        33423
+      ]
+    },
+    "33382": {
+      "name": "Immaculate mole skin",
+      "tabs": [
+        "Giant Mole"
+      ],
+      "all_ids": [
+        33382
+      ]
     }
   },
   "derivedItems": {
@@ -16423,7 +16522,8 @@
       "name": "dragonfire shield",
       "item_ids": [
         11283,
-        11284
+        11284,
+        33186
       ],
       "clog_dependencies": [
         [
@@ -18136,6 +18236,61 @@
         ]
       ]
     },
+    "dragon hasta": {
+      "name": "dragon hasta",
+      "item_ids": [
+        22731
+      ],
+      "clog_dependencies": [
+        [
+          22963
+        ]
+      ]
+    },
+    "dragon hasta(p)": {
+      "name": "dragon hasta(p)",
+      "item_ids": [
+        22734
+      ],
+      "clog_dependencies": [
+        [
+          22963
+        ]
+      ]
+    },
+    "dragon hasta(p+)": {
+      "name": "dragon hasta(p+)",
+      "item_ids": [
+        22737
+      ],
+      "clog_dependencies": [
+        [
+          22963
+        ]
+      ]
+    },
+    "dragon hasta(p++)": {
+      "name": "dragon hasta(p++)",
+      "item_ids": [
+        22740
+      ],
+      "clog_dependencies": [
+        [
+          22963
+        ]
+      ]
+    },
+    "dragon hasta(kp)": {
+      "name": "dragon hasta(kp)",
+      "item_ids": [
+        22743
+      ],
+      "clog_dependencies": [
+        [
+          22963
+        ]
+      ]
+    },
     "dark squirrel": {
       "name": "dark squirrel",
       "item_ids": [
@@ -18715,6 +18870,18 @@
         ]
       ]
     },
+    "gem sack": {
+      "name": "gem sack",
+      "item_ids": [
+        33393
+      ],
+      "clog_dependencies": [
+        [
+          25628,
+          33382
+        ]
+      ]
+    },
     "stuffed hydra heads": {
       "name": "stuffed hydra heads",
       "item_ids": [
@@ -18823,29 +18990,6 @@
         ]
       ]
     },
-    "crystal shards": {
-      "name": "crystal shards",
-      "item_ids": [
-        23866
-      ],
-      "clog_dependencies": [
-        [
-          23953
-        ],
-        [
-          25859
-        ],
-        [
-          23956
-        ],
-        [
-          23959
-        ],
-        [
-          4207
-        ]
-      ]
-    },
     "bloodbark legs": {
       "name": "bloodbark legs",
       "item_ids": [
@@ -18903,6 +19047,23 @@
         ]
       ]
     },
+    "crystal sapling": {
+      "name": "crystal sapling",
+      "item_ids": [
+        23659
+      ],
+      "clog_dependencies": [
+        [
+          23956
+        ],
+        [
+          23953
+        ],
+        [
+          4207
+        ]
+      ]
+    },
     "crystal acorn": {
       "name": "crystal acorn",
       "item_ids": [
@@ -18930,6 +19091,40 @@
         [
           21028,
           23953
+        ]
+      ]
+    },
+    "crystal seedling": {
+      "name": "crystal seedling",
+      "item_ids": [
+        23655
+      ],
+      "clog_dependencies": [
+        [
+          23956
+        ],
+        [
+          23953
+        ],
+        [
+          4207
+        ]
+      ]
+    },
+    "crystal seedling (w)": {
+      "name": "crystal seedling (w)",
+      "item_ids": [
+        23657
+      ],
+      "clog_dependencies": [
+        [
+          23956
+        ],
+        [
+          23953
+        ],
+        [
+          4207
         ]
       ]
     },
@@ -19582,7 +19777,8 @@
     "elidinis' ward (f)": {
       "name": "elidinis' ward (f)",
       "item_ids": [
-        27251
+        27251,
+        33176
       ],
       "clog_dependencies": [
         [
@@ -19655,7 +19851,8 @@
       "name": "torva platelegs",
       "item_ids": [
         26386,
-        30304
+        30304,
+        33194
       ],
       "clog_dependencies": [
         [
@@ -20070,7 +20267,8 @@
     "masori body (f)": {
       "name": "masori body (f)",
       "item_ids": [
-        27238
+        27238,
+        33190
       ],
       "clog_dependencies": [
         [
@@ -20090,7 +20288,8 @@
     "masori chaps (f)": {
       "name": "masori chaps (f)",
       "item_ids": [
-        27241
+        27241,
+        33192
       ],
       "clog_dependencies": [
         [
@@ -20426,7 +20625,8 @@
     "ultor ring": {
       "name": "ultor ring",
       "item_ids": [
-        28307
+        28307,
+        33182
       ],
       "clog_dependencies": [
         [
@@ -20439,7 +20639,8 @@
     "magus ring": {
       "name": "magus ring",
       "item_ids": [
-        28313
+        28313,
+        33180
       ],
       "clog_dependencies": [
         [
@@ -21130,7 +21331,8 @@
     "burning claws": {
       "name": "burning claws",
       "item_ids": [
-        29577
+        29577,
+        33200
       ],
       "clog_dependencies": [
         [
@@ -21152,7 +21354,8 @@
     "purging staff": {
       "name": "purging staff",
       "item_ids": [
-        29594
+        29594,
+        33184
       ],
       "clog_dependencies": [
         [
@@ -21163,7 +21366,8 @@
     "noxious halberd": {
       "name": "noxious halberd",
       "item_ids": [
-        29796
+        29796,
+        33178
       ],
       "clog_dependencies": [
         [
@@ -21778,7 +21982,8 @@
     "avernic treads (max)": {
       "name": "avernic treads (max)",
       "item_ids": [
-        31097
+        31097,
+        33172
       ],
       "clog_dependencies": [
         [
@@ -21945,6 +22150,92 @@
         33068,
         33070,
         33072
+      ],
+      "clog_dependencies": [
+        [
+          8901
+        ]
+      ]
+    },
+    "toxic staff (deadman)": {
+      "name": "toxic staff (deadman)",
+      "item_ids": [
+        33036
+      ],
+      "clog_dependencies": [
+        [
+          11791,
+          12932
+        ]
+      ]
+    },
+    "silklined herb sack": {
+      "name": "silklined herb sack",
+      "item_ids": [
+        33135
+      ],
+      "clog_dependencies": [
+        [
+          13226,
+          33133
+        ]
+      ]
+    },
+    "soulreaper axe (o)": {
+      "name": "soulreaper axe (o)",
+      "item_ids": [
+        33335
+      ],
+      "clog_dependencies": [
+        [
+          28319,
+          28321,
+          28323,
+          28325
+        ]
+      ]
+    },
+    "oathplate slayer helmet": {
+      "name": "oathplate slayer helmet",
+      "item_ids": [
+        33338
+      ],
+      "clog_dependencies": [
+        [
+          8901
+        ]
+      ]
+    },
+    "radiant slayer helmet": {
+      "name": "radiant slayer helmet",
+      "item_ids": [
+        33340
+      ],
+      "clog_dependencies": [
+        [
+          8901
+        ]
+      ]
+    },
+    "oathplate slayer helmet (i)": {
+      "name": "oathplate slayer helmet (i)",
+      "item_ids": [
+        33439,
+        33441,
+        33443
+      ],
+      "clog_dependencies": [
+        [
+          8901
+        ]
+      ]
+    },
+    "radiant slayer helmet (i)": {
+      "name": "radiant slayer helmet (i)",
+      "item_ids": [
+        33445,
+        33447,
+        33449
       ],
       "clog_dependencies": [
         [
@@ -24532,6 +24823,17 @@
         ]
       ]
     },
+    "bottomless milk bucket": {
+      "name": "bottomless milk bucket",
+      "item_ids": [
+        33089
+      ],
+      "clog_dependencies": [
+        [
+          33091
+        ]
+      ]
+    },
     "crystal bow (inactive)": {
       "name": "crystal bow (inactive)",
       "item_ids": [
@@ -24831,8 +25133,7 @@
     "accursed sceptre": {
       "name": "accursed sceptre",
       "item_ids": [
-        27665,
-        27679
+        27665
       ],
       "clog_dependencies": [
         [
