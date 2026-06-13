@@ -48,10 +48,26 @@ Some items can't be auto-detected (e.g., items that share display names with bas
 }
 ```
 
+### Reviewing New Candidates
+
+Every run (unless `--skip-manual-review` is passed) checks for clog-derived recipe outputs that have no auto-detected item ID and aren't yet in `manual_recipes.json`. If there's nothing new, this is silent and generation proceeds as normal.
+
+Candidates with no item ID suggestion from the wiki (`page_ids` lookup comes back empty) are automatically declined without prompting. This covers both cosmetic recolours (e.g. `dark bow (green)`, `lost bag (red)`, `amulet of the eye (blue)` - which reuse their base item's ID and never get a distinct one) and POH/construction decorations (e.g. mounted heads, trophies) that have no item ID at all - in both cases there's no ID to add to `manual_recipes.json`, so there's nothing to review.
+
+For each remaining new or changed candidate (one with at least one suggested item ID), it prints the recipe and its clog dependencies, then prompts you to:
+- Enter the item's real item ID(s) (comma-separated) - looked up on the wiki/in-game - to add it to `manual_recipes.json`
+- Enter `d` to decline (the item has no real distinct ID, e.g. it's a Construction decoration or cosmetic recolour)
+- Press Enter to skip for now (will be asked again next run)
+
+Decisions are recorded in `manual_candidate_decisions.json` (tracked in git), keyed by a hash of the recipe's materials - so declined candidates aren't re-prompted unless their recipe data changes.
+
+Use `--skip-manual-review` to run non-interactively without this step.
+
 ## File Structure
 
 - `clog_dependency_builder.py` - Main script
 - `manual_recipes.json` - Manually-defined derived items
+- `manual_candidate_decisions.json` - Accept/decline history for `--review-manual-candidates`
 - `cache/` - Cached wiki data (7 day TTL)
 - `output/` - Generated output files
 
@@ -63,6 +79,12 @@ Some items can't be auto-detected (e.g., items that share display names with bas
 4. **Find Dependencies**: Determine which items require clog unlocks
 5. **Add Manual Recipes**: Merge manually-defined recipes
 6. **Generate Output**: Create `clog_restrictions.json`
+
+## Excluded Page Name Suffixes
+
+Some wiki pages document non-obtainable items (betas, interface/animation-only graphics, discontinued items, Last Man Standing replicas, etc.) that reuse a real item's display name under a different item ID. If left in, these IDs would pollute the real item's variant ID list in the output.
+
+These are filtered out via `EXCLUDED_PAGE_NAME_SUFFIXES` in `clog_dependency_builder.py`, matched against each entry's wiki `page_name`. The wiki adds new pages like this over time (new minigames, beta tests, events, etc.), so this list may need updating - if a future `--refresh-cache` run introduces spurious duplicate IDs for a real item, check the offending page's `page_name` suffix and add it to the list if it fits this pattern.
 
 ## Variant Patterns
 

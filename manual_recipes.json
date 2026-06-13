@@ -4,112 +4,382 @@
     "item_ids": [
       24225
     ],
-    "clog_dependencies": [[
-      4153,
-      24229
-    ]]
+    "clog_dependencies": [
+      [
+        4153,
+        24229
+      ]
+    ]
   },
   "granite maul (clamp)": {
     "name": "granite maul (clamp)",
     "item_ids": [
       12848
     ],
-    "clog_dependencies": [[
-      4153,
-      12849
-    ]]
+    "clog_dependencies": [
+      [
+        4153,
+        12849
+      ]
+    ]
   },
   "granite maul (ornate handle, clamp)": {
     "name": "granite maul (ornate handle, clamp)",
     "item_ids": [
       24227
     ],
-    "clog_dependencies": [[
-      4153,
-      24229,
-      12849
-    ]]
+    "clog_dependencies": [
+      [
+        4153,
+        24229,
+        12849
+      ]
+    ]
   },
   "rune scimitar (guthix)": {
     "name": "rune scimitar (guthix)",
     "item_ids": [
       23330
     ],
-    "clog_dependencies": [[
-      23321
-    ]]
+    "clog_dependencies": [
+      [
+        23321
+      ]
+    ]
   },
   "rune scimitar (saradomin)": {
     "name": "rune scimitar (saradomin)",
     "item_ids": [
       23332
     ],
-    "clog_dependencies": [[
-      23324
-    ]]
+    "clog_dependencies": [
+      [
+        23324
+      ]
+    ]
   },
   "rune scimitar (zamorak)": {
     "name": "rune scimitar (zamorak)",
     "item_ids": [
       23334
     ],
-    "clog_dependencies": [[
-      23327
-    ]]
+    "clog_dependencies": [
+      [
+        23327
+      ]
+    ]
   },
   "lava battlestaff (or)": {
     "name": "lava battlestaff (or)",
     "item_ids": [
       21198
     ],
-    "clog_dependencies": [[
-      21202
-    ]]
+    "clog_dependencies": [
+      [
+        21202
+      ]
+    ]
   },
   "malediction ward (or)": {
     "name": "malediction ward (or)",
     "item_ids": [
       12806
     ],
-    "clog_dependencies": [[
-      12802
-    ]]
+    "clog_dependencies": [
+      [
+        12802
+      ]
+    ]
   },
   "mystic lava staff (or)": {
     "name": "mystic lava staff (or)",
     "item_ids": [
       21200
     ],
-    "clog_dependencies": [[
-      21202
-    ]]
+    "clog_dependencies": [
+      [
+        21202
+      ]
+    ]
   },
   "mystic steam staff (or)": {
     "name": "mystic steam staff (or)",
     "item_ids": [
       12796
     ],
-    "clog_dependencies": [[
-      12798
-    ]]
+    "clog_dependencies": [
+      [
+        12798
+      ]
+    ]
   },
   "odium ward (or)": {
     "name": "odium ward (or)",
     "item_ids": [
       12807
     ],
-    "clog_dependencies": [[
-      12802
-    ]]
+    "clog_dependencies": [
+      [
+        12802
+      ]
+    ]
   },
   "steam battlestaff (or)": {
     "name": "steam battlestaff (or)",
     "item_ids": [
       12795
     ],
-    "clog_dependencies": [[
-      12798,
-      11787
-    ]]
+    "clog_dependencies": [
+      [
+        12798,
+        11787
+      ]
+    ]
+  },
+  "dragon pickaxe (upgraded)": {
+    "name": "dragon pickaxe (upgraded)",
+    "item_ids": [
+      12797
+    ],
+    "clog_dependencies": [
+      [
+        11920,
+        12800
+      ]
+    ]
+  },
+  "graceful boots (hallowed)": {
+    "name": "graceful boots (hallowed)",
+    "item_ids": [
+      24758,
+      24760
+    ],
+    "clog_dependencies": [
+      [
+        24729,
+        30060
+      ]
+    ]
+  },
+  "graceful cape (hallowed)": {
+    "name": "graceful cape (hallowed)",
+    "item_ids": [
+      24746,
+      24748
+    ],
+    "clog_dependencies": [
+      [
+        24729,
+        30048
+      ]
+    ]
+  },
+  "graceful gloves (hallowed)": {
+    "name": "graceful gloves (hallowed)",
+    "item_ids": [
+      24755,
+      24757
+    ],
+    "clog_dependencies": [
+      [
+        24729,
+        30057
+      ]
+    ]
+  },
+  "graceful hood (hallowed)": {
+    "name": "graceful hood (hallowed)",
+    "item_ids": [
+      24743,
+      24745
+    ],
+    "clog_dependencies": [
+      [
+        24729,
+        30045
+      ]
+    ]
+  },
+  "graceful legs (hallowed)": {
+    "name": "graceful legs (hallowed)",
+    "item_ids": [
+      24752,
+      24754
+    ],
+    "clog_dependencies": [
+      [
+        24729,
+        30054
+      ]
+    ]
+  },
+  "graceful top (hallowed)": {
+    "name": "graceful top (hallowed)",
+    "item_ids": [
+      24749,
+      24751
+    ],
+    "clog_dependencies": [
+      [
+        24729,
+        30051
+      ]
+    ]
+  },
+  "dragon pickaxe (or) (trailblazer)": {
+    "name": "dragon pickaxe (or) (trailblazer)",
+    "item_ids": [
+      25376,
+      30351
+    ],
+    "clog_dependencies": [
+      [
+        11920
+      ]
+    ]
+  },
+  "graceful cape (trailblazer)": {
+    "name": "graceful cape (trailblazer)",
+    "item_ids": [
+      25072,
+      25074
+    ],
+    "clog_dependencies": [
+      [
+        30048
+      ]
+    ]
+  },
+  "graceful top (trailblazer)": {
+    "name": "graceful top (trailblazer)",
+    "item_ids": [
+      25075,
+      25077
+    ],
+    "clog_dependencies": [
+      [
+        30051
+      ]
+    ]
+  },
+  "graceful boots (trailblazer)": {
+    "name": "graceful boots (trailblazer)",
+    "item_ids": [
+      25084,
+      25086
+    ],
+    "clog_dependencies": [
+      [
+        30060
+      ]
+    ]
+  },
+  "graceful legs (trailblazer)": {
+    "name": "graceful legs (trailblazer)",
+    "item_ids": [
+      25078,
+      25080
+    ],
+    "clog_dependencies": [
+      [
+        30054
+      ]
+    ]
+  },
+  "graceful hood (trailblazer)": {
+    "name": "graceful hood (trailblazer)",
+    "item_ids": [
+      25069,
+      25071
+    ],
+    "clog_dependencies": [
+      [
+        30045
+      ]
+    ]
+  },
+  "graceful gloves (trailblazer)": {
+    "name": "graceful gloves (trailblazer)",
+    "item_ids": [
+      25081,
+      25083
+    ],
+    "clog_dependencies": [
+      [
+        30057
+      ]
+    ]
+  },
+  "graceful hood (adventurer)": {
+    "name": "graceful hood (adventurer)",
+    "item_ids": [
+      27444,
+      27446
+    ],
+    "clog_dependencies": [
+      [
+        30045
+      ]
+    ]
+  },
+  "graceful cape (adventurer)": {
+    "name": "graceful cape (adventurer)",
+    "item_ids": [
+      27447,
+      27449
+    ],
+    "clog_dependencies": [
+      [
+        30048
+      ]
+    ]
+  },
+  "graceful top (adventurer)": {
+    "name": "graceful top (adventurer)",
+    "item_ids": [
+      27450,
+      27452
+    ],
+    "clog_dependencies": [
+      [
+        30051
+      ]
+    ]
+  },
+  "graceful legs (adventurer)": {
+    "name": "graceful legs (adventurer)",
+    "item_ids": [
+      27453,
+      27455
+    ],
+    "clog_dependencies": [
+      [
+        30054
+      ]
+    ]
+  },
+  "graceful gloves (adventurer)": {
+    "name": "graceful gloves (adventurer)",
+    "item_ids": [
+      27456,
+      27458
+    ],
+    "clog_dependencies": [
+      [
+        30057
+      ]
+    ]
+  },
+  "graceful boots (adventurer)": {
+    "name": "graceful boots (adventurer)",
+    "item_ids": [
+      27459,
+      27461
+    ],
+    "clog_dependencies": [
+      [
+        30060
+      ]
+    ]
   }
 }
