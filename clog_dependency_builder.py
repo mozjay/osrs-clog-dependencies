@@ -289,7 +289,7 @@ class OSRSWikiClient:
         """Fetch a batch of item names from the Bucket API."""
         self._rate_limit()
 
-        query = f"bucket('infobox_item').select('item_name','item_id','page_name','quest').offset({offset}).limit({limit}).run()"
+        query = f"bucket('infobox_item').select('item_name','item_id','page_name','quest','tradeable').offset({offset}).limit({limit}).run()"
         params = {
             "action": "bucket",
             "query": query,
@@ -333,7 +333,7 @@ class OSRSWikiClient:
             print(f"  Warning: Failed to fetch prices mapping: {e}")
             return {}
 
-    def fetch_all_items(self, force_refresh: bool = False) -> Tuple[Dict[str, int], Dict[str, List[int]], Dict[str, List[int]]]:
+    def fetch_all_items(self, force_refresh: bool = False) -> Tuple[Dict[str, int], Dict[str, List[int]], Dict[str, List[int]], Set[str]]:
         """Fetch all item names and IDs from wiki bucket API + prices API.
 
         The bucket API returns multiple entries for items with variants (LMS, imbued, etc.).
@@ -343,6 +343,8 @@ class OSRSWikiClient:
         - primary_ids: Dict mapping item_name (lowercase) -> primary item_id
         - all_ids: Dict mapping item_name (lowercase) -> list of all item IDs
         - page_ids: Dict mapping wiki page_name (lowercase) -> list of item IDs on that page
+        - tradeable_names: Set of item_name (lowercase) considered tradeable, from
+          either the prices API or the wiki infobox `tradeable` field (see below)
 
         For derived items:
         - Tradeable items: use primary_id (from prices API)
@@ -351,14 +353,21 @@ class OSRSWikiClient:
         page_ids is useful for resolving items whose display name (item_name)
         collides with another item's, but which have their own wiki page
         (e.g. "Granite maul (ornate handle)").
+
+        tradeable_names combines two signals because neither is complete on
+        its own: the prices API only lists items with real-time GE data, and
+        the wiki's `tradeable` infobox field is missing on many genuinely
+        tradeable items (e.g. "Dark bow", "Granite maul"). It's used as an OR
+        rather than the sole signal so it can only make the redundant-item
+        pruning in generate_output_json() more conservative, never less.
         """
         # Check cache first
         if not force_refresh and self.cache.is_cache_valid(ALL_ITEMS_CACHE_FILE):
             print("Loading all item names from cache...")
             cached = self.cache.load_cache(ALL_ITEMS_CACHE_FILE)
-            if isinstance(cached, dict) and "primary_ids" in cached and "all_ids" in cached and "page_ids" in cached:
+            if isinstance(cached, dict) and "primary_ids" in cached and "all_ids" in cached and "page_ids" in cached and "tradeable_names" in cached:
                 print(f"  Loaded {len(cached['primary_ids'])} item names from cache")
-                return cached["primary_ids"], cached["all_ids"], cached["page_ids"]
+                return cached["primary_ids"], cached["all_ids"], cached["page_ids"], set(cached["tradeable_names"])
             # Old cache format - need to regenerate
             print("  Old cache format detected, regenerating...")
 
@@ -368,8 +377,9 @@ class OSRSWikiClient:
         all_ids_by_page: Dict[str, List[int]] = defaultdict(list)
         # Per-name bookkeeping for the quest-duplicate filter below: every
         # entry seen for a name, tagged with whether its own `quest` field
-        # marks it as a temporary quest-only duplicate.
-        entries_by_name: Dict[str, List[Tuple[List[int], str, bool]]] = defaultdict(list)
+        # marks it as a temporary quest-only duplicate, and whether its own
+        # `tradeable` field is present.
+        entries_by_name: Dict[str, List[Tuple[List[int], str, bool, bool]]] = defaultdict(list)
         offset = 0
         batch_size = 500
         total_entries = 0
@@ -384,6 +394,11 @@ class OSRSWikiClient:
                 item_id_raw = item.get("item_id", [])
                 page_name = item.get("page_name", "")
                 quest = item.get("quest")
+                # The wiki bucket represents this boolean field by key
+                # presence rather than a Yes/No value: the key is present
+                # (with an empty string value) when tradeable = Yes, and
+                # absent entirely when tradeable = No or unset.
+                is_wiki_tradeable = "tradeable" in item
 
                 if not name:
                     continue
@@ -415,12 +430,14 @@ class OSRSWikiClient:
                     except (ValueError, TypeError):
                         pass
 
-                entries_by_name[name].append((ids, page_name, is_quest_item))
+                entries_by_name[name].append((ids, page_name, is_quest_item, is_wiki_tradeable))
 
             total_entries += len(batch)
             if total_entries % 2000 == 0:
                 print(f"  Fetched {total_entries} entries...")
             offset += batch_size
+
+        wiki_tradeable_names: Set[str] = set()
 
         for name, entries in entries_by_name.items():
             # Some quest-flagged items are genuinely quest-only with no
@@ -434,15 +451,17 @@ class OSRSWikiClient:
             # Without this, the duplicate's ID gets merged into the real
             # item's all_ids and can end up wrongly treated as a collection
             # log variant (e.g. incorrectly restricting "Vial of blood").
-            has_non_quest_entry = any(not is_quest for _, _, is_quest in entries)
+            has_non_quest_entry = any(not is_quest for _, _, is_quest, _ in entries)
 
-            for ids, page_name, is_quest_item in entries:
+            for ids, page_name, is_quest_item, is_wiki_tradeable in entries:
                 if has_non_quest_entry and is_quest_item:
                     continue
 
                 all_ids_by_name[name].extend(ids)
                 if page_name:
                     all_ids_by_page[page_name.lower()].extend(ids)
+                if is_wiki_tradeable:
+                    wiki_tradeable_names.add(name)
 
         print(f"  Total: {total_entries} entries -> {len(all_ids_by_name)} unique item names")
 
@@ -488,11 +507,21 @@ class OSRSWikiClient:
         multi_id_count = sum(1 for ids in all_ids_by_name.values() if len(ids) > 1)
         print(f"  Items with multiple IDs: {multi_id_count}")
 
+        # Combine both tradeability signals (see docstring for why neither
+        # is used alone).
+        tradeable_names: Set[str] = set(prices_mapping.keys()) | wiki_tradeable_names
+        print(f"  Tradeable item names (GE or wiki-flagged): {len(tradeable_names)}")
+
         # Save to cache
-        cache_data = {"primary_ids": primary_ids, "all_ids": dict(all_ids_by_name), "page_ids": page_ids}
+        cache_data = {
+            "primary_ids": primary_ids,
+            "all_ids": dict(all_ids_by_name),
+            "page_ids": page_ids,
+            "tradeable_names": sorted(tradeable_names),
+        }
         self.cache.save_cache(ALL_ITEMS_CACHE_FILE, cache_data)
 
-        return primary_ids, dict(all_ids_by_name), page_ids
+        return primary_ids, dict(all_ids_by_name), page_ids, tradeable_names
 
 
 class DependencyResolver:
@@ -1126,7 +1155,7 @@ def load_manual_recipes() -> Dict[str, dict]:
         return {}
 
 
-def process_manual_recipes(clog_items_output, derived_items_output, manual_recipes):
+def process_manual_recipes(clog_items_output, derived_items_output, manual_recipes, clog_id_to_name, tradeable_names):
     """
     Add manual recipes to derived items and remove their IDs from clog item variants.
 
@@ -1134,13 +1163,33 @@ def process_manual_recipes(clog_items_output, derived_items_output, manual_recip
         clog_items_output: Dict of clog items being built for output
         derived_items_output: Dict of derived items being built for output
         manual_recipes: Dict of manual recipes loaded from JSON
+        clog_id_to_name: Dict mapping clog item_id -> item name (lowercase)
+        tradeable_names: Set of item names (lowercase) considered tradeable
     """
     if not manual_recipes:
         return
 
+    added = 0
+    redundant = 0
+
     for item_name, recipe in manual_recipes.items():
+        item_name_lower = item_name.lower()
+
+        # Same untradeable-dependency pruning as the auto-detected recipes in
+        # generate_output_json(): if neither this item nor any of its
+        # dependencies can be traded, restricting it is a no-op (see that
+        # function's comment for the full reasoning).
+        dep_sets = recipe["clog_dependencies"]
+        if item_name_lower not in tradeable_names and all(
+            all(clog_id_to_name.get(cid, "") not in tradeable_names for cid in dep_set)
+            for dep_set in dep_sets
+        ):
+            redundant += 1
+            continue
+
         # Add directly to derived items (already in correct format)
-        derived_items_output[item_name.lower()] = recipe
+        derived_items_output[item_name_lower] = recipe
+        added += 1
 
         # Remove these IDs from clog item all_ids to prevent double-counting
         ids_to_remove = set(recipe["item_ids"])
@@ -1150,7 +1199,11 @@ def process_manual_recipes(clog_items_output, derived_items_output, manual_recip
             if len(filtered) < len(original):
                 clog_entry["all_ids"] = filtered
 
-    print(f"  Added {len(manual_recipes)} manual recipes to derived items")
+    print(f"  Added {added} manual recipes to derived items")
+    if redundant:
+        print(f"  Pruned {redundant} manual recipes with untradeable-only dependencies (restriction would be a no-op)")
+
+    return redundant
 
 
 def _recipe_hash(recipes_list: List[List[str]]) -> str:
@@ -1303,16 +1356,20 @@ def generate_output_json(
     resolver: DependencyResolver,
     primary_ids: Dict[str, int],
     all_ids: Dict[str, List[int]],
+    tradeable_names: Set[str],
     output_path: str = "clog_restrictions.json"
 ):
     """Generate the final JSON output for the RuneLite plugin."""
     print(f"\nGenerating output JSON: {output_path}")
+
+    clog_id_to_name = {item_id: item.name.lower() for item_id, item in clog_items.items()}
 
     # Build derived items (items where ALL recipes require clog items)
     derived_items = {}
     skipped_items = 0
     multi_id_items = 0
     no_id_items = 0
+    redundant_untradeable_items = 0
 
     for output_name in resolver.recipes_by_item.keys():
         # Skip if this item is itself a clog item
@@ -1322,6 +1379,23 @@ def generate_output_json(
         all_dep_sets = resolver.find_all_minimum_clog_dependency_sets(output_name)
 
         if all_dep_sets:
+            # Restriction is a no-op if the item itself can't be traded and
+            # every recipe path to it only requires untradeable clog items.
+            # Since none of the ingredients can be bought from another
+            # player, the only way to ever hold this item is to have
+            # legitimately obtained the untradeable clog item(s) yourself -
+            # which is the same act that unlocks them in the log. There's no
+            # route to owning it that skips the unlock, so restricting it
+            # can never actually block anything (e.g. "Dizana's quiver (l)"
+            # can only be made from an already-owned, untradeable, drop-only
+            # "Dizana's quiver (uncharged)").
+            if output_name not in tradeable_names and all(
+                all(clog_id_to_name.get(cid, "") not in tradeable_names for cid in dep_set)
+                for dep_set in all_dep_sets
+            ):
+                redundant_untradeable_items += 1
+                continue
+
             # All recipes require clog items - this is a derived item
             primary_id = primary_ids.get(output_name)
             item_ids = all_ids.get(output_name, [])
@@ -1407,7 +1481,7 @@ def generate_output_json(
 
     # Load and add manual recipes
     manual_recipes = load_manual_recipes()
-    process_manual_recipes(clog_items_output, derived_items, manual_recipes)
+    redundant_manual_recipes = process_manual_recipes(clog_items_output, derived_items, manual_recipes, clog_id_to_name, tradeable_names)
 
     # Build the output structure
     output = {
@@ -1419,6 +1493,7 @@ def generate_output_json(
             "items_with_clog_free_recipes": skipped_items,
             "derived_items_with_multiple_ids": multi_id_items,
             "derived_items_without_ids": no_id_items,
+            "redundant_untradeable_items_pruned": redundant_untradeable_items + redundant_manual_recipes,
             "clog_items_with_multiple_ids": clog_items_with_extra_ids,
             "clog_items_craftable_from_other_clogs": clog_items_with_crafting
         },
@@ -1439,6 +1514,7 @@ def generate_output_json(
     if no_id_items > 0:
         print(f"  WARNING: {no_id_items} derived items have no ID (will not be restricted)")
     print(f"  Skipped {skipped_items} items with clog-free recipes")
+    print(f"  Pruned {redundant_untradeable_items} untradeable items with untradeable-only dependencies (restriction would be a no-op)")
 
 
 def main():
@@ -1457,7 +1533,7 @@ def main():
     # Fetch data (uses cache unless --refresh-cache)
     clog_items = wiki_client.fetch_collection_log_items(force_refresh=args.refresh_cache)
     recipes = wiki_client.fetch_all_recipes(force_refresh=args.refresh_cache)
-    primary_ids, all_ids, page_ids = wiki_client.fetch_all_items(force_refresh=args.refresh_cache)
+    primary_ids, all_ids, page_ids, tradeable_names = wiki_client.fetch_all_items(force_refresh=args.refresh_cache)
 
     # Build resolver
     resolver = DependencyResolver(clog_items)
@@ -1471,7 +1547,7 @@ def main():
             manual_recipes = load_manual_recipes()
             review_manual_candidates(resolver, primary_ids, all_ids, page_ids, clog_items, manual_recipes)
 
-        generate_output_json(clog_items, resolver, primary_ids, all_ids, args.output)
+        generate_output_json(clog_items, resolver, primary_ids, all_ids, tradeable_names, args.output)
 
 
 if __name__ == "__main__":
