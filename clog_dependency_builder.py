@@ -27,7 +27,7 @@ from collections import defaultdict
 
 
 # Configuration
-OUTPUT_DATA_VERSION = "1.3.1"  # version field written to clog_restrictions.json
+OUTPUT_DATA_VERSION = "1.4.0"  # version field written to clog_restrictions.json
 WIKI_API_BASE = "https://oldschool.runescape.wiki/api.php"
 CLOG_DATA_URL = "https://oldschool.runescape.wiki/w/Module:Collection_log/data.json?action=raw"
 PRICES_API_MAPPING = "https://prices.runescape.wiki/api/v1/osrs/mapping"
