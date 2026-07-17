@@ -1,13 +1,13 @@
 {
   "version": "1.3.1",
-  "generated": "2026-06-13 17:53:53",
+  "generated": "2026-07-17 10:28:36",
   "stats": {
-    "total_clog_items": 1701,
-    "total_derived_items": 832,
-    "items_with_clog_free_recipes": 3202,
-    "derived_items_with_multiple_ids": 54,
+    "total_clog_items": 1706,
+    "total_derived_items": 845,
+    "items_with_clog_free_recipes": 3247,
+    "derived_items_with_multiple_ids": 53,
     "derived_items_without_ids": 99,
-    "clog_items_with_multiple_ids": 97,
+    "clog_items_with_multiple_ids": 93,
     "clog_items_craftable_from_other_clogs": 33
   },
   "collectionLogItems": {
@@ -713,7 +713,6 @@
         "Slayer"
       ],
       "all_ids": [
-        2513,
         3140
       ]
     },
@@ -1175,8 +1174,7 @@
         "Slayer"
       ],
       "all_ids": [
-        4151,
-        4178
+        4151
       ]
     },
     "4153": {
@@ -10374,7 +10372,6 @@
         "Theatre of Blood"
       ],
       "all_ids": [
-        22405,
         22446
       ]
     },
@@ -11395,9 +11392,7 @@
         "Medium Treasure Trails"
       ],
       "all_ids": [
-        23407,
-        29930,
-        29936
+        23407
       ]
     },
     "23410": {
@@ -14423,7 +14418,7 @@
       ]
     },
     "29784": {
-      "name": "Araxyte venom sack",
+      "name": "Araxyte venom sac",
       "tabs": [
         "Araxxor"
       ],
@@ -15026,7 +15021,6 @@
         "Yama"
       ],
       "all_ids": [
-        9589,
         30803,
         30805
       ]
@@ -16161,6 +16155,52 @@
       "all_ids": [
         33382
       ]
+    },
+    "33642": {
+      "name": "Maggot marquess",
+      "tabs": [
+        "Maggot King",
+        "All Pets"
+      ],
+      "all_ids": [
+        33642
+      ]
+    },
+    "33631": {
+      "name": "Crimson kisten",
+      "tabs": [
+        "Maggot King"
+      ],
+      "all_ids": [
+        33631
+      ]
+    },
+    "33634": {
+      "name": "Elder venator fang",
+      "tabs": [
+        "Maggot King"
+      ],
+      "all_ids": [
+        33634
+      ]
+    },
+    "33663": {
+      "name": "Venator tooth",
+      "tabs": [
+        "Venators"
+      ],
+      "all_ids": [
+        33663
+      ]
+    },
+    "33661": {
+      "name": "Venator fang",
+      "tabs": [
+        "Venators"
+      ],
+      "all_ids": [
+        33661
+      ]
     }
   },
   "derivedItems": {
@@ -16536,8 +16576,7 @@
       "name": "bandos godsword",
       "item_ids": [
         11804,
-        20782,
-        21060
+        20782
       ],
       "clog_dependencies": [
         [
@@ -17247,8 +17286,7 @@
     "elysian spirit shield": {
       "name": "elysian spirit shield",
       "item_ids": [
-        12817,
-        19559
+        12817
       ],
       "clog_dependencies": [
         [
@@ -18673,6 +18711,17 @@
         ]
       ]
     },
+    "molch pearl": {
+      "name": "molch pearl",
+      "item_ids": [
+        22820
+      ],
+      "clog_dependencies": [
+        [
+          22840
+        ]
+      ]
+    },
     "gem sack": {
       "name": "gem sack",
       "item_ids": [
@@ -19825,8 +19874,7 @@
       "name": "colossal pouch",
       "item_ids": [
         26784,
-        26786,
-        26906
+        26786
       ],
       "clog_dependencies": [
         [
@@ -22011,6 +22059,19 @@
         ]
       ]
     },
+    "necklace of rupture": {
+      "name": "necklace of rupture",
+      "item_ids": [
+        33639
+      ],
+      "clog_dependencies": [
+        [
+          6573,
+          19529,
+          33634
+        ]
+      ]
+    },
     "soulreaper axe (o)": {
       "name": "soulreaper axe (o)",
       "item_ids": [
@@ -22070,6 +22131,28 @@
       "clog_dependencies": [
         [
           8901
+        ]
+      ]
+    },
+    "etched araxyte fang": {
+      "name": "etched araxyte fang",
+      "item_ids": [
+        33534
+      ],
+      "clog_dependencies": [
+        [
+          29799
+        ]
+      ]
+    },
+    "etched elder venator fang": {
+      "name": "etched elder venator fang",
+      "item_ids": [
+        33636
+      ],
+      "clog_dependencies": [
+        [
+          33634
         ]
       ]
     },
@@ -24489,17 +24572,6 @@
         ]
       ]
     },
-    "dizana's quiver (uncharged) (l)": {
-      "name": "dizana's quiver (uncharged) (l)",
-      "item_ids": [
-        28949
-      ],
-      "clog_dependencies": [
-        [
-          28947
-        ]
-      ]
-    },
     "eclipse moon chestplate (broken)": {
       "name": "eclipse moon chestplate (broken)",
       "item_ids": [
@@ -25464,6 +25536,116 @@
       "clog_dependencies": [
         [
           31572
+        ]
+      ]
+    },
+    "void knight top (l) (broken)": {
+      "name": "void knight top (l) (broken)",
+      "item_ids": [
+        33476
+      ],
+      "clog_dependencies": [
+        [
+          8839
+        ]
+      ]
+    },
+    "void knight robe (l) (broken)": {
+      "name": "void knight robe (l) (broken)",
+      "item_ids": [
+        33484
+      ],
+      "clog_dependencies": [
+        [
+          8840
+        ]
+      ]
+    },
+    "void knight gloves (l) (broken)": {
+      "name": "void knight gloves (l) (broken)",
+      "item_ids": [
+        33492
+      ],
+      "clog_dependencies": [
+        [
+          8842
+        ]
+      ]
+    },
+    "fighter torso (l) (broken)": {
+      "name": "fighter torso (l) (broken)",
+      "item_ids": [
+        33520
+      ],
+      "clog_dependencies": [
+        [
+          10551
+        ]
+      ]
+    },
+    "void mage helm (l) (broken)": {
+      "name": "void mage helm (l) (broken)",
+      "item_ids": [
+        33468
+      ],
+      "clog_dependencies": [
+        [
+          11663
+        ]
+      ]
+    },
+    "void ranger helm (l) (broken)": {
+      "name": "void ranger helm (l) (broken)",
+      "item_ids": [
+        33472
+      ],
+      "clog_dependencies": [
+        [
+          11664
+        ]
+      ]
+    },
+    "void melee helm (l) (broken)": {
+      "name": "void melee helm (l) (broken)",
+      "item_ids": [
+        33464
+      ],
+      "clog_dependencies": [
+        [
+          11665
+        ]
+      ]
+    },
+    "elite void top (l) (broken)": {
+      "name": "elite void top (l) (broken)",
+      "item_ids": [
+        33480
+      ],
+      "clog_dependencies": [
+        [
+          13072
+        ]
+      ]
+    },
+    "elite void robe (l) (broken)": {
+      "name": "elite void robe (l) (broken)",
+      "item_ids": [
+        33488
+      ],
+      "clog_dependencies": [
+        [
+          13073
+        ]
+      ]
+    },
+    "infernal cape (l) (broken)": {
+      "name": "infernal cape (l) (broken)",
+      "item_ids": [
+        33500
+      ],
+      "clog_dependencies": [
+        [
+          21295
         ]
       ]
     },

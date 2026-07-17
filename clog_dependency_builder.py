@@ -289,7 +289,7 @@ class OSRSWikiClient:
         """Fetch a batch of item names from the Bucket API."""
         self._rate_limit()
 
-        query = f"bucket('infobox_item').select('item_name','item_id','page_name').offset({offset}).limit({limit}).run()"
+        query = f"bucket('infobox_item').select('item_name','item_id','page_name','quest').offset({offset}).limit({limit}).run()"
         params = {
             "action": "bucket",
             "query": query,
@@ -366,6 +366,10 @@ class OSRSWikiClient:
         print("Fetching all items from wiki bucket API...")
         all_ids_by_name: Dict[str, List[int]] = defaultdict(list)
         all_ids_by_page: Dict[str, List[int]] = defaultdict(list)
+        # Per-name bookkeeping for the quest-duplicate filter below: every
+        # entry seen for a name, tagged with whether its own `quest` field
+        # marks it as a temporary quest-only duplicate.
+        entries_by_name: Dict[str, List[Tuple[List[int], str, bool]]] = defaultdict(list)
         offset = 0
         batch_size = 500
         total_entries = 0
@@ -379,6 +383,7 @@ class OSRSWikiClient:
                 name = item.get("item_name", "").lower()
                 item_id_raw = item.get("item_id", [])
                 page_name = item.get("page_name", "")
+                quest = item.get("quest")
 
                 if not name:
                     continue
@@ -388,6 +393,13 @@ class OSRSWikiClient:
                 # a real item's display name under a different item ID.
                 if page_name.endswith(EXCLUDED_PAGE_NAME_SUFFIXES):
                     continue
+
+                # The infobox `quest` field is a "[[Quest name]]" wikilink (or
+                # sometimes a bare "Yes") for items tied to a quest. "Not tied
+                # to a quest" is represented inconsistently: JSON null (field
+                # absent), or the literal string "No" or "None" - all seen
+                # across different item pages.
+                is_quest_item = bool(quest) and quest not in ("No", "None")
 
                 # Handle item_id being a list (bucket API returns arrays)
                 ids = []
@@ -403,14 +415,34 @@ class OSRSWikiClient:
                     except (ValueError, TypeError):
                         pass
 
-                all_ids_by_name[name].extend(ids)
-                if page_name:
-                    all_ids_by_page[page_name.lower()].extend(ids)
+                entries_by_name[name].append((ids, page_name, is_quest_item))
 
             total_entries += len(batch)
             if total_entries % 2000 == 0:
                 print(f"  Fetched {total_entries} entries...")
             offset += batch_size
+
+        for name, entries in entries_by_name.items():
+            # Some quest-flagged items are genuinely quest-only with no
+            # separate permanent item under the same name (e.g. "Charcoal",
+            # "Iban's staff (u)") - for those, quest status doesn't indicate
+            # a duplicate and all entries should be kept as-is. Only drop
+            # quest-flagged entries when a *non*-quest entry for the same
+            # name also exists - that's the sign of a temporary quest-only
+            # duplicate page reusing a real item's display name (e.g. "Vial
+            # of blood (A Taste of Hope)" reusing "Vial of blood"'s name).
+            # Without this, the duplicate's ID gets merged into the real
+            # item's all_ids and can end up wrongly treated as a collection
+            # log variant (e.g. incorrectly restricting "Vial of blood").
+            has_non_quest_entry = any(not is_quest for _, _, is_quest in entries)
+
+            for ids, page_name, is_quest_item in entries:
+                if has_non_quest_entry and is_quest_item:
+                    continue
+
+                all_ids_by_name[name].extend(ids)
+                if page_name:
+                    all_ids_by_page[page_name.lower()].extend(ids)
 
         print(f"  Total: {total_entries} entries -> {len(all_ids_by_name)} unique item names")
 
