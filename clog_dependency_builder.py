@@ -27,7 +27,7 @@ from collections import defaultdict
 
 
 # Configuration
-OUTPUT_DATA_VERSION = "1.4.0"  # version field written to clog_restrictions.json
+DEFAULT_VERSION = "1.4.0"  # bootstrap fallback version, used only when no previous output file exists to read a prior version from
 WIKI_API_BASE = "https://oldschool.runescape.wiki/api.php"
 CLOG_DATA_URL = "https://oldschool.runescape.wiki/w/Module:Collection_log/data.json?action=raw"
 PRICES_API_MAPPING = "https://prices.runescape.wiki/api/v1/osrs/mapping"
@@ -540,6 +540,7 @@ class DependencyResolver:
         self._dep_cache: Dict[str, Set[int]] = {}
         self._min_dep_cache: Dict[str, Tuple[Set[int], int]] = {}
         self._all_dep_sets_cache: Dict[str, List[frozenset]] = {}
+        self._tradeable_intermediate_cache: Dict[str, bool] = {}
 
     def build_recipe_graph(self, recipes: List[dict]):
         """Build a graph of item -> list of recipes (each recipe is a list of materials)."""
@@ -921,6 +922,77 @@ class DependencyResolver:
         self._all_dep_sets_cache[item_name_lower] = minimal_sets
         return minimal_sets
 
+    def has_tradeable_clog_gated_intermediate(
+        self,
+        item_name: str,
+        tradeable_names: Set[str],
+        visited: Optional[Set[str]] = None
+    ) -> bool:
+        """
+        Check whether ANY recipe path below item_name (not just the minimal
+        dependency-set path) passes through a tradeable, non-clog
+        intermediate material that itself sits on a path to a terminal clog
+        item (i.e. find_minimum_clog_dependencies(material) is non-empty).
+
+        Used to validate the "redundant untradeable restriction" pruning in
+        generate_output_json()/process_manual_recipes(): if a pre-built,
+        clog-gated intermediate can be bought on the GE (e.g. "Soulreaper
+        axe", tradeable, itself requires the 4 DT2 uniques), a player can buy
+        it and skip ever personally unlocking the terminal clog item(s)
+        themselves - so pruning the item as a "no-op restriction" would be
+        wrong.
+
+        Clog-free branches (materials with no clog dependency of their own,
+        e.g. a display case built from mahogany plank + gold leaf) are
+        deliberately NOT flagged even if tradeable - their tradeability is
+        irrelevant to whether a clog-gated branch elsewhere in the recipe can
+        be bypassed. Clog items themselves are leaves, matching
+        _find_all_dep_sets_for_recipe's treatment - their own tradeability is
+        already checked separately by callers.
+
+        Cached by item name only (not by visited-path), matching
+        _min_dep_cache's existing behavior - the item graph is effectively a
+        DAG in practice so this is safe.
+        """
+        if visited is None:
+            visited = set()
+
+        item_name_lower = item_name.lower()
+
+        if item_name_lower in self._tradeable_intermediate_cache:
+            return self._tradeable_intermediate_cache[item_name_lower]
+
+        if item_name_lower in visited:
+            return False
+        visited.add(item_name_lower)
+
+        if item_name_lower in self.clog_names:
+            self._tradeable_intermediate_cache[item_name_lower] = False
+            return False
+
+        result = False
+        for recipe_materials in self.recipes_by_item.get(item_name_lower, []):
+            for material in recipe_materials:
+                material_lower = material.lower()
+                if material_lower in visited or material_lower in self.clog_names:
+                    continue
+                # Only materials that themselves carry a clog-dependency
+                # footprint are relevant - a clog-free branch can't be a
+                # bypass route for a clog-gated one.
+                if not self.find_minimum_clog_dependencies(material_lower):
+                    continue
+                if material_lower in tradeable_names:
+                    result = True
+                    break
+                if self.has_tradeable_clog_gated_intermediate(material_lower, tradeable_names, visited.copy()):
+                    result = True
+                    break
+            if result:
+                break
+
+        self._tradeable_intermediate_cache[item_name_lower] = result
+        return result
+
     def is_item_restricted(self, item_name: str) -> bool:
         """
         Check if an item should be restricted.
@@ -1155,7 +1227,7 @@ def load_manual_recipes() -> Dict[str, dict]:
         return {}
 
 
-def process_manual_recipes(clog_items_output, derived_items_output, manual_recipes, clog_id_to_name, tradeable_names):
+def process_manual_recipes(clog_items_output, derived_items_output, manual_recipes, clog_id_to_name, tradeable_names, resolver):
     """
     Add manual recipes to derived items and remove their IDs from clog item variants.
 
@@ -1165,6 +1237,8 @@ def process_manual_recipes(clog_items_output, derived_items_output, manual_recip
         manual_recipes: Dict of manual recipes loaded from JSON
         clog_id_to_name: Dict mapping clog item_id -> item name (lowercase)
         tradeable_names: Set of item names (lowercase) considered tradeable
+        resolver: DependencyResolver, used to check for tradeable clog-gated
+            intermediates (see has_tradeable_clog_gated_intermediate)
     """
     if not manual_recipes:
         return
@@ -1176,13 +1250,19 @@ def process_manual_recipes(clog_items_output, derived_items_output, manual_recip
         item_name_lower = item_name.lower()
 
         # Same untradeable-dependency pruning as the auto-detected recipes in
-        # generate_output_json(): if neither this item nor any of its
-        # dependencies can be traded, restricting it is a no-op (see that
+        # generate_output_json(): if neither this item, nor any of its
+        # dependencies, nor any tradeable clog-gated intermediate along the
+        # way (e.g. a tradeable base item used to craft an untradeable
+        # variant) can be traded, restricting it is a no-op (see that
         # function's comment for the full reasoning).
         dep_sets = recipe["clog_dependencies"]
-        if item_name_lower not in tradeable_names and all(
-            all(clog_id_to_name.get(cid, "") not in tradeable_names for cid in dep_set)
-            for dep_set in dep_sets
+        if (
+            item_name_lower not in tradeable_names
+            and all(
+                all(clog_id_to_name.get(cid, "") not in tradeable_names for cid in dep_set)
+                for dep_set in dep_sets
+            )
+            and not resolver.has_tradeable_clog_gated_intermediate(item_name_lower, tradeable_names)
         ):
             redundant += 1
             continue
@@ -1211,6 +1291,22 @@ def _recipe_hash(recipes_list: List[List[str]]) -> str:
     when a candidate's recipe data has changed since it was last reviewed."""
     normalized = sorted(sorted(materials) for materials in recipes_list)
     return hashlib.md5(json.dumps(normalized).encode()).hexdigest()[:12]
+
+
+def _parse_version(version_str: str) -> Tuple[int, int, int]:
+    """Parse a plain X.Y.Z version string into a (major, minor, patch) tuple."""
+    parts = (version_str.split(".") + ["0", "0", "0"])[:3]
+    return tuple(int(p) for p in parts)
+
+
+def _bump_patch_version(version_str: str) -> str:
+    """Bump the patch component (e.g. '1.4.0' -> '1.4.1'). Used for the
+    automatic version bump when a routine data refresh changes the item
+    list. Minor/major bumps are always manual (via --set-version) - they
+    signal an intentional logic/behavior change, which can't be reliably
+    distinguished from "the wiki added new items" by diffing output alone."""
+    major, minor, patch = _parse_version(version_str)
+    return f"{major}.{minor}.{patch + 1}"
 
 
 def find_manual_recipe_candidates(
@@ -1351,16 +1447,159 @@ def review_manual_candidates(
         print(f"\nReviewed {new_count} candidate(s).")
 
 
+CHANGELOG_FILE = Path(__file__).parent / "CHANGELOG.md"
+CHANGELOG_HEADER = "# Changelog\n\n"
+
+
+def _normalize_dep_sets(dep_sets: Optional[List[List[int]]]) -> List[Tuple[int, ...]]:
+    """Order-independent normal form for an OR-of-AND clog-id list-of-lists,
+    so harmless list-ordering nondeterminism upstream (e.g. the resolver
+    dedups dependency sets via a set comprehension in
+    find_all_minimum_clog_dependency_sets) doesn't register as a diff."""
+    return sorted(tuple(sorted(s)) for s in (dep_sets or []))
+
+
+def compute_output_diff(old_output: Optional[dict], new_output: dict) -> dict:
+    """
+    Compare two parsed clog_restrictions.json-shaped dicts (only
+    collectionLogItems/derivedItems are inspected; version/generated/stats
+    are ignored) and return a structured diff used both to write
+    CHANGELOG.md entries and to decide the auto version bump.
+
+    old_output may be None (bootstrap: no previous file on disk yet).
+    """
+    diff = {
+        "initial": old_output is None,
+        "collectionLogItems": {"added": [], "removed": [], "changed": []},
+        "derivedItems": {"added": [], "removed": [], "changed": []},
+    }
+
+    new_clog = new_output.get("collectionLogItems", {})
+    new_derived = new_output.get("derivedItems", {})
+
+    if old_output is None:
+        diff["collectionLogItems"]["added"] = sorted(new_clog.keys(), key=int)
+        diff["derivedItems"]["added"] = sorted(new_derived.keys())
+        diff["has_changes"] = bool(diff["collectionLogItems"]["added"] or diff["derivedItems"]["added"])
+        return diff
+
+    old_clog = old_output.get("collectionLogItems", {})
+    old_ids, new_ids = set(old_clog.keys()), set(new_clog.keys())
+    diff["collectionLogItems"]["added"] = sorted(new_ids - old_ids, key=int)
+    diff["collectionLogItems"]["removed"] = sorted(old_ids - new_ids, key=int)
+
+    for cid in sorted(old_ids & new_ids, key=int):
+        old_e, new_e = old_clog[cid], new_clog[cid]
+        changes = {}
+        if sorted(old_e.get("all_ids", [])) != sorted(new_e.get("all_ids", [])):
+            changes["all_ids"] = (sorted(old_e.get("all_ids", [])), sorted(new_e.get("all_ids", [])))
+        old_cf = _normalize_dep_sets(old_e.get("craftable_from"))
+        new_cf = _normalize_dep_sets(new_e.get("craftable_from"))
+        if old_cf != new_cf:
+            changes["craftable_from"] = (old_cf, new_cf)
+        if changes:
+            diff["collectionLogItems"]["changed"].append(
+                {"id": cid, "name": new_e.get("name", old_e.get("name", "")), "changes": changes}
+            )
+
+    old_derived = old_output.get("derivedItems", {})
+    old_names, new_names = set(old_derived.keys()), set(new_derived.keys())
+    diff["derivedItems"]["added"] = sorted(new_names - old_names)
+    diff["derivedItems"]["removed"] = sorted(old_names - new_names)
+
+    for name in sorted(old_names & new_names):
+        old_e, new_e = old_derived[name], new_derived[name]
+        changes = {}
+        if sorted(old_e.get("item_ids", [])) != sorted(new_e.get("item_ids", [])):
+            changes["item_ids"] = (sorted(old_e.get("item_ids", [])), sorted(new_e.get("item_ids", [])))
+        old_deps = _normalize_dep_sets(old_e.get("clog_dependencies"))
+        new_deps = _normalize_dep_sets(new_e.get("clog_dependencies"))
+        if old_deps != new_deps:
+            changes["clog_dependencies"] = (old_deps, new_deps)
+        if changes:
+            diff["derivedItems"]["changed"].append({"name": name, "changes": changes})
+
+    diff["has_changes"] = any(
+        diff["collectionLogItems"][k] for k in ("added", "removed", "changed")
+    ) or any(
+        diff["derivedItems"][k] for k in ("added", "removed", "changed")
+    )
+    return diff
+
+
+def format_changelog_entry(diff: dict, version: str, date: Optional[str] = None) -> Optional[str]:
+    """Render a compute_output_diff() result as a Keep-a-Changelog-style
+    Markdown entry. Returns None when there's nothing to report (no
+    changes, not an initial run) so callers can skip writing anything."""
+    if date is None:
+        date = time.strftime("%Y-%m-%d")
+
+    if diff.get("initial"):
+        return f"## [{version}] - {date}\n\nInitial generation.\n"
+
+    if not diff.get("has_changes"):
+        return None
+
+    lines = [f"## [{version}] - {date}", ""]
+
+    clog = diff["collectionLogItems"]
+    if clog["added"] or clog["removed"] or clog["changed"]:
+        lines.append("### Collection Log Items")
+        lines += [f"+ Added: {cid}" for cid in clog["added"]]
+        lines += [f"- Removed: {cid}" for cid in clog["removed"]]
+        lines += [
+            f"~ Changed: {e['name']} (ID {e['id']}) - {', '.join(e['changes'].keys())} updated"
+            for e in clog["changed"]
+        ]
+        lines.append("")
+
+    derived = diff["derivedItems"]
+    if derived["added"] or derived["removed"] or derived["changed"]:
+        lines.append("### Derived Items")
+        lines += [f"+ Added: {name}" for name in derived["added"]]
+        lines += [f"- Removed: {name}" for name in derived["removed"]]
+        lines += [
+            f"~ Changed: {e['name']} - {', '.join(e['changes'].keys())} updated"
+            for e in derived["changed"]
+        ]
+        lines.append("")
+
+    return "\n".join(lines)
+
+
+def prepend_changelog_entry(entry_text: str, changelog_path: Path = CHANGELOG_FILE):
+    """Prepend entry_text under the '# Changelog' header, most-recent-first."""
+    existing = ""
+    if changelog_path.exists():
+        with open(changelog_path, "r") as f:
+            existing = f.read()
+    body = existing[len(CHANGELOG_HEADER):] if existing.startswith(CHANGELOG_HEADER) else existing
+    with open(changelog_path, "w") as f:
+        f.write(CHANGELOG_HEADER + entry_text.rstrip("\n") + "\n\n" + body)
+
+
 def generate_output_json(
     clog_items: Dict[int, Item],
     resolver: DependencyResolver,
     primary_ids: Dict[str, int],
     all_ids: Dict[str, List[int]],
     tradeable_names: Set[str],
-    output_path: str = "clog_restrictions.json"
+    output_path: str = "clog_restrictions.json",
+    set_version: Optional[str] = None
 ):
     """Generate the final JSON output for the RuneLite plugin."""
     print(f"\nGenerating output JSON: {output_path}")
+
+    # Read the previous run's output (if any) before it gets overwritten, so
+    # we can diff against it for the CHANGELOG.md entry and the auto
+    # minor-version bump decision below.
+    old_output: Optional[dict] = None
+    if Path(output_path).exists():
+        try:
+            with open(output_path, "r") as f:
+                old_output = json.load(f)
+        except (json.JSONDecodeError, OSError) as e:
+            print(f"  Warning: could not read previous output at {output_path}: {e}")
 
     clog_id_to_name = {item_id: item.name.lower() for item_id, item in clog_items.items()}
 
@@ -1379,19 +1618,35 @@ def generate_output_json(
         all_dep_sets = resolver.find_all_minimum_clog_dependency_sets(output_name)
 
         if all_dep_sets:
-            # Restriction is a no-op if the item itself can't be traded and
-            # every recipe path to it only requires untradeable clog items.
-            # Since none of the ingredients can be bought from another
-            # player, the only way to ever hold this item is to have
-            # legitimately obtained the untradeable clog item(s) yourself -
-            # which is the same act that unlocks them in the log. There's no
-            # route to owning it that skips the unlock, so restricting it
-            # can never actually block anything (e.g. "Dizana's quiver (l)"
-            # can only be made from an already-owned, untradeable, drop-only
-            # "Dizana's quiver (uncharged)").
-            if output_name not in tradeable_names and all(
-                all(clog_id_to_name.get(cid, "") not in tradeable_names for cid in dep_set)
-                for dep_set in all_dep_sets
+            # Restriction is a no-op if the item itself can't be traded, every
+            # recipe path to it only requires untradeable clog items, AND
+            # there's no tradeable intermediate item anywhere in the recipe
+            # chain that itself depends on those clog items. Since none of
+            # the ingredients can be bought from another player, the only way
+            # to ever hold this item is to have legitimately obtained the
+            # untradeable clog item(s) yourself - which is the same act that
+            # unlocks them in the log. There's no route to owning it that
+            # skips the unlock, so restricting it can never actually block
+            # anything (e.g. "Dizana's quiver (l)" can only be made from an
+            # already-owned, untradeable, drop-only "Dizana's quiver
+            # (uncharged)").
+            #
+            # This does NOT hold when a tradeable, clog-gated intermediate
+            # exists partway through the chain - e.g. "Soulreaper axe (o)" is
+            # untradeable and requires the 4 untradeable DT2 uniques, but its
+            # recipe includes plain "Soulreaper axe", which is itself
+            # tradeable despite requiring those same uniques. A player can
+            # buy a Soulreaper axe on the GE and ornament it without ever
+            # personally unlocking the DT2 collection log entries, so the
+            # restriction is NOT a no-op here. has_tradeable_clog_gated_intermediate
+            # checks for exactly this case.
+            if (
+                output_name not in tradeable_names
+                and all(
+                    all(clog_id_to_name.get(cid, "") not in tradeable_names for cid in dep_set)
+                    for dep_set in all_dep_sets
+                )
+                and not resolver.has_tradeable_clog_gated_intermediate(output_name, tradeable_names)
             ):
                 redundant_untradeable_items += 1
                 continue
@@ -1481,11 +1736,31 @@ def generate_output_json(
 
     # Load and add manual recipes
     manual_recipes = load_manual_recipes()
-    redundant_manual_recipes = process_manual_recipes(clog_items_output, derived_items, manual_recipes, clog_id_to_name, tradeable_names)
+    redundant_manual_recipes = process_manual_recipes(clog_items_output, derived_items, manual_recipes, clog_id_to_name, tradeable_names, resolver)
+
+    # Diff against the previous on-disk output to drive both the CHANGELOG.md
+    # entry and the auto patch-version bump decision below.
+    diff = compute_output_diff(
+        old_output,
+        {"collectionLogItems": clog_items_output, "derivedItems": derived_items}
+    )
+
+    if set_version:
+        version = set_version
+    elif old_output is None:
+        version = DEFAULT_VERSION
+    else:
+        prev_version = old_output.get("version", DEFAULT_VERSION)
+        version = _bump_patch_version(prev_version) if diff["has_changes"] else prev_version
+
+    entry_text = format_changelog_entry(diff, version)
+    if entry_text:
+        prepend_changelog_entry(entry_text)
+        print(f"  Wrote CHANGELOG.md entry for version {version}")
 
     # Build the output structure
     output = {
-        "version": OUTPUT_DATA_VERSION,
+        "version": version,
         "generated": time.strftime("%Y-%m-%d %H:%M:%S"),
         "stats": {
             "total_clog_items": len(clog_items),
@@ -1524,6 +1799,9 @@ def main():
     parser.add_argument("--refresh-cache", action="store_true", help="Force refresh of cached wiki data")
     parser.add_argument("--skip-manual-review", action="store_true",
                          help="Skip interactive review of new manual_recipes.json candidates")
+    parser.add_argument("--set-version", type=str, default=None,
+                         help="Force an explicit output version (e.g. 1.5.0) for an intentional logic/behavior change - "
+                              "bypasses the auto patch-version bump, which only fires for routine item-list changes")
     args = parser.parse_args()
 
     # Initialize cache and client
@@ -1547,7 +1825,7 @@ def main():
             manual_recipes = load_manual_recipes()
             review_manual_candidates(resolver, primary_ids, all_ids, page_ids, clog_items, manual_recipes)
 
-        generate_output_json(clog_items, resolver, primary_ids, all_ids, tradeable_names, args.output)
+        generate_output_json(clog_items, resolver, primary_ids, all_ids, tradeable_names, args.output, args.set_version)
 
 
 if __name__ == "__main__":
