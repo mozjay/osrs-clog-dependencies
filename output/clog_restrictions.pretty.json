@@ -1,12 +1,12 @@
 {
-  "version": "1.4.0",
-  "generated": "2026-07-17 12:49:08",
+  "version": "1.5.0",
+  "generated": "2026-08-03 23:11:04",
   "stats": {
-    "total_clog_items": 1706,
+    "total_clog_items": 1712,
     "total_derived_items": 623,
-    "items_with_clog_free_recipes": 3247,
+    "items_with_clog_free_recipes": 3251,
     "derived_items_with_multiple_ids": 50,
-    "derived_items_without_ids": 47,
+    "derived_items_without_ids": 48,
     "redundant_untradeable_items_pruned": 274,
     "clog_items_with_multiple_ids": 93,
     "clog_items_craftable_from_other_clogs": 33
@@ -10042,7 +10042,8 @@
     "21726": {
       "name": "Granite dust",
       "tabs": [
-        "Grotesque Guardians"
+        "Grotesque Guardians",
+        "The Mad Angel"
       ],
       "all_ids": [
         21726
@@ -16309,6 +16310,62 @@
       ],
       "all_ids": [
         33661
+      ]
+    },
+    "34027": {
+      "name": "Hallowfell",
+      "tabs": [
+        "The Mad Angel"
+      ],
+      "all_ids": [
+        34027
+      ]
+    },
+    "34033": {
+      "name": "Ardeaglais teleport",
+      "tabs": [
+        "The Mad Angel"
+      ],
+      "all_ids": [
+        34033
+      ]
+    },
+    "34042": {
+      "name": "Aggy",
+      "tabs": [
+        "The Mad Angel",
+        "All Pets"
+      ],
+      "all_ids": [
+        34042
+      ]
+    },
+    "34030": {
+      "name": "Jar of light",
+      "tabs": [
+        "The Mad Angel"
+      ],
+      "all_ids": [
+        34030
+      ]
+    },
+    "34040": {
+      "name": "Mr mcgroot",
+      "tabs": [
+        "All Pets",
+        "Skilling Pets"
+      ],
+      "all_ids": [
+        34040
+      ]
+    },
+    "34024": {
+      "name": "Jeweller's chisel",
+      "tabs": [
+        "Miscellaneous"
+      ],
+      "all_ids": [
+        34024
       ]
     }
   },

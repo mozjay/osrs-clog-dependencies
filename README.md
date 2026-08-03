@@ -25,12 +25,33 @@ python3 clog_dependency_builder.py --visualize "Item Name"
 
 # Custom output path
 python3 clog_dependency_builder.py --output path/to/output.json
+
+# Force an explicit version (see Versioning below)
+python3 clog_dependency_builder.py --set-version 1.6.0
 ```
 
 ## Output
 
 - Default: `output/clog_restrictions.json` (in this repo)
 - Copy to clogman repo: `../clogman-mode/src/main/resources/clog_restrictions.json`
+
+## Versioning
+
+The `version` field is compared against the previous on-disk output every run:
+
+- **Patch** (`1.4.0` -> `1.4.1`) - bumped automatically whenever the generated `collectionLogItems`/`derivedItems` differ from the last run (e.g. the wiki added new collection log items). This is the common case and needs no action.
+- **Minor** (`1.4.1` -> `1.5.0`) - always manual, via `--set-version`. Bump this yourself when a real logic/behavior change lands (a bug fix, a new pruning/dependency rule, etc.) - this can't be reliably auto-detected from the output diff alone, since a bug fix and a routine data refresh can look identical from the outside (or even produce no diff at all, if the fix only prevents a *future* regression).
+- **Major** - always manual, reserved for a substantial overhaul (unlikely to come up often).
+
+If the item list is unchanged since the last run, the version stays the same and no `CHANGELOG.md` entry is written.
+
+## Changelog
+
+Every run that changes the generated item list prepends a dated entry to `CHANGELOG.md` (added/removed/changed `collectionLogItems` and `derivedItems`). For ad-hoc comparisons between two arbitrary output files (e.g. against an old git revision), use the standalone script:
+
+```bash
+python3 changelog.py old.json new.json
+```
 
 ## Manual Recipes
 
