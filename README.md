@@ -13,21 +13,23 @@ This tool:
 
 ## Usage
 
+Dependencies are managed with [`uv`](https://docs.astral.sh/uv/). Run `uv sync` once to create `.venv`, then prefix commands with `uv run` (which keeps the environment in sync automatically):
+
 ```bash
 # Generate output (uses cached data if fresh)
-python3 clog_dependency_builder.py
+uv run python3 clog_dependency_builder.py
 
 # Force refresh cached data
-python3 clog_dependency_builder.py --refresh-cache
+uv run python3 clog_dependency_builder.py --refresh-cache
 
 # Visualize dependencies for specific item
-python3 clog_dependency_builder.py --visualize "Item Name"
+uv run python3 clog_dependency_builder.py --visualize "Item Name"
 
 # Custom output path
-python3 clog_dependency_builder.py --output path/to/output.json
+uv run python3 clog_dependency_builder.py --output path/to/output.json
 
 # Force an explicit version (see Versioning below)
-python3 clog_dependency_builder.py --set-version 1.6.0
+uv run python3 clog_dependency_builder.py --set-version 1.6.0
 ```
 
 ## Output
@@ -50,8 +52,18 @@ If the item list is unchanged since the last run, the version stays the same and
 Every run that changes the generated item list prepends a dated entry to `CHANGELOG.md` (added/removed/changed `collectionLogItems` and `derivedItems`). For ad-hoc comparisons between two arbitrary output files (e.g. against an old git revision), use the standalone script:
 
 ```bash
-python3 changelog.py old.json new.json
+uv run python3 changelog.py old.json new.json
 ```
+
+## Dependency Explorer
+
+For QA/debugging (e.g. "why was this item pruned?") or general curiosity, `build_explorer.py` generates a self-contained `output/explorer.html` (data embedded inline, no server or database) that lets you search any clog-relevant item and browse its full dependency chain as an interactive node/edge graph - drag to pan, scroll to zoom, click a node to jump the view to that item - covering every recipe alternative and every material, not just the minimal dependency set that ships in `clog_restrictions.json`. Rendering is via [`pyvis`](https://pyvis.readthedocs.io/)/vis-network, inlined into the page at build time so the file stays self-contained (no CDN, works offline). Rebuilds from the existing `cache/` data (no network calls):
+
+```bash
+uv run python3 build_explorer.py
+```
+
+Then just open `output/explorer.html` in a browser. It's gitignored and entirely independent of `clog_restrictions.json` - regenerate it on demand, never commit it.
 
 ## Manual Recipes
 
@@ -95,6 +107,8 @@ For example, `Malformed infernal blend` is a failed-smithing byproduct of crafti
 ## File Structure
 
 - `clog_dependency_builder.py` - Main script
+- `build_explorer.py` - Local dependency-graph explorer (see Dependency Explorer above)
+- `pyproject.toml` / `uv.lock` - Dependencies, managed with `uv`
 - `manual_recipes.json` - Manually-defined derived items
 - `manual_dependency_overrides.json` - Manual clog dependency overrides for items the recipe graph misrepresents as free base materials
 - `manual_candidate_decisions.json` - Accept/decline history for `--review-manual-candidates`

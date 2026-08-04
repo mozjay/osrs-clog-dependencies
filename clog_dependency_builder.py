@@ -27,7 +27,7 @@ from collections import defaultdict
 
 
 # Configuration
-DEFAULT_VERSION = "1.4.0"  # bootstrap fallback version, used only when no previous output file exists to read a prior version from
+DEFAULT_VERSION = "1.5.0"  # bootstrap fallback version, used only when no previous output file exists to read a prior version from
 WIKI_API_BASE = "https://oldschool.runescape.wiki/api.php"
 CLOG_DATA_URL = "https://oldschool.runescape.wiki/w/Module:Collection_log/data.json?action=raw"
 PRICES_API_MAPPING = "https://prices.runescape.wiki/api/v1/osrs/mapping"
@@ -993,6 +993,23 @@ class DependencyResolver:
         self._tradeable_intermediate_cache[item_name_lower] = result
         return result
 
+    def get_best_recipe_index(self, item_name: str) -> Optional[int]:
+        """
+        Index into recipes_by_item[item_name] of the recipe find_minimum_clog_dependencies
+        picked as cheapest - the same choice get_dependency_chain/--visualize follows, and
+        the one that actually determines what ships in clog_restrictions.json. Returns None
+        if the item has no cached resolution (e.g. a clog item, which needs no recipe at all
+        - unlocking the clog entry itself satisfies the requirement regardless of what it can
+        be crafted into) or -1 if the minimum came from a dependency override or the item has
+        no recipes at all.
+        """
+        item_name_lower = item_name.lower()
+        if item_name_lower in self.clog_names:
+            return None
+        self.find_minimum_clog_dependencies(item_name)  # populates _min_dep_cache as a side effect
+        cached = self._min_dep_cache.get(item_name_lower)
+        return cached[1] if cached else None
+
     def is_item_restricted(self, item_name: str) -> bool:
         """
         Check if an item should be restricted.
@@ -1090,6 +1107,32 @@ class DependencyResolver:
     def get_clog_only_chain(self, item_name: str) -> List[str]:
         """Get a condensed view showing only the path to clog items."""
         return self.get_dependency_chain(item_name, clog_only=True)
+
+
+def is_redundant_untradeable_restriction(
+    item_name_lower: str,
+    dep_sets,
+    tradeable_names: Set[str],
+    clog_id_to_name: Dict[int, str],
+    resolver: DependencyResolver
+) -> bool:
+    """
+    Shared predicate for the "redundant untradeable restriction" pruning used
+    by both generate_output_json() (auto-detected recipes) and
+    process_manual_recipes() (manual_recipes.json entries) - see the detailed
+    reasoning in generate_output_json(). Extracted here so any other
+    consumer (e.g. the standalone dependency explorer) can answer "would
+    this item's restriction be pruned as a no-op" without duplicating the
+    logic and risking drift.
+    """
+    return (
+        item_name_lower not in tradeable_names
+        and all(
+            all(clog_id_to_name.get(cid, "") not in tradeable_names for cid in dep_set)
+            for dep_set in dep_sets
+        )
+        and not resolver.has_tradeable_clog_gated_intermediate(item_name_lower, tradeable_names)
+    )
 
 
 def visualize_item(resolver: DependencyResolver, item_name: str, clog_items: Dict[int, Item]):
@@ -1256,14 +1299,7 @@ def process_manual_recipes(clog_items_output, derived_items_output, manual_recip
         # variant) can be traded, restricting it is a no-op (see that
         # function's comment for the full reasoning).
         dep_sets = recipe["clog_dependencies"]
-        if (
-            item_name_lower not in tradeable_names
-            and all(
-                all(clog_id_to_name.get(cid, "") not in tradeable_names for cid in dep_set)
-                for dep_set in dep_sets
-            )
-            and not resolver.has_tradeable_clog_gated_intermediate(item_name_lower, tradeable_names)
-        ):
+        if is_redundant_untradeable_restriction(item_name_lower, dep_sets, tradeable_names, clog_id_to_name, resolver):
             redundant += 1
             continue
 
@@ -1640,14 +1676,7 @@ def generate_output_json(
             # personally unlocking the DT2 collection log entries, so the
             # restriction is NOT a no-op here. has_tradeable_clog_gated_intermediate
             # checks for exactly this case.
-            if (
-                output_name not in tradeable_names
-                and all(
-                    all(clog_id_to_name.get(cid, "") not in tradeable_names for cid in dep_set)
-                    for dep_set in all_dep_sets
-                )
-                and not resolver.has_tradeable_clog_gated_intermediate(output_name, tradeable_names)
-            ):
+            if is_redundant_untradeable_restriction(output_name, all_dep_sets, tradeable_names, clog_id_to_name, resolver):
                 redundant_untradeable_items += 1
                 continue
 
