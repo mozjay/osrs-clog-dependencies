@@ -65,6 +65,14 @@ uv run python3 build_explorer.py
 
 Then just open `output/explorer.html` in a browser. It's gitignored and entirely independent of `clog_restrictions.json` - regenerate it on demand, never commit it.
 
+### Hosted copy
+
+A copy also lives at `docs/index.html` and is published via GitHub Pages at https://mozjay.github.io/osrs-clog-dependencies/. Unlike `output/explorer.html`, this one *is* committed - but it's a manual snapshot, not auto-rebuilt from the wiki on a schedule. Regenerate and commit it whenever you do a real release (i.e. whenever you'd otherwise copy `clog_restrictions.json` to the clogman-mode repo), so the hosted page tracks whatever version is actually live in the plugin, not the latest wiki state:
+
+```bash
+uv run python3 build_explorer.py --output docs/index.html
+```
+
 ## Manual Recipes
 
 Some items can't be auto-detected (e.g., items that share display names with base items). These are defined in `manual_recipes.json`.
