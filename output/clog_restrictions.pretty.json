@@ -1,9 +1,9 @@
 {
-  "version": "1.5.0",
-  "generated": "2026-09-02 10:39:21",
+  "version": "1.5.1",
+  "generated": "2026-09-05 11:41:52",
   "stats": {
-    "total_clog_items": 1712,
-    "total_derived_items": 623,
+    "total_clog_items": 1717,
+    "total_derived_items": 628,
     "items_with_clog_free_recipes": 3294,
     "derived_items_with_multiple_ids": 50,
     "derived_items_without_ids": 48,
@@ -16297,7 +16297,7 @@
     "33663": {
       "name": "Venator tooth",
       "tabs": [
-        "Venators"
+        "Slayer"
       ],
       "all_ids": [
         33663
@@ -16306,7 +16306,7 @@
     "33661": {
       "name": "Venator fang",
       "tabs": [
-        "Venators"
+        "Slayer"
       ],
       "all_ids": [
         33661
@@ -16365,6 +16365,51 @@
       ],
       "all_ids": [
         34024
+      ]
+    },
+    "34401": {
+      "name": "Necklace of fangs",
+      "tabs": [
+        "Slayer"
+      ],
+      "all_ids": [
+        34401
+      ]
+    },
+    "34404": {
+      "name": "Air diamond",
+      "tabs": [
+        "Slayer"
+      ],
+      "all_ids": [
+        34404
+      ]
+    },
+    "34410": {
+      "name": "Water sapphire",
+      "tabs": [
+        "Slayer"
+      ],
+      "all_ids": [
+        34410
+      ]
+    },
+    "34416": {
+      "name": "Earth emerald",
+      "tabs": [
+        "Slayer"
+      ],
+      "all_ids": [
+        34416
+      ]
+    },
+    "34422": {
+      "name": "Fire ruby",
+      "tabs": [
+        "Slayer"
+      ],
+      "all_ids": [
+        34422
       ]
     }
   },
@@ -21358,6 +21403,64 @@
       "clog_dependencies": [
         [
           33634
+        ]
+      ]
+    },
+    "elemental amulet": {
+      "name": "elemental amulet",
+      "item_ids": [
+        34428
+      ],
+      "clog_dependencies": [
+        [
+          34404,
+          34410,
+          34416,
+          34422
+        ]
+      ]
+    },
+    "amulet of fire": {
+      "name": "amulet of fire",
+      "item_ids": [
+        34425
+      ],
+      "clog_dependencies": [
+        [
+          34422
+        ]
+      ]
+    },
+    "amulet of water": {
+      "name": "amulet of water",
+      "item_ids": [
+        34413
+      ],
+      "clog_dependencies": [
+        [
+          34410
+        ]
+      ]
+    },
+    "amulet of earth": {
+      "name": "amulet of earth",
+      "item_ids": [
+        34419
+      ],
+      "clog_dependencies": [
+        [
+          34416
+        ]
+      ]
+    },
+    "amulet of air": {
+      "name": "amulet of air",
+      "item_ids": [
+        34407
+      ],
+      "clog_dependencies": [
+        [
+          34404
         ]
       ]
     },
